@@ -158,7 +158,7 @@ function App() {
                     {/* About  */}
 
                     <div data-aos="fade-up" className="relative" id="about">
-                        <div className="flex md:flex-row flex-row w-full items-center p-8">
+                        <div className="flex md:flex-row flex-col w-full items-center p-8">
                             <img className="w-[50%] h-[80%] ml-2 mt-0 rounded-md shadow-lg shadow-red-600 md:ml-[15%] md:w-[25%]" src={about} />
                             <div className="flex flex-col">
                                 <h1 className="title text-[2rem] text-black ml-4 md:ml-8 dark:text-white">About <span className="text-[2rem] text-red-600">Me</span></h1>
