@@ -22,7 +22,7 @@ function App() {
       // Typing
 
       const [typeEffect] = useTypewriter({
-        words : ["Full Stack Dev","Software Engineer","Coder"],
+        words : ["Full Stack Dev","Software Dev","Coder"],
         loop : {},
         typeSpeed : 100,
         delaySpeed : 30
