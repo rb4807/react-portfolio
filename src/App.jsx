@@ -1,6 +1,7 @@
 import React , { useState,useEffect } from 'react'
 import './index.css';
 import rb from './assets/rb.webp'
+import { useTypewriter } from 'react-simple-typewriter'
 import intro from './assets/intro.webp'
 import useThemeStore from "./stores/useThemeStore"
 import { applyThemePreference } from "./utils/themeUtils"
@@ -18,6 +19,15 @@ import 'aos/dist/aos.css'
 
 function App() {
     
+      // Typing
+
+      const [typeEffect] = useTypewriter({
+        words : ["Full Stack Dev","Software Engineer","Coder"],
+        loop : {},
+        typeSpeed : 100,
+        delaySpeed : 30
+    })
+
     // Theme
 
     const toggleTheme = useThemeStore((state) => state.toggleTheme);
@@ -79,6 +89,7 @@ function App() {
 
     const [showEducation, setShowEducation] = useState(true);
 
+    
   return (
     <>
         {/* Cover */}
@@ -111,7 +122,7 @@ function App() {
                                 <a className="p-2 border-b-2 border-transparent hover:text-red-600 hover:border-red-600 dark:hover:text-red-600" href="#social">Contact Me</a>
                             </li>
                         </ul>
-                        <button className="z-16" onClick={toggleTheme}>
+                        <button className="ml-[80%] md:ml-0" onClick={toggleTheme}>
                             <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-sun" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                                 <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
@@ -135,17 +146,15 @@ function App() {
                                     <div className="mb-4">
                                         <div className="head text-[1.5rem] text-black dark:text-white md:text-[2.4rem]">Rajesh Balasubramaniam</div>
                                     </div>
-                                    <div className="mb-4">
-                                        <div className="head text-[1.5rem] text-black dark:text-white font-black md:text-[2.4rem]">Python Full Stack Developer</div>
-                                    </div>
-                                    <div className="mb-4">
+                                    <div className="mb-4 flex flex-row">
                                         <a href="https://drive.google.com/file/d/1Zv5oQ1Gq9BP4sxR94EPUBXs_PRUu8FCn/view?usp=drivesdk" className="relative inline-flex items-center justify-center p-2 px-1 py-1 overflow-hidden font-medium text-white transition duration-300 ease-out border-2 border-red-600 rounded-full shadow-md group md:px-6 md:py-3">
                                             <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-red-600 group-hover:translate-x-0 ease">
                                                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                                             </span>
                                             <span className="absolute text-[0.75rem] flex items-center justify-center w-full h-full bg-red-600 text-white transition-all duration-300 transform group-hover:translate-x-full ease md:text-[1.2rem]">Download CV</span>
                                             <span id="journey" className="relative invisible">Download CV</span>
-                                        </a>                                        
+                                        </a>                        
+                                        <h1 className="head text-[1.5rem] text-black dark:text-white font-black ml-2 md:ml-6 md:text-[2.4rem]">{typeEffect}</h1>
                                     </div>
                                 </div>
                                 <div class="w-full md:w-1/2">
