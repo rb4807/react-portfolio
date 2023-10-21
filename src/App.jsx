@@ -1,10 +1,12 @@
 import React , { useState,useEffect } from 'react'
 import './index.css';
-import rb from './assets/rb.webp'
+import dark from './assets/dark.webp'
+import light from './assets/light.png'
 import { useTypewriter } from 'react-simple-typewriter'
 import intro from './assets/intro.webp'
 import useThemeStore from "./stores/useThemeStore"
 import { applyThemePreference } from "./utils/themeUtils"
+import {THEME_TYPES } from './constants'
 import about from './assets/about.webp'
 import ecommerce from './assets/ecommerce.webp'
 import mfj from './assets/mfj.webp'
@@ -16,6 +18,8 @@ import pic from './assets/pic.webp'
 import Loader from './Loader';
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+
+const { THEME_LIGHT, THEME_DARK } = THEME_TYPES;
 
 function App() {
     
@@ -35,6 +39,36 @@ function App() {
     useEffect(() => {
         applyThemePreference(theme);
     }, [theme]);
+
+    const lightIcon = (
+        <svg xmlns="http://www.w3.org/2000/svg" className="hover:scale-115 duration-1000 transform icon icon-tabler icon-tabler-moon-stars" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+            <path d="M17 4a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2" />
+            <path d="M19 11h2m-1 -1v2" />
+        </svg>   
+    );
+    
+    const darkIcon = (
+        <svg xmlns="http://www.w3.org/2000/svg" className="hover:scale-115 duration-1000 transform icon icon-tabler icon-tabler-sun" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
+            <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" />
+        </svg>       
+         
+    );
+    const icon = theme === THEME_LIGHT ? lightIcon : darkIcon;
+
+    const lightLogo = (
+        <img className="hover:scale-110 duration-1000 transform w-10 md:flex md:w-20" src={light} alt="..." />  
+         
+    );
+    
+    const darkLogo = (
+        <img className="hover:scale-110 duration-1000 transform w-10 md:flex md:w-20" src={dark} alt="..." />  
+   
+    );
+    const logo = theme === THEME_LIGHT ? lightLogo : darkLogo;
 
     // Slideshow
 
@@ -89,16 +123,15 @@ function App() {
 
     const [showEducation, setShowEducation] = useState(true);
 
-    
   return (
     <>
         {/* Cover */}
 
         <div>
             {isLoading ? ( <Loader />) :(
-                <div className="bg-neutral-100 dark:bg-black">
+                <div className="bg-white dark:bg-black">
                     <div className="p-8 items-center h-[5rem] flex md:justify-between" id="top">
-                        <img className="w-10 md:flex md:w-20" src={rb} alt="..." />  
+                        {logo}
                         <ul className="hidden navbar font-bold md:text-black md:flex md:items-center md:gap-[2vw] dark:text-white">
                             <li>
                                 <a className="p-2 border-b-2 border-transparent hover:text-red-600 hover:border-red-600 dark:hover:text-red-600" href="#journey">About Me</a>
@@ -123,17 +156,7 @@ function App() {
                             </li>
                         </ul>
                         <button className="ml-[80%] md:ml-0" onClick={toggleTheme}>
-                            <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-sun" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
-                                <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" />
-                            </svg> 
-                            {/* <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon-stars" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
-                                <path d="M17 4a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2" />
-                                <path d="M19 11h2m-1 -1v2" />
-                            </svg>  */}
+                        {icon}
                         </button>
                     </div>
                     <div data-aos="fade-up" className="container mx-auto p-4">
@@ -187,13 +210,13 @@ function App() {
 
                     <h1 data-aos="fade-up" className="title text-black dark:text-white text-[2.4rem] mt-[8%] ml-[30%] md:mt-[3%] md:ml-[43%]" id="services">My <span className='text-[2.4rem] text-red-600'>Service</span></h1>
                     <div data-aos="fade-up" className="container mx-auto p-4">
-                        <div className="content grid grid-cols-2 gap-4 text-black dark:text-white">
-                            <div className="bg-white dark:bg-black p-4 rounded-lg shadow shadow-red-600">Full Stack Development</div>
-                            <div className="bg-white dark:bg-black p-4 rounded-lg shadow shadow-red-600">Python Projects</div>
-                            <div className="bg-white dark:bg-black p-4 rounded-lg shadow shadow-red-600">Api Integration</div>
-                            <div className="bg-white dark:bg-black p-4 rounded-lg shadow shadow-red-600">Software Development</div>
-                            <div className="bg-white dark:bg-black p-4 rounded-lg shadow shadow-red-600">Technical Support</div>
-                            <div className="bg-white dark:bg-black p-4 rounded-lg shadow shadow-red-600">Testing & Debugging</div>
+                        <div className="content grid md:grid-cols-3 grid-cols-2 gap-4 text-black dark:text-white">
+                            <div className="bg-white hover:scale-105 duration-1000 transform dark:bg-black p-4 rounded-lg text-center shadow shadow-red-600">Full Stack Development</div>
+                            <div className="bg-white hover:scale-105 duration-1000 transform dark:bg-black p-4 rounded-lg text-center shadow shadow-red-600">Python Projects</div>
+                            <div className="bg-white hover:scale-105 duration-1000 transform dark:bg-black p-4 rounded-lg text-center shadow shadow-red-600">Api Integration</div>
+                            <div className="bg-white hover:scale-105 duration-1000 transform dark:bg-black p-4 rounded-lg text-center shadow shadow-red-600">Software Development</div>
+                            <div className="bg-white hover:scale-105 duration-1000 transform dark:bg-black p-4 rounded-lg text-center shadow shadow-red-600">Technical Support</div>
+                            <div className="bg-white hover:scale-105 duration-1000 transform dark:bg-black p-4 rounded-lg text-center shadow shadow-red-600">Testing & Debugging</div>
                         </div>
                     </div>
 
@@ -203,56 +226,32 @@ function App() {
                     <div data-aos="fade-up" className='relative'>
                         <div className="content container mx-auto p-4">
                             <div className="grid grid-cols-1 gap-6 text-white md:grid md:grid-cols-3 md:gap-4">
-                                <div class="max-w-sm  bg-white dark:bg-black dark:border-gray-700 border border-black rounded-lg shadow-md shadow-red-600 md:shadow-lg md:shadow-red-600">
-                                    <img className="rounded-t-lg" src={mfj} alt="" />
-                                    <div className="p-5">
-                                        <h5 className="mb-2 text-2xl font-bold tracking-tight text-black dark:text-white">Jewellery Shopping App</h5>
-                                        <span className='font-bold text-black dark:text-white'>Technologies</span><p className="mb-3 font-normal text-black dark:text-white">Django, PostgreSQL, Ajax, Jquery, Git, Github, JavaScript, HTML, CSS, Tailwind CSS.</p>
-                                        <a href="https://github.com/rb4807/jewelry-django.git">
-                                            <label className="bg-red-600 absolute top-2 left-[89%] p-1 rounded-full cursor-pointer md:top-2 md:left-[30%]">
-                                                <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-external-link" width="36" height="36" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                                    <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" />
-                                                    <path d="M11 13l9 -9" />
-                                                    <path d="M15 4h5v5" />
-                                                </svg>
-                                            </label>
-                                        </a>
-                                    </div>
+                                <div class="max-w-sm hover:scale-105 duration-1000 transform bg-white dark:bg-black border-black rounded-lg shadow-md shadow-red-600 md:shadow-lg md:shadow-red-600">
+                                    <a href="https://github.com/rb4807/jewelry-django.git">
+                                        <img className="rounded-t-lg" src={mfj} alt="" />
+                                        <div className="p-5">
+                                            <h5 className="mb-2 text-2xl font-bold tracking-tight text-black dark:text-white">Jewellery Shopping App</h5>
+                                            <span className='font-bold text-black dark:text-white'>Technologies</span><p className="mb-3 font-normal text-black dark:text-white">Django, PostgreSQL, Ajax, Jquery, Git, Github, JavaScript, HTML, CSS, Tailwind CSS.</p>   
+                                        </div>
+                                    </a>
                                 </div>
-                                <div className="max-w-sm bg-white dark:bg-black dark:border-gray-700 border border-black rounded-lg shadow-md shadow-red-600 md:shadow-lg md:shadow-red-600">
-                                    <img className="rounded-t-lg" src={teammed} alt="" />
-                                    <div className="p-5">
-                                        <h5 className="mb-2 text-2xl font-bold tracking-tight text-black dark:text-white">Doctor's Booking App</h5>
-                                        <span className='font-bold text-black dark:text-white'>Technologies</span><p className="mb-3 font-normal text-black dark:text-white">Django, PostgreSQL, Ajax, Jquery, Git, Github, JavaScript, HTML, CSS, Tailwind CSS.</p>
-                                        <a href="https://github.com/rb4807/teammed-django.git">
-                                            <label  className="bg-red-600 absolute top-[34%] left-[89%] p-1 rounded-full cursor-pointer md:top-2 md:left-[61%]">
-                                                <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-external-link" width="36" height="36" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                                    <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" />
-                                                    <path d="M11 13l9 -9" />
-                                                    <path d="M15 4h5v5" />
-                                                </svg>
-                                            </label>
-                                        </a>
-                                    </div>
+                                <div className="max-w-sm hover:scale-105 duration-1000 transform bg-white dark:bg-black border-black rounded-lg shadow-md shadow-red-600 md:shadow-lg md:shadow-red-600">
+                                    <a href="https://github.com/rb4807/teammed-django.git">
+                                        <img className="rounded-t-lg" src={teammed} alt="" />
+                                        <div className="p-5">
+                                            <h5 className="mb-2 text-2xl font-bold tracking-tight text-black dark:text-white">Doctor's Booking App</h5>
+                                            <span className='font-bold text-black dark:text-white'>Technologies</span><p className="mb-3 font-normal text-black dark:text-white">Django, PostgreSQL, Ajax, Jquery, Git, Github, JavaScript, HTML, CSS, Tailwind CSS.</p>     
+                                        </div>
+                                    </a>
                                 </div>
-                                <div className="max-w-sm bg-white dark:bg-black dark:border-gray-700 border border-black rounded-lg shadow-md shadow-red-600 md:shadow-lg md:shadow-red-600">
+                                <div className="max-w-sm hover:scale-105 duration-1000 transform bg-white dark:bg-black border-black rounded-lg shadow-md shadow-red-600 md:shadow-lg md:shadow-red-600">
                                     <img className="rounded-t-lg" src={ecommerce} alt="" />
-                                    <div className="p-5">
-                                        <h5 className="mb-2 text-2xl font-bold tracking-tight text-black dark:text-white">Ecommerce App</h5>
-                                        <span className='font-bold text-black dark:text-white'>Technologies</span><p className="mb-3 font-normal text-black dark:text-white">Django, SQLite, Ajax, Jquery, Git, Github, JavaScript, HTML, CSS, Bootstrap.</p>
-                                        <a href="https://github.com/rb4807/e-commerce.git">
-                                            <label className="bg-red-600 absolute top-[67%] left-[89%] p-1 rounded-full cursor-pointer md:top-2 md:left-[92.5%]">
-                                                <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-external-link" width="36" height="36" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                                    <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" />
-                                                    <path d="M11 13l9 -9" />
-                                                    <path d="M15 4h5v5" />
-                                                </svg>
-                                            </label>
-                                        </a>
-                                    </div>
+                                    <a href="https://github.com/rb4807/e-commerce.git">
+                                        <div className="p-5">
+                                            <h5 className="mb-2 text-2xl font-bold tracking-tight text-black dark:text-white">Ecommerce App</h5>
+                                            <span className='font-bold text-black dark:text-white'>Technologies</span><p className="mb-3 font-normal text-black dark:text-white">Django, SQLite, Ajax, Jquery, Git, Github, JavaScript, HTML, CSS, Bootstrap.</p>
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>  
