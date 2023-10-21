@@ -193,7 +193,7 @@ function App() {
                         <div className="flex md:flex-row flex-col w-full items-center p-8">
                             <img className="w-[50%] h-[80%] ml-2 mt-0 rounded-md shadow-lg shadow-red-600 md:ml-[15%] md:w-[25%]" src={about} />
                             <div className="flex flex-col">
-                                <h1 className="title text-[2rem] text-black ml-4 md:ml-8 dark:text-white">About <span className="text-[2rem] text-red-600">Me</span></h1>
+                                <h1 className="title text-[2rem] text-black mt-4 ml-4 md:ml-8 dark:text-white">About <span className="text-[2rem] text-red-600">Me</span></h1>
                                 <p className="content text-[0.75rem] text-black dark:text-white mr-2 ml-4 md:ml-8 md:mr-10 md:text-[1.5rem] md:text-justify">
                                     Dedicated and highly self-motivated Software engineer
                                     student with strong analytical skills. Experienced and
