@@ -7,7 +7,7 @@ const { THEME_LIGHT, THEME_DARK } = THEME_TYPES;
 const useThemeStore = create(
   persist(
     (set) => ({
-      theme: THEME_DARK,
+      theme: THEME_LIGHT,
       toggleTheme: () =>
         set((state) => ({
           theme: state.theme === THEME_LIGHT ? THEME_DARK : THEME_LIGHT,
