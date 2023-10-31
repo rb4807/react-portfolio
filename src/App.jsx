@@ -228,7 +228,7 @@ function App() {
                         <div className="content container mx-auto p-4">
                             <div className="grid grid-cols-1 gap-6 text-white md:grid md:grid-cols-3 md:gap-4">
                                 <div class="max-w-sm hover:scale-105 duration-1000 transform bg-white dark:bg-black border-black rounded-lg shadow-md shadow-red-600 md:shadow-lg md:shadow-red-600">
-                                    <a href="https://github.com/rb4807/jewelry-django.git">
+                                    <a href="https://mfj-rb4807.vercel.app/">
                                         <img className="rounded-t-lg" src={mfj} alt="" />
                                         <div className="p-5">
                                             <h5 className="mb-2 text-2xl font-bold tracking-tight text-black dark:text-white">Jewellery Shopping App</h5>
