@@ -387,7 +387,7 @@ function App() {
 
                     {/* Certification */}
 
-                    <h1 data-aos="fade-up" className="title text-black dark:text-white text-[2.4rem] mt-[20%] ml-[16%] md:mt-[15%] md:ml-[43%]" id="certi">My <span className='text-[2.4rem] text-red-600'>Certifications</span></h1>
+                    <h1 data-aos="fade-up" className="title text-black dark:text-white text-[2.4rem] mt-[60%] ml-[16%] md:mt-[15%] md:ml-[43%]" id="certi">My <span className='text-[2.4rem] text-red-600'>Certifications</span></h1>
                     <div data-aos="fade-up" className="container mx-auto p-4">
                         <div className="content bg-white dark:bg-black text-black dark:text-white p-4 rounded-lg text-[.80rem] shadow shadow-red-600 md:text-[1.2rem]">
                             • Power Programmer Virtual Experience Program from <span className="ml-[2.7%] text-red-600 md:ml-[0%]">Infosys.</span> <br/>
