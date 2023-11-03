@@ -26,7 +26,7 @@ function App() {
       // Typing
 
       const [typeEffect] = useTypewriter({
-        words : ["Full Stack Dev","Software Dev","Coder"],
+        words : ["Software Dev","Full Stack Dev","Coder"],
         loop : {},
         typeSpeed : 100,
         delaySpeed : 30
@@ -178,7 +178,6 @@ function App() {
                                             <span className="absolute text-[0.75rem] flex items-center justify-center w-full h-full bg-red-600 text-white transition-all duration-300 transform group-hover:translate-x-full ease md:text-[1.2rem]">Download CV</span>
                                             <span id="journey" className="relative invisible">Download CV</span>
                                         </a>                        
-                                        <h1 className="head text-[1.5rem] text-black dark:text-white font-black ml-2 md:ml-6 md:text-[2.4rem]">{typeEffect}</h1>
                                     </div>
                                 </div>
                                 <div class="w-full md:w-1/2">
@@ -194,8 +193,11 @@ function App() {
                         <div className="flex md:flex-row flex-col w-full items-center p-8">
                             <img className="w-[50%] h-[80%] ml-2 mt-0 rounded-md shadow-lg shadow-red-600 md:ml-[15%] md:w-[25%]" src={about} />
                             <div className="flex flex-col">
-                                <h1 className="title text-[2rem] text-black mt-4 ml-4 md:ml-8 dark:text-white">About <span className="text-[2rem] text-red-600">Me</span></h1>
-                                <p className="content text-[0.75rem] text-black dark:text-white mr-2 ml-4 md:ml-8 md:mr-10 md:text-[1.5rem] md:text-justify">
+                                <div className="flex flex-row">
+                                    <h1 className="title text-[2rem] text-black mt-4 ml-4 md:ml-8 dark:text-white">About <span className="text-[2rem] text-red-600">Me</span></h1>
+                                    <h1 className="head text-[1.5rem] text-black dark:text-white font-black mt-[5.5%] ml-4 md:ml-6 md:mt-[1.7%] md:text-[2rem]">{typeEffect}</h1>
+                                </div>
+                                <p className="content text-[0.75rem] text-black dark:text-white mr-2 ml-4 md:ml-8 md:mr-10 md:text-[1.5rem] text-justify">
                                     Dedicated and highly self-motivated Software engineer
                                     student with strong analytical skills. Experienced and
                                     gained knowledge in programming, developing, designing
