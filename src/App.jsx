@@ -11,6 +11,7 @@ import about from './assets/about.webp'
 import ecommerce from './assets/ecommerce.webp'
 import mfj from './assets/mfj.webp'
 import teammed from './assets/teammed.webp'
+import chatgpt from './assets/chatgpt.png'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
@@ -23,9 +24,9 @@ const { THEME_LIGHT, THEME_DARK } = THEME_TYPES;
 
 function App() {
     
-      // Typing
+    // Typing
 
-      const [typeEffect] = useTypewriter({
+    const [typeEffect] = useTypewriter({
         words : ["Full Stack Dev","Software Dev","Coder"],
         loop : {},
         typeSpeed : 100,
@@ -57,8 +58,8 @@ function App() {
         </svg>       
          
     );
-    const icon = theme === THEME_LIGHT ? lightIcon : darkIcon;
 
+    const icon = theme === THEME_LIGHT ? lightIcon : darkIcon;
     const lightLogo = (
         <img className="hover:scale-110 duration-1000 transform w-10 md:flex md:w-20" src={light} alt="..." />  
          
@@ -66,7 +67,6 @@ function App() {
     
     const darkLogo = (
         <img className="hover:scale-110 duration-1000 transform w-10 md:flex md:w-20" src={dark} alt="..." />  
-   
     );
     const logo = theme === THEME_LIGHT ? lightLogo : darkLogo;
 
@@ -228,7 +228,7 @@ function App() {
                         <div className="content container mx-auto p-4">
                             <div className="grid grid-cols-1 gap-6 text-white md:grid md:grid-cols-3 md:gap-4">
                                 <div class="max-w-sm hover:scale-105 duration-1000 transform bg-white dark:bg-black border-black rounded-lg shadow-md shadow-red-600 md:shadow-lg md:shadow-red-600">
-                                    <a href="https://mfj-rb4807.vercel.app/">
+                                    <a href="https://mfj-rb4807.vercel.app/" target='blank'>
                                         <img className="rounded-t-lg" src={mfj} alt="" />
                                         <div className="p-5">
                                             <h5 className="mb-2 text-2xl font-bold tracking-tight text-black dark:text-white">Jewellery Shopping App</h5>
@@ -236,8 +236,17 @@ function App() {
                                         </div>
                                     </a>
                                 </div>
+                                <div class="max-w-sm hover:scale-105 duration-1000 transform bg-white dark:bg-black border-black rounded-lg shadow-md shadow-red-600 md:shadow-lg md:shadow-red-600">
+                                    <a href="https://chatgpt-clone-7jxv.vercel.app/" target='blank'>
+                                        <img className="rounded-t-lg" src={chatgpt} alt="" />
+                                        <div className="p-5">
+                                            <h5 className="mb-2 text-2xl font-bold tracking-tight text-black dark:text-white">ChatGPT Clone</h5>
+                                            <span className='font-bold text-black dark:text-white'>Technologies</span><p className="mb-3 font-normal text-black dark:text-white">React.JS, JavaScript, Tailwind CSS, Git, Github.</p>   
+                                        </div>
+                                    </a>
+                                </div>
                                 <div className="max-w-sm hover:scale-105 duration-1000 transform bg-white dark:bg-black border-black rounded-lg shadow-md shadow-red-600 md:shadow-lg md:shadow-red-600">
-                                    <a href="https://github.com/rb4807/teammed-django.git">
+                                    <a href="https://github.com/rb4807/teammed-django.git" target='blank'>
                                         <img className="rounded-t-lg" src={teammed} alt="" />
                                         <div className="p-5">
                                             <h5 className="mb-2 text-2xl font-bold tracking-tight text-black dark:text-white">Doctor's Booking App</h5>
@@ -247,7 +256,7 @@ function App() {
                                 </div>
                                 <div className="max-w-sm hover:scale-105 duration-1000 transform bg-white dark:bg-black border-black rounded-lg shadow-md shadow-red-600 md:shadow-lg md:shadow-red-600">
                                     <img className="rounded-t-lg" src={ecommerce} alt="" />
-                                    <a href="https://github.com/rb4807/e-commerce.git">
+                                    <a href="https://github.com/rb4807/e-commerce.git" target='blank'>
                                         <div className="p-5">
                                             <h5 className="mb-2 text-2xl font-bold tracking-tight text-black dark:text-white">Ecommerce App</h5>
                                             <span className='font-bold text-black dark:text-white'>Technologies</span><p className="mb-3 font-normal text-black dark:text-white">Django, SQLite, Ajax, Jquery, Git, Github, JavaScript, HTML, CSS, Bootstrap.</p>
