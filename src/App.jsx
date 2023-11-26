@@ -8,9 +8,8 @@ import useThemeStore from "./stores/useThemeStore"
 import { applyThemePreference } from "./utils/themeUtils"
 import {THEME_TYPES } from './constants'
 import about from './assets/about.webp'
-import ecommerce from './assets/ecommerce.webp'
 import mfj from './assets/mfj.webp'
-import teammed from './assets/teammed.webp'
+import school from './assets/school.png'
 import chatgpt from './assets/chatgpt.png'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
@@ -170,7 +169,7 @@ function App() {
                                         <div className="head text-[1.5rem] text-black dark:text-white md:text-[2.4rem]">Rajesh Balasubramaniam</div>
                                     </div>
                                     <div className="mb-4 flex flex-row">
-                                        <a href="https://drive.google.com/file/d/1N46Jxq9NfgpGFr62rgldsehU5W17i46j/view?usp=drivesdk" className="relative inline-flex items-center justify-center p-2 px-1 py-1 overflow-hidden font-medium text-white transition duration-300 ease-out border-2 border-red-600 rounded-full shadow-md group md:px-6 md:py-3">
+                                        <a href="https://drive.google.com/file/d/1Y56cAewFE_Hni_x-_gFmdojidL5YQLq0/view?usp=drivesdk" className="relative inline-flex items-center justify-center p-2 px-1 py-1 overflow-hidden font-medium text-white transition duration-300 ease-out border-2 border-red-600 rounded-full shadow-md group md:px-6 md:py-3">
                                             <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-red-600 group-hover:translate-x-0 ease">
                                                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                                             </span>
@@ -231,7 +230,24 @@ function App() {
                                         <img className="rounded-t-lg" src={mfj} alt="" />
                                         <div className="p-5">
                                             <h5 className="mb-2 text-2xl font-bold tracking-tight text-black dark:text-white">Jewellery Shopping App</h5>
-                                            <span className='font-bold text-black dark:text-white'>Technologies</span><p className="mb-3 font-normal text-black dark:text-white">Django, PostgreSQL, Ajax, Jquery, Git, Github, JavaScript, HTML, CSS, Tailwind CSS.</p>   
+                                            <h1 className='font-bold text-black dark:text-white'>Technologies</h1>
+                                            <p className="mb-3 font-normal text-black dark:text-white"><span className='text-red-600'>Frontend :- </span> Ajax, Jquery, JavaScript, Tailwind CSS, HTML.</p>   
+                                            <p className="mb-3 font-normal text-black dark:text-white"><span className='text-red-600'>Backend :- </span> Django.</p>                                     
+                                            <p className="mb-3 font-normal text-black dark:text-white"><span className='text-red-600'>Database :- </span> PostgreSQL.</p>                                     
+                                            <p className="mb-3 font-normal text-black dark:text-white"><span className='text-red-600'>Version Control System :- </span> Git, Github.</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div className="max-w-sm hover:scale-105 duration-1000 transform bg-white dark:bg-black border-black rounded-lg shadow-md shadow-red-600 md:shadow-lg md:shadow-red-600">
+                                    <a href="https://github.com/rb4807/school-management" target='blank'>
+                                        <img className="rounded-t-lg" src={school} alt="" />
+                                        <div className="p-5">
+                                            <h5 className="mb-2 text-2xl font-bold tracking-tight text-black dark:text-white">School Management App</h5>
+                                            <h1 className='font-bold text-black dark:text-white'>Technologies</h1>
+                                            <p className="mb-3 font-normal text-black dark:text-white"><span className='text-red-600'>Frontend :- </span> React.JS, Tailwind CSS.</p>   
+                                            <p className="mb-3 font-normal text-black dark:text-white"><span className='text-red-600'>Backend :- </span> Django, REST API, Simple-JWT, CRUD, Postman for API.</p> 
+                                            <p className="mb-3 font-normal text-black dark:text-white"><span className='text-red-600'>Database :- </span> PostgreSQL.</p>                                                                         
+                                            <p className="mb-3 font-normal text-black dark:text-white"><span className='text-red-600'>Version Control System :- </span> Git, Github.</p>                                        
                                         </div>
                                     </a>
                                 </div>
@@ -240,28 +256,13 @@ function App() {
                                         <img className="rounded-t-lg" src={chatgpt} alt="" />
                                         <div className="p-5">
                                             <h5 className="mb-2 text-2xl font-bold tracking-tight text-black dark:text-white">ChatGPT Clone</h5>
-                                            <span className='font-bold text-black dark:text-white'>Technologies</span><p className="mb-3 font-normal text-black dark:text-white">React.JS, JavaScript, Tailwind CSS, Git, Github.</p>   
+                                            <h1 className='font-bold text-black dark:text-white'>Technologies</h1>
+                                            <p className="mb-3 font-normal text-black dark:text-white"><span className='text-red-600'>Frontend :- </span> React.JS, JavaScript, Tailwind CSS.</p>   
+                                            <p className="mb-3 font-normal text-black dark:text-white"><span className='text-red-600'>Version Control System :- </span> Git, Github.</p>   
                                         </div>
                                     </a>
                                 </div>
-                                <div className="max-w-sm hover:scale-105 duration-1000 transform bg-white dark:bg-black border-black rounded-lg shadow-md shadow-red-600 md:shadow-lg md:shadow-red-600">
-                                    <a href="https://github.com/rb4807/teammed-django.git" target='blank'>
-                                        <img className="rounded-t-lg" src={teammed} alt="" />
-                                        <div className="p-5">
-                                            <h5 className="mb-2 text-2xl font-bold tracking-tight text-black dark:text-white">Doctor's Booking App</h5>
-                                            <span className='font-bold text-black dark:text-white'>Technologies</span><p className="mb-3 font-normal text-black dark:text-white">Django, PostgreSQL, Ajax, Jquery, Git, Github, JavaScript, HTML, CSS, Tailwind CSS.</p>     
-                                        </div>
-                                    </a>
-                                </div>
-                                <div className="max-w-sm hover:scale-105 duration-1000 transform bg-white dark:bg-black border-black rounded-lg shadow-md shadow-red-600 md:shadow-lg md:shadow-red-600">
-                                    <img className="rounded-t-lg" src={ecommerce} alt="" />
-                                    <a href="https://github.com/rb4807/e-commerce.git" target='blank'>
-                                        <div className="p-5">
-                                            <h5 className="mb-2 text-2xl font-bold tracking-tight text-black dark:text-white">Ecommerce App</h5>
-                                            <span className='font-bold text-black dark:text-white'>Technologies</span><p className="mb-3 font-normal text-black dark:text-white">Django, SQLite, Ajax, Jquery, Git, Github, JavaScript, HTML, CSS, Bootstrap.</p>
-                                        </div>
-                                    </a>
-                                </div>
+                                
                             </div>
                         </div>  
                     </div>
