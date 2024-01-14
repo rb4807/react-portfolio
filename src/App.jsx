@@ -169,7 +169,7 @@ function App() {
                                         <div className="head text-[1.5rem] text-black dark:text-white md:text-[2.4rem]">Rajesh Balasubramaniam</div>
                                     </div>
                                     <div className="mb-4 flex flex-row">
-                                        <a href="https://drive.google.com/file/d/1Y56cAewFE_Hni_x-_gFmdojidL5YQLq0/view?usp=drivesdk" className="relative inline-flex items-center justify-center p-2 px-1 py-1 overflow-hidden font-medium text-white transition duration-300 ease-out border-2 border-red-600 rounded-full shadow-md group md:px-6 md:py-3">
+                                        <a href="https://drive.google.com/file/d/13Pop2yyXkmARkGzNKXM7f295RqfQpYBb/view?usp=drivesdk" className="relative inline-flex items-center justify-center p-2 px-1 py-1 overflow-hidden font-medium text-white transition duration-300 ease-out border-2 border-red-600 rounded-full shadow-md group md:px-6 md:py-3">
                                             <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-red-600 group-hover:translate-x-0 ease">
                                                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                                             </span>
@@ -372,21 +372,38 @@ function App() {
                                         </li>
                                     </ul>
                                 ) : (
-                                    <li className="mb-10 ml-6">
-                                        <span className="absolute flex items-center justify-center w-8 h-8 bg-red-600 rounded-full -left-4 ring-4 ring-red-600">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-briefcase" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                                <path d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" />
-                                                <path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2" />
-                                                <path d="M12 12l0 .01" />
-                                                <path d="M3 13a20 20 0 0 0 18 0" />
-                                            </svg>
-                                        </span>
-                                        <h3 className="font-bold leading-tight text-red-600 text-[0.75rem] md:text-[1.3rem]">Luminar Technolab</h3>
-                                        <p className="text-[0.75rem] md:text-[1.3rem] mt-2">Python Full Stack Developer</p>
-                                        <p className="text-[0.75rem] md:text-[1.3rem] mt-2">2023-Present</p>
-                                        <p className="text-[0.75rem] md:text-[1.3rem] mt-2">Kochi, Kerala</p>
-                                    </li> 
+                                    <ul>
+                                        <li className="mb-10 ml-6">
+                                            <span className="absolute flex items-center justify-center w-8 h-8 bg-red-600 rounded-full -left-4 ring-4 ring-red-600">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-briefcase" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                                    <path d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" />
+                                                    <path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2" />
+                                                    <path d="M12 12l0 .01" />
+                                                    <path d="M3 13a20 20 0 0 0 18 0" />
+                                                </svg>
+                                            </span>
+                                            <h3 className="font-bold leading-tight text-red-600 text-[0.75rem] md:text-[1.3rem]">Luminar Technolab</h3>
+                                            <p className="text-[0.75rem] md:text-[1.3rem] mt-2">Python Full Stack Developer</p>
+                                            <p className="text-[0.75rem] md:text-[1.3rem] mt-2">2023-Present</p>
+                                            <p className="text-[0.75rem] md:text-[1.3rem] mt-2">Kochi, Kerala</p>
+                                        </li> 
+                                        <li className="mb-10 ml-6">
+                                            <span className="absolute flex items-center justify-center w-8 h-8 bg-red-600 rounded-full -left-4 ring-4 ring-red-600">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-briefcase" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                                    <path d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" />
+                                                    <path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2" />
+                                                    <path d="M12 12l0 .01" />
+                                                    <path d="M3 13a20 20 0 0 0 18 0" />
+                                                </svg>
+                                            </span>
+                                            <h3 className="font-bold leading-tight text-red-600 text-[0.75rem] md:text-[1.3rem]">Deienami</h3>
+                                            <p className="text-[0.75rem] md:text-[1.3rem] mt-2">Software Engineer</p>
+                                            <p className="text-[0.75rem] md:text-[1.3rem] mt-2">2024-Present</p>
+                                            <p className="text-[0.75rem] md:text-[1.3rem] mt-2">Thrivandrum, Kerala</p>
+                                        </li> 
+                                    </ul>
                                 )}
                             </ol>
                         </div>
