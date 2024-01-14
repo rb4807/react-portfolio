@@ -239,7 +239,7 @@ function App() {
                                     </a>
                                 </div>
                                 <div className="max-w-sm hover:scale-105 duration-1000 transform bg-white dark:bg-black border-black rounded-lg shadow-md shadow-red-600 md:shadow-lg md:shadow-red-600">
-                                    <a href="https://github.com/rb4807/school-management" target='blank'>
+                                    <a href="https://school-psi-ten.vercel.app/" target='blank'>
                                         <img className="rounded-t-lg" src={school} alt="" />
                                         <div className="p-5">
                                             <h5 className="mb-2 text-2xl font-bold tracking-tight text-black dark:text-white">School Management App</h5>
