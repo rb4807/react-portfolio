@@ -385,7 +385,7 @@ function App() {
                                             </span>
                                             <h3 className="font-bold leading-tight text-red-600 text-[0.75rem] md:text-[1.3rem]">Luminar Technolab</h3>
                                             <p className="text-[0.75rem] md:text-[1.3rem] mt-2">Python Full Stack Developer</p>
-                                            <p className="text-[0.75rem] md:text-[1.3rem] mt-2">2023-Present</p>
+                                            <p className="text-[0.75rem] md:text-[1.3rem] mt-2">2023-2024</p>
                                             <p className="text-[0.75rem] md:text-[1.3rem] mt-2">Kochi, Kerala</p>
                                         </li> 
                                         <li className="mb-10 ml-6">
