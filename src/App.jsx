@@ -316,7 +316,7 @@ function App() {
                     <div data-aos="fade-up" className="relative">
                         <img className="w-[46%] ml-2 mt-[18%] rounded-md shadow-lg shadow-red-600 md:mt-10 md:ml-[17%] md:w-[23%]" src={pic} />
                         <div className="content absolute top-[-22%] left-[56%] md:top-3 md:left-[50%]">
-                            <div className="flex flex-row gap-4">
+                            <div className="flex flex-row gap-3">
                                 <button onClick={() => setShowEducation(true)} className="text-[.85rem] text-black hover:text-red-600 dark:hover:text-red-600 dark:text-white md:text-[2rem]">Education </button>
                                 <button onClick={() => setShowEducation(false)} className="text-[.85rem] text-black hover:text-red-600 dark:hover:text-red-600  dark:text-white md:text-[2rem]">| Experience</button>
                             </div>
@@ -442,7 +442,7 @@ function App() {
                     <footer className="bg-white dark:bg-black" id="social">
                         <hr className="my-6 border-black sm:mx-auto dark:border-white lg:my-8" />
                         <div className="sm:flex sm:items-center sm:justify-between">
-                            <span className="text-sm ml-4 mb-2 text-black dark:text-white sm:text-center">© 2023 Copyright. All Rights Reserved.</span>
+                            <span className="text-sm ml-4 mb-2 text-black dark:text-white sm:text-center">© 2024 Copyright. All Rights Reserved.</span>
                             <div className="flex mt-4 space-x-5 p-2 sm:justify-center sm:mt-0">
                                 <a href="https://www.linkedin.com/in/rajesh-mbalu">
                                     <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-brand-linkedin bg-red-600 rounded-full hover:bg-blue-600 rounded-full " width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
