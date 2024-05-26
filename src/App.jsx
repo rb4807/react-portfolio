@@ -168,7 +168,7 @@ function App() {
                                     <div className="mb-4">
                                         <div className="head text-[1.5rem] text-black dark:text-white md:text-[2.4rem]">Rajesh Balasubramaniam</div>
                                     </div>
-                                    <div className="mb-4 flex flex-row">
+                                    <div className="mb-4 h-[10%] flex flex-row">
                                         <a href="https://drive.google.com/file/d/1KDHdBJHfkv-5bdpBbOUZUyADutkyndoQ/view?usp=drivesdk" className="relative inline-flex items-center justify-center p-2 px-1 py-1 overflow-hidden font-medium text-white transition duration-300 ease-out border-2 border-red-600 rounded-full shadow-md group md:px-6 md:py-3">
                                             <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-red-600 group-hover:translate-x-0 ease">
                                                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
@@ -194,12 +194,16 @@ function App() {
                             <div className="flex flex-col">
                                 <h1 className="title text-[2rem] text-black mt-4 ml-4 md:ml-8 dark:text-white">About <span className="text-[2rem] text-red-600">Me</span></h1>
                                 <p className="content text-[0.75rem] text-black dark:text-white mr-2 ml-4 md:ml-8 md:mr-10 md:text-[1.5rem] md:text-justify">
-                                    Dedicated and highly self-motivated Software engineer
-                                    student with strong analytical skills. Experienced and
-                                    gained knowledge in programming, developing, designing
-                                    and testing codes. Quickly learning and adapting to new
-                                    technologies. Efficient and honest in working on a team
-                                    and self-esteemed event.
+                                Motivated Anna University engineering graduate with
+                                a robust skill set encompassing development,
+                                programming, and problem-solving. Refined my
+                                abilities during a six-month web tech internship,
+                                focusing on crafting user-friendly applications.
+                                Presently excelling as a full-stack engineer, where I
+                                apply my internship experience to drive innovation in
+                                software solutions. Passionate about continuously
+                                evolving and staying updated on the latest trends in
+                                technology.
                                 </p>
                             </div>
                         </div>
