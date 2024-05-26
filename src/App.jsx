@@ -176,7 +176,7 @@ function App() {
                                             <span className="absolute text-[0.75rem] flex items-center justify-center w-full h-full bg-red-600 text-white transition-all duration-300 transform group-hover:translate-x-full ease md:text-[1.2rem]">Download CV</span>
                                             <span id="journey" className="relative invisible">Download CV</span>
                                         </a>                        
-                                        <h1 className="head text-[1.5rem] text-black dark:text-white font-black ml-2 md:ml-6 md:text-[2.4rem]">{typeEffect}</h1>
+                                        <h1 className="head text-[4.5vw] sm:text-[3.5vw] md:text-[2.5vw] lg:text-[2.5vw] xl:text-[2.5vw] 2xl:text-[2vw] text-black dark:text-white font-black ml-2 md:ml-6 whitespace-nowrap">{typeEffect}</h1>
                                     </div>
                                 </div>
                                 <div class="w-full md:w-1/2">
