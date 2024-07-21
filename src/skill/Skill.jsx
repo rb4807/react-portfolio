@@ -47,7 +47,7 @@ const Skill = () => {
                             </div>
                             <div className="p-4">
                                 <div className="rounded-lg text-contentLight dark:text-contentDark bg-secLight dark:bg-secDark p-6">
-                                    <h1 className="text-2xl font-bold text-center text-baseColor">Full Stack Development</h1>
+                                    <h1 className="text-2xl font-bold text-center text-baseColor">Full Stack</h1>
                                     <h1 className="mt-2 text-xl text-center"><span className="text-xl font-bold text-center">Frontend : </span>React.JS, Angular.JS</h1>
                                     <h1 className="text-xl text-center"><span className="text-xl font-bold text-center">Backend : </span>Django</h1>
                                 </div>

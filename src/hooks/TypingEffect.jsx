@@ -2,7 +2,7 @@ import { useTypewriter } from 'react-simple-typewriter';
 
 const TypingEffect = () => {
     const [typeEffect] = useTypewriter({
-        words: ["Full Stack Dev", "Software Dev", "Coder"],
+        words: ["Full Stack Dev", "Software Engineer", "Coder"],
         loop: {},
         typeSpeed: 100,
         delaySpeed: 30,
