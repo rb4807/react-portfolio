@@ -79,7 +79,7 @@ const Cover = () => {
                                             .fill()
                                             .map((_, i) => <Skeleton key={i} className="w-20 h-8 rounded" />)
                                         : [
-                                            { text: 'About Me', href: '#journey' },
+                                            { text: 'About Me', href: '#about' },
                                             { text: 'Services', href: '#about' },
                                             { text: 'Projects', href: '#services' },
                                             { text: 'Skills', href: '#project' },
@@ -126,7 +126,7 @@ const Cover = () => {
                                                     <button
                                                         onClick={toggleMenu}
                                                         className={
-                                                            `p-2 rounded-md text-white dark:text-white transition-transform duration-300 ease-in-out
+                                                            `p-2 rounded-md text-black dark:text-white transition-transform duration-300 ease-in-out
                                                             ${isMenuOpen ? 'bg-opacity-30 backdrop-blur-md' : 'bg-transparent hover:bg-opacity-30 hover:backdrop-blur-md'}
                                                             ${theme === 'dark' ? 'hover:bg-black' : 'hover:bg-white'}`
                                                         }
