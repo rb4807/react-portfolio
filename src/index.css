@@ -27,3 +27,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* Add this to your global CSS or a relevant CSS file */
+.glass-navbar {
+  background: rgba(255, 255, 255, 0.1); /* Adjust transparency as needed */
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: top 0.3s ease-in-out;
+}
