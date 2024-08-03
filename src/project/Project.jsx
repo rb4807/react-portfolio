@@ -125,7 +125,7 @@ const ProjectCard = ({
     return (
         <>
             <div
-                className={`w-full px-4 sm:w-1/2 lg:w-1/3 
+                className={`w-full px-4 sm:w-1/2 lg:w-1/3 mb-8 sm:mb-12 lg:mb-16
                     ${
                     showCard === "all" || categories.includes(showCard)
                         ? "block"
