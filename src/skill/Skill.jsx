@@ -54,6 +54,13 @@ const Skill = () => {
                     </div>
                     <div className="p-4">
                         <div className="rounded-lg text-contentLight dark:text-contentDark bg-secLight dark:bg-secDark p-6">
+                            <h1 className="text-2xl font-bold text-center text-baseColor">E Commerce</h1>
+                            <h1 className="mt-2 text-xl text-center">Shopify</h1>
+                            <h1 className="text-xl text-center">WordPress</h1>
+                        </div>
+                    </div>
+                    <div className="p-4">
+                        <div className="rounded-lg text-contentLight dark:text-contentDark bg-secLight dark:bg-secDark p-6">
                             <h1 className="text-2xl font-bold text-center text-baseColor">Web Technologies</h1>
                             <h1 className="mt-2 text-xl text-center">HTML5</h1>
                             <h1 className="text-xl text-center">CSS3</h1>
