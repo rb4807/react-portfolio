@@ -159,7 +159,7 @@ const Cover = () => {
                                                 <br />
                                                 <span className="block h-12 md:h-16 text-[1.5rem] md:text-[2.4rem] text-yellow-400">{typeEffect}</span>
                                             </h1>
-                                            <a href="/resume.pdf" download>
+                                            <a href="/Resume.pdf" download>
                                                 <button className="px-6 py-3 bg-blue-500 text-white font-bold rounded-full hover:bg-blue-700">
                                                     Download Now
                                                 </button>
