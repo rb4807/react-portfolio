@@ -8,7 +8,9 @@ const Service = () => {
                     <div className="bg-secLight hover:scale-105 duration-1000 transform dark:bg-secDark p-4 rounded-lg text-center shadow shadow-baseColor">Full Stack Development</div>
                     <div className="bg-secLight hover:scale-105 duration-1000 transform dark:bg-secDark p-4 rounded-lg text-center shadow shadow-baseColor">Python Projects</div>
                     <div className="bg-secLight hover:scale-105 duration-1000 transform dark:bg-secDark p-4 rounded-lg text-center shadow shadow-baseColor">Api Integration</div>
-                    <div className="bg-secLight hover:scale-105 duration-1000 transform dark:bg-secDark p-4 rounded-lg text-center shadow shadow-baseColor">Software Development</div>
+                    <div className="bg-secLight hover:scale-105 duration-1000 transform dark:bg-secDark p-4 rounded-lg text-center shadow shadow-baseColor">ETL</div>
+                    <div className="bg-secLight hover:scale-105 duration-1000 transform dark:bg-secDark p-4 rounded-lg text-center shadow shadow-baseColor">Shopify</div>
+                    <div className="bg-secLight hover:scale-105 duration-1000 transform dark:bg-secDark p-4 rounded-lg text-center shadow shadow-baseColor">WordPress</div>
                     <div className="bg-secLight hover:scale-105 duration-1000 transform dark:bg-secDark p-4 rounded-lg text-center shadow shadow-baseColor">Technical Support</div>
                     <div className="bg-secLight hover:scale-105 duration-1000 transform dark:bg-secDark p-4 rounded-lg text-center shadow shadow-baseColor">Testing & Debugging</div>
                 </div>
