@@ -56,10 +56,10 @@ function App() {
                         <Project/>
                     {/* Skills  */}
                         <Skill/>
-                    {/* Certification */}
-                        <Certification/>
                     {/* Journey  */}
                         <Journey/>
+                    {/* Certification */}
+                        <Certification/>
                     {/* Contact */}
                         <Footer/>
                 </div> 
