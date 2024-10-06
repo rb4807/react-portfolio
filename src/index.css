@@ -36,9 +36,10 @@ body {
   transition: top 0.3s ease-in-out;
 }
 
-@media (min-width: 1024px) {
+@media only screen and (min-width: 1024px) and (max-width: 1440px) {
   #certification {
-    margin-top: 100px;
+    padding-top: 300px;
   }
+
 }
 
