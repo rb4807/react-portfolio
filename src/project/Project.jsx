@@ -12,7 +12,7 @@ const Project = () => {
 
     return (
         <>
-            <section data-aos="fade-up" className="pt-20 pb-12 lg:pt-[80px] lg:pb-[90px] dark:bg-dark">
+            <section data-aos="fade-up" className="pt-20 pb-12 lg:pt-[80px] lg:pb-[60px] dark:bg-dark">
                 <div className="container mx-auto px-4">
                     <div className="flex flex-wrap -mx-4">
                         <div className="w-full px-4">

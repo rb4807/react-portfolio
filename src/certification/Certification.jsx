@@ -2,9 +2,9 @@ const Certification = () => {
     return (
         <div className="mt-[22%] md:mt-[14%]">
             <h1 data-aos="fade-up" className="title text-titleLight dark:text-titleDark text-[2rem] md:text-[2.4rem] text-center" id="certi">My <span className='text-baseColor'>Certifications</span></h1>
-            <div data-aos="fade-up" className="container mx-auto p-4 max-w-4xl">
+            <div data-aos="fade-up" className="container mx-auto p-4 max-w-full lg:max-w-4xl">
                 <a href='https://certifications-ashen.vercel.app/' target='_blank' rel="noopener noreferrer">
-                    <div className="content bg-secLight dark:bg-secDark text-contentLight dark:text-contentDark p-4 rounded-lg text-[0.8rem] md:text-[1rem] lg:text-[1.2rem] hover:scale-105 duration-300 transform">
+                    <div className="content bg-secLight dark:bg-secDark text-contentLight dark:text-contentDark p-4 rounded-lg text-[0.8rem] md:text-[1rem] lg:text-[1.2rem] hover:scale-105 duration-300 transform overflow-hidden">
                         <ul className="list-disc pl-5">
                             <li>Power Programmer Virtual Experience Program from <span className="text-baseColor">Infosys.</span></li>
                             <li><span className="text-baseColor">Python Backend And Django</span> Framework Complete Course.</li>
