@@ -36,10 +36,28 @@ body {
   transition: top 0.3s ease-in-out;
 }
 
-@media only screen and (min-width: 1024px) and (max-width: 1440px) {
-  #certification {
-    padding-top: 600px;
+/* Targeting desktop mode on a mobile browser */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+  /* Styles for landscape mode on mobile browsers */
+  #certi{
+    padding-top: 100px;
   }
-
 }
+
+/* Optionally, target even smaller screens */
+@media screen and (max-width: 480px) and (orientation: landscape) {
+  /* Styles for small mobile screens in desktop mode */
+  #certi{
+    padding-top: 100px;
+  }
+}
+
+/* General targeting for mobile screens with larger resolutions */
+@media screen and (min-width: 1024px) {
+  /* Desktop mode on larger screens, including tablets */
+  #certi{
+    padding-top: 10px;
+  }
+}
+
 
