@@ -35,7 +35,7 @@ const Skill = () => {
 
     return (
         <>
-            <h1 data-aos="fade-up" className="title text-titleLight dark:text-titleDark text-[2.4rem] mt-[8%] ml-[30%] md:mt-0  md:ml-[43%]" id="skills">My <span className='text-[2.4rem] text-baseColor'>Skills</span></h1>
+            <h1 data-aos="fade-up" className="title text-titleLight dark:text-titleDark text-[2.4rem] mt-[5%] ml-[30%] md:mt-0 md:ml-[43%]" id="skills">My <span className='text-[2.4rem] text-baseColor'>Skills</span></h1>
             <div data-aos="fade-up" className="content w-full max-w-screen-xl mx-auto">
                 <Slider {...settings} >
                     <div className="p-4">
