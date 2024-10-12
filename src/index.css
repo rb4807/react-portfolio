@@ -52,12 +52,10 @@ body {
   }
 }
 
-/* Mobile desktop mode styles */
-@media screen and (max-width: 1023px) and (min-resolution: 1.5dppx) {
-  /* Desktop mode on larger screens, including tablets */
-  #certi{
+/* Styles for desktop mode on mobile devices */
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (min-resolution: 1.5dppx) {
+  #certi {
     padding-top: 170px;
   }
 }
-
 
