@@ -52,11 +52,11 @@ body {
   }
 }
 
-/* General targeting for mobile screens with larger resolutions */
-@media screen and (min-width: 1024px) {
+/* Mobile desktop mode styles */
+@media screen and (max-width: 1023px) and (min-resolution: 1.5dppx) {
   /* Desktop mode on larger screens, including tablets */
   #certi{
-    padding-top: 10px;
+    padding-top: 40px;
   }
 }
 
