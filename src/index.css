@@ -56,7 +56,7 @@ body {
 @media screen and (max-width: 1023px) and (min-resolution: 1.5dppx) {
   /* Desktop mode on larger screens, including tablets */
   #certi{
-    padding-top: 400px;
+    padding-top: 360px;
   }
 }
 
