@@ -13,16 +13,15 @@ const About = () => {
                 <div className="flex flex-col">
                     <h1 className="title text-[2rem] text-titleLight mt-4 ml-4 md:ml-8 dark:text-titleDark">About <span className="text-[2rem] text-baseColor">Me</span></h1>
                     <p className="content text-[0.75rem] text-contentLight dark:text-contentDark mr-2 ml-4 md:ml-8 md:mr-10 md:text-[1.5rem] md:text-justify">
-                        Motivated Anna University engineering graduate with
-                        a robust skill set encompassing development,
-                        programming, and problem-solving. Refined my
-                        abilities during a six-month web tech internship,
-                        focusing on crafting user-friendly applications.
-                        Presently excelling as a full-stack engineer, where I
-                        apply my internship experience to drive innovation in
-                        software solutions. Passionate about continuously
-                        evolving and staying updated on the latest trends in
-                        technology.
+                        Proficient Software Engineer with a strong foundation
+                        in development, programming and problem-solving.
+                        Successfully completed a six-month internship in
+                        Python Full Stack Development, where I honed my
+                        skills in building robust, user-friendly applications.
+                        With one year of professional experience, I specialize
+                        in delivering innovative software solutions. Passionate
+                        about continuous learning and staying updated with
+                        the latest technological advancements.
                     </p>
                 </div>
             </div>
