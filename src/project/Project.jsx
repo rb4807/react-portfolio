@@ -9,6 +9,7 @@ import teammed from '../assets/teammed.webp'
 import beond_audit from '../assets/beond_audit.jpg'
 import deltafour from '../assets/deltafour.jpg'
 import beond_work from '../assets/beond_work.jpg'
+import text_to_voice from '../assets/text_to_voice.png'
 
 const Project = () => {
     const [showCard, setShowCard] = useState("all");
@@ -140,7 +141,7 @@ const Project = () => {
                             ImageHref={chatgpt}
                             category="JavaScript"
                             title="CHATGPT CLONE"
-                            techStack="HTML5, TailwindCSS, AJAX, jQuery, JavaScript, Django, Stripe, PostgreSQL, GitHub."
+                            techStack="React.JS, TailwindCSS, Vercel, GitHub"
                             responsibility="End to end development"
                             showCard={showCard}
                             button="View Details"
@@ -165,6 +166,16 @@ const Project = () => {
                             showCard={showCard}
                             button="View Details"
                             buttonHref="https://github.com/rb4807/teammed-django.git"
+                        />
+                        <ProjectCard 
+                            ImageHref={text_to_voice}
+                            category="JavaScript"
+                            title="TEXT TO VOICE GENERATOR WITH MULTIPLE LANGUAGE"
+                            techStack="React.JS, TailwindCSS, Vercel, GitHub"
+                            responsibility="End to end development"
+                            showCard={showCard}
+                            button="View Details"
+                            buttonHref="https://text-to-voice-generator.vercel.app/"
                         />
                     </div>
                 </div>
