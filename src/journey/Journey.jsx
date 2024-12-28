@@ -84,7 +84,7 @@ const Journey = () => {
                                     </span>
                                     <h3 className="font-bold leading-tight text-titleLight dark:text-titleDark text-[0.75rem] md:text-[1.3rem]">Luminar Technolab</h3>
                                     <p className="text-[0.75rem] md:text-[1.3rem] mt-2">Python Full Stack Developer</p>
-                                    <p className="text-[0.75rem] md:text-[1.3rem] mt-2">2023-2024</p>
+                                    <p className="text-[0.75rem] md:text-[1.3rem] mt-2">2023-2024 (6 Months)</p>
                                     <p className="text-[0.75rem] md:text-[1.3rem] mt-2">Kochi, Kerala</p>
                                 </li> 
                                 <li className="mb-10 ml-6">
@@ -100,7 +100,7 @@ const Journey = () => {
                                     <h3 className="font-bold leading-tight text-titleLight dark:text-titleDark text-[0.75rem] md:text-[1.3rem]">Deienami</h3>
                                     <p className="text-[0.75rem] md:text-[1.3rem] mt-2">Software Engineer</p>
                                     <p className="text-[0.75rem] md:text-[1.3rem] mt-2">2024-Present</p>
-                                    <p className="text-[0.75rem] md:text-[1.3rem] mt-2">Thrivandrum, Kerala</p>
+                                    <p className="text-[0.75rem] md:text-[1.3rem] mt-2">Trivandrum, Kerala</p>
                                 </li> 
                             </ul>
                         )}

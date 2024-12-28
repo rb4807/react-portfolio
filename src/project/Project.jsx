@@ -1,8 +1,14 @@
 import React, { useState } from "react";
 
-import mfj from '../assets/mfj.webp'
 import school from '../assets/school.png'
+import mfj from '../assets/mfj.webp'
+import notespedia from '../assets/notespedia.jpg'
 import chatgpt from '../assets/chatgpt.png'
+import ecommerce from '../assets/ecommerce.webp'
+import teammed from '../assets/teammed.webp'
+import beond_audit from '../assets/beond_audit.jpg'
+import deltafour from '../assets/deltafour.jpg'
+import beond_work from '../assets/beond_work.jpg'
 
 const Project = () => {
     const [showCard, setShowCard] = useState("all");
@@ -50,6 +56,19 @@ const Project = () => {
                                 </li>
                                 <li className="mb-1">
                                     <button
+                                        onClick={() => handleProject("golang")}
+                                        className={`inline-block rounded-lg py-2 px-5 text-center text-base font-semibold transition md:py-3 lg:px-8 ${
+                                        showCard === "golang"
+                                            ? "activeClasses bg-primary text-baseColor dark:text-baseColor"
+                                            : "inactiveClasses text-body-color text-subLight hover:text-baseColor dark:text-subDark dark:hover:text-baseColor"
+                                        }`}
+                                        
+                                    >
+                                        Golang
+                                    </button>
+                                </li>
+                                <li className="mb-1">
+                                    <button
                                         onClick={() => handleProject("javascript")}
                                         className={`inline-block rounded-lg py-2 px-5 text-center text-base font-semibold transition md:py-3 lg:px-8 ${
                                         showCard === "javascript"
@@ -66,38 +85,86 @@ const Project = () => {
                     </div>
                     <div className="flex flex-wrap -mx-4">
                         <ProjectCard 
+                            ImageHref={notespedia}
+                            category="Python"
+                            title="NOTESPAEDIA"
+                            techStack="Django, REST API, MySQL, JavaScript, jQuery, Ajax, Bootstrap, Shopify API, AWS S3 Bucket, Razorpay, Ghostscript, Imagemagick, Tkinter, Apache, GitHub."
+                            responsibility="Backend development & Full Stack Development"
+                            showCard={showCard}
+                        />
+                        <ProjectCard 
+                            ImageHref={deltafour}
+                            category="Python"
+                            title="DELTAFOUR"
+                            techStack="Django, REST API, PostgreSQL, DynamoDB, JavaScript, jQuery, Ajax, Bootstrap, AWS S3 Bucket, AWS EC2, Apache, GitHub."
+                            responsibility="Backend development & Full Stack Development"
+                            showCard={showCard}
+                        />
+                        <ProjectCard 
+                            ImageHref={beond_audit}
+                            category="Python,Golang"
+                            title="BEONDAUDIT"
+                            techStack="Django, Golang, REST API, PostgreSQL, JavaScript, jQuery, Ajax, Bootstrap, Tkinter, Razorpay, Apache, GitHub."
+                            responsibility="Backend development & Full Stack Development"
+                            showCard={showCard}
+                        />
+                        <ProjectCard 
+                            ImageHref={beond_work}
+                            category="Python"
+                            title="BEONDWORK"
+                            techStack="Django, MySQL, JavaScript, jQuery, Ajax, Bootstrap, Apache, GitHub."
+                            responsibility="Backend development & Full Stack Development"
+                            showCard={showCard}
+                        />
+                        <ProjectCard 
                             ImageHref={mfj}
                             category="Python"
-                            title="Jewellery Shopping App"
-                            frontend="Ajax, Jquery, JavaScript, Tailwind CSS, HTML."
-                            backend="Django."
-                            database="PostgreSQL."
-                            versionControl="Git, Github."
+                            title="JEWELLERY SHOPPING APP"
+                            techStack="HTML5, TailwindCSS, AJAX, jQuery, JavaScript, Django, Stripe, PostgreSQL, GitHub."
+                            responsibility="End to end development"
+                            showCard={showCard}
                             button="View Details"
                             buttonHref="https://mfj-rb4807.vercel.app/"
-                            showCard={showCard}
                         />
-                        <ProjectCard
+                        <ProjectCard 
                             ImageHref={school}
                             category="Python,JavaScript"
-                            title="School Management App"
-                            frontend="React.JS, Tailwind CSS."
-                            backend=" Django, REST API, Simple-JWT, CRUD, Postman for API."
-                            database="PostgreSQL."
-                            versionControl="Git, Github."
+                            title="SCHOOL MANAGEMENT APP"
+                            techStack="HTML5, TailwindCSS, AJAX, jQuery, JavaScript, Django, Stripe, PostgreSQL, GitHub."
+                            responsibility="End to end development"
+                            showCard={showCard}
                             button="View Details"
                             buttonHref="https://school-psi-ten.vercel.app/"
-                            showCard={showCard}
                         />
-                        <ProjectCard
+                        <ProjectCard 
                             ImageHref={chatgpt}
                             category="JavaScript"
-                            title="ChatGPT Clone"
-                            frontend="React.JS, Tailwind CSS."
-                            versionControl="Git, Github."
+                            title="CHATGPT CLONE"
+                            techStack="HTML5, TailwindCSS, AJAX, jQuery, JavaScript, Django, Stripe, PostgreSQL, GitHub."
+                            responsibility="End to end development"
+                            showCard={showCard}
                             button="View Details"
                             buttonHref="https://chatgpt-clone-7jxv.vercel.app/"
+                        />
+                        <ProjectCard 
+                            ImageHref={ecommerce}
+                            category="Python"
+                            title="ECOMMERCE WEB APP"
+                            techStack="HTML5, TailwindCSS, AJAX, jQuery, JavaScript, Django, Stripe, PostgreSQL, GitHub."
+                            responsibility="End to end development"
                             showCard={showCard}
+                            button="View Details"
+                            buttonHref="https://mfj-rb4807.vercel.app/"
+                        />
+                        <ProjectCard 
+                            ImageHref={teammed}
+                            category="Python"
+                            title="HOSPITAL APPOINTMENT WEB APP"
+                            techStack="HTML5, TailwindCSS, AJAX, jQuery, JavaScript, Django, PostgreSQL, GitHub."
+                            responsibility="End to end development"
+                            showCard={showCard}
+                            button="View Details"
+                            buttonHref="https://mfj-rb4807.vercel.app/"
                         />
                     </div>
                 </div>
@@ -115,10 +182,8 @@ const ProjectCard = ({
     title,
     button,
     buttonHref,
-    frontend,
-    backend,
-    database,
-    versionControl
+    techStack,
+    responsibility,
 }) => 
 {
     const categories = category.toLowerCase().split(',');
@@ -144,26 +209,21 @@ const ProjectCard = ({
                         <h3 className="content text-baseDark dark:text-baseLight mb-3 sm:mb-5 text-lg sm:text-xl font-bold">
                             {title}
                         </h3>
-                        <h1 className='font-bold text-subLight dark:text-subDark'>Technologies</h1>
                         <div className="content mb-3 font-normal text-start text-contentLight dark:text-contentDark flex-grow">
-                            {frontend && (
-                                <p><span className='text-baseColor'>Frontend :- </span> {frontend}</p>
+                            {responsibility && (
+                                <p><span className='text-baseColor'>Responsibility :- </span> {responsibility}</p>
                             )}
-                            {backend && (
-                                <p><span className='text-baseColor'>Backend :- </span> {backend}</p>
-                            )}
-                            {database && (
-                                <p><span className='text-baseColor'>Database :- </span> {database}</p>
-                            )}
-                            {versionControl && (
-                                <p><span className='text-baseColor'>Version Control System :- </span> {versionControl}</p>
+                            {techStack && (
+                                <p><span className='text-baseColor'>Tech Stack :- </span> {techStack}</p>
                             )}
                         </div>
-                        <a href={buttonHref}
-                            target='blank' className="text-body-color inline-block rounded-md bg-baseColor hover:bg-titleLight text-titleDark hover:text-white dark:bg-baseColor dark:hover:bg-titleDark dark:text-titleDark dark:hover:text-black py-2 sm:py-[10px] px-4 sm:px-7 text-xs sm:text-sm font-medium transition mt-auto"
-                        >
-                            {button}
-                        </a>
+                        {button && buttonHref && (
+                            <a href={buttonHref}
+                                target='blank' className="text-body-color inline-block rounded-md bg-baseColor hover:bg-titleLight text-titleDark hover:text-white dark:bg-baseColor dark:hover:bg-titleDark dark:text-titleDark dark:hover:text-black py-2 sm:py-[10px] px-4 sm:px-7 text-xs sm:text-sm font-medium transition mt-auto"
+                            >
+                                {button}
+                            </a>
+                        )}
                     </div>
                 </div>
             </div>
