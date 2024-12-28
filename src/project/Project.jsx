@@ -154,7 +154,7 @@ const Project = () => {
                             responsibility="End to end development"
                             showCard={showCard}
                             button="View Details"
-                            buttonHref="https://mfj-rb4807.vercel.app/"
+                            buttonHref="https://github.com/rb4807/e-commerce-django.git"
                         />
                         <ProjectCard 
                             ImageHref={teammed}
@@ -164,7 +164,7 @@ const Project = () => {
                             responsibility="End to end development"
                             showCard={showCard}
                             button="View Details"
-                            buttonHref="https://mfj-rb4807.vercel.app/"
+                            buttonHref="https://github.com/rb4807/teammed-django.git"
                         />
                     </div>
                 </div>
