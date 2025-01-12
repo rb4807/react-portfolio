@@ -14,10 +14,7 @@ const HamburgerNavbar = ({ isMenuOpen, toggleMenu, theme }) => {
                         [
                             { text: 'About Me', href: '#journey' },
                             { text: 'Services', href: '#about' },
-                            { text: 'Projects', href: '#services' },
-                            { text: 'Skills', href: '#project' },
-                            { text: 'Journey', href: '#skills' },
-                            { text: 'Certifications', href: '#certi' },
+                            { text: 'Journey', href: '#services' },
                             { text: 'Contact Me', href: '#social' },
                         ].map((item) => (
                             <a key={item.text} href={item.href} onClick={() => { toggleMenu(); }} className="text-gray-800 dark:text-white hover:bg-gray-700 hover:text-white block px-4 py-2 rounded-md text-base font-medium">

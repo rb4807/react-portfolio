@@ -1,4 +1,5 @@
 import React , { useState,useEffect } from 'react'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import AOS from 'aos'
 import 'aos/dist/aos.css'
@@ -6,67 +7,59 @@ import 'aos/dist/aos.css'
 import './index.css';
 import {THEME_TYPES } from './constants'
 import Loader from './utils/Loader';
-import Project from './project/Project';
+import WelcomeScreen from './components/WelcomeScreen';
+import AnimatedBackground from './utils/Background';
+import Portfolio from './portfolio/Portfolio';
 import Cover from './cover/cover';
+import StatsSection from './stat/StatsSection';
 import About from './about/About';
 import Service from './service/Service';
-import Skill from './skill/Skill';
-import Journey from './journey/Journey';
-import Certification from './certification/Certification';
 import Footer from './footer/Footer';
-
+import { AnimatePresence } from 'framer-motion';
 const { THEME_LIGHT, THEME_DARK } = THEME_TYPES;
 
+const LandingPage = ({ showWelcome, setShowWelcome }) => {
+    return (
+        <>
+            <div>
+                <AnimatePresence mode="wait">
+                    {showWelcome && (
+                        <WelcomeScreen onLoadingComplete={() => setShowWelcome(false)} />
+                    )}
+                </AnimatePresence>
+
+                {!showWelcome && (
+                    <div className="bg-baseDark">
+                        {/* Cover */}
+                        <AnimatedBackground />
+
+                        <Cover />
+                        {/* About */}                        
+                        <About />
+                        <StatsSection />
+                        {/* Services */}
+                        <Service />
+                        {/* Portfolio */}
+                        <Portfolio />
+                        {/* Footer */}
+                        <Footer />
+                    </div>
+                )}
+            </div>
+        </>
+    );
+};
+
 function App() {
+    const [showWelcome, setShowWelcome] = useState(true);
 
-    // Preload
-    const [isLoading, setIsLoading] = useState(true);
-        useEffect(() => {
-            setTimeout(() => {
-                setIsLoading(false); 
-            }, 1000); 
-        }, 
-    []);
-
-    // animation
-
-    const [animation, setAnimation] = useState(true);
-        useEffect(() => {
-            setTimeout(() => {
-                setAnimation(false); 
-            }, AOS.init({duration:3000})
-            );
-        }, 
-    []);
-
-    
-
-  return (
-    <>
-        <div>
-            {isLoading ? ( <Loader />) :(
-                <div className="bg-baseLight dark:bg-baseDark">
-                    {/* Cover */}
-                        <Cover/>
-                    {/* About  */}
-                        <About/>
-                    {/* Services */}
-                        <Service/>
-                    {/* Project */}
-                        <Project/>
-                    {/* Skills  */}
-                        <Skill/>
-                    {/* Journey  */}
-                        <Journey/>
-                    {/* Certification */}
-                        <Certification/>
-                    {/* Contact */}
-                        <Footer/>
-                </div> 
-            )}
-        </div>
-    </>
-  );
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<LandingPage showWelcome={showWelcome} setShowWelcome={setShowWelcome} />} />
+            </Routes>
+        </BrowserRouter>
+    );
 }
 
 export default App;

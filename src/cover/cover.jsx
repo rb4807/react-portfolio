@@ -1,179 +1,204 @@
-import React, { useState, useEffect } from 'react';
-
-import cover_light from '../assets/cover_light.jpg';
-import cover_dark from '../assets/cover_dark.jpg';
 import dark from '../assets/dark.webp';
 import light from '../assets/light.png';
-
+import about_dark from '../assets/about_dark.webp';
+import about_light from '../assets/about_light.jpg';
 import useThemeStore from "../stores/useThemeStore";
-
-import TypingEffect from '../hooks/TypingEffect';
 import FloatNavbar from '../hooks/FloatNavbar';
-
-import { Skeleton, CoverSkeleton } from '../utils/Skeleton';
+import { Skeleton } from '../utils/Skeleton';
 import { applyThemePreference } from "../utils/themeUtils";
 import HamburgerNavbar from '../utils/HamburgerNavbar';
 import { getThemeIcon } from '../utils/ThemeIcons';
+import React, { useState, useEffect, useCallback, memo } from "react";
+import { Github, Linkedin, Mail, ExternalLink, Instagram, Sparkles } from "lucide-react";
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-
-const Cover = () => {
+const Cover = memo(() => {
+    const [text, setText] = useState("");
+    const [isTyping, setIsTyping] = useState(true);
+    const [wordIndex, setWordIndex] = useState(0);
+    const [charIndex, setCharIndex] = useState(0);
+    const [isLoaded, setIsLoaded] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isHovering, setIsHovering] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
+    const toggleTheme = useThemeStore((state) => state.toggleTheme);
+    const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
     const [showNavbar, setShowNavbar] = useState(true); 
     const { isScrolled, isScrollingUp } = FloatNavbar();
-    const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-    const toggleTheme = useThemeStore((state) => state.toggleTheme);
     const theme = useThemeStore((state) => state.theme);
-    const typeEffect = TypingEffect();
 
     useEffect(() => {
         applyThemePreference(theme);
-
-        // Simulate loading time
         const timer = setTimeout(() => {
             setIsLoading(false);
-        }, 2000); // Adjust this time as needed
-
+        }, 2000); 
         return () => clearTimeout(timer);
     }, [theme]);
-    const backgroundImage = theme === 'light' ? cover_light : cover_dark;
+
+    const TYPING_SPEED = 100;
+    const ERASING_SPEED = 50;
+    const PAUSE_DURATION = 2000;
+    const WORDS = ["Software Engineer", "Tech Enthusiast", "Full Stack Developer"];
+    const TECH_STACK = ["Python", "Javascript", "Golang"];
+    const SOCIAL_LINKS = [
+        { icon: Mail , link: "mailto:rajesh.mbalu@gmail.com" },
+        { icon: Linkedin, link: "https://www.linkedin.com/in/rajesh-mbalu" },
+        { icon: Github, link: "https://github.com/rb4807" },
+        { icon: Instagram, link: "https://instagram.com/https://instagram.com/_._r__b_._" }
+    ];
+
+    useEffect(() => {
+        AOS.init({ once: true, offset: 10 });
+        window.addEventListener('resize', AOS.refresh);
+        return () => window.removeEventListener('resize', AOS.refresh);
+    }, []);
+
+    useEffect(() => {
+        setIsLoaded(true);
+        return () => setIsLoaded(false);
+    }, []);
+
+    const handleTyping = useCallback(() => {
+        if (isTyping) {
+            if (charIndex < WORDS[wordIndex].length) {
+                setText(prev => prev + WORDS[wordIndex][charIndex]);
+                setCharIndex(prev => prev + 1);
+            } else {
+                setTimeout(() => setIsTyping(false), PAUSE_DURATION);
+            }
+        } else {
+            if (charIndex > 0) {
+                setText(prev => prev.slice(0, -1));
+                setCharIndex(prev => prev - 1);
+            } else {
+                setWordIndex(prev => (prev + 1) % WORDS.length);
+                setIsTyping(true);
+            }
+        }
+    }, [charIndex, isTyping, wordIndex]);
+
+    useEffect(() => {
+        const timeout = setTimeout(handleTyping, isTyping ? TYPING_SPEED : ERASING_SPEED);
+        return () => clearTimeout(timeout);
+    }, [handleTyping]);
 
     return (
-        <div className={`h-screen w-full overflow-hidden ${theme}`}>
-            {isLoading ? 
-                (
-                    <CoverSkeleton />
-                ) : 
-
-                (
-                    <div
-                        className={`relative h-full w-full bg-cover bg-center bg-no-repeat transition-opacity duration-300 ${showNavbar ? 'bg-opacity-100' : 'bg-opacity-0'}`}
-                        style={{ backgroundImage: `url(${backgroundImage})`, backgroundPosition: '65% center' }}
-                    >
-                        {/* Navbar */}
-                        <nav 
-                            className={`
-                            ${isScrolled ? 'fixed top-0 left-0 right-0' : 'absolute top-0 left-0 right-0'} 
-                            z-10 transition-all duration-300 ease-in-out
-                            ${isScrolled ? (isScrollingUp ? 'translate-y-0 glass-navbar' : '-translate-y-full') : ''}
-                            `}
-                        >
-                            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                                <div className="flex items-center justify-between h-16">
-                                    {/* Logo (always visible, left-aligned) */}
-                                    <div className="flex items-center">
-                                        {isLoading ? 
-                                            (
-                                                <Skeleton className="w-10 h-10 md:w-20 md:h-20 rounded" />
-                                            ) : 
-                                            (
-                                                <img className="hover:scale-110 duration-1000 transform w-10 md:flex md:w-20" src={theme === 'light' ? light : dark} alt="Logo" />
-                                            )
-                                        }
-                                    </div>
-
-                                    {/* Centered menu items (hidden on mobile) */}
-                                    <div className="hidden md:flex items-center justify-center flex-1 space-x-4">
-                                        {isLoading
-                                        ? Array(7)
-                                            .fill()
-                                            .map((_, i) => <Skeleton key={i} className="w-20 h-8 rounded" />)
-                                        : [
-                                            { text: 'About Me', href: '#about' },
-                                            { text: 'Services', href: '#about' },
-                                            { text: 'Projects', href: '#services' },
-                                            { text: 'Skills', href: '#project' },
-                                            { text: 'Journey', href: '#skills' },
-                                            { text: 'Certifications', href: '#certi' },
-                                            { text: 'Contact Me', href: '#social' },
-                                            ].map((item) => (
-                                                <a
-                                                    key={item.text}
-                                                    href={item.href}
-                                                    className="text-white dark:text-white border-b-2 border-transparent hover:text-baseColor hover:border-baseColor dark:hover:text-baseColor px-3 py-2 text-sm font-medium"
-                                                >
-                                                    {item.text}
-                                                </a>
-                                            )
-                                        )}
-                                    </div>
-
-                                    {/* Theme toggle and mobile menu button */}
-                                    <div className="flex items-center">
-                                        {isLoading ? 
-                                            (
-                                                <Skeleton className="w-8 h-8 rounded-full" />
-                                            ) : 
-                                            (
-                                                <button
-                                                    onClick={toggleTheme}
-                                                    className={
-                                                        `p-2 rounded-full text-gray-800 dark:text-white transition-transform duration-300 ease-in-out
-                                                        ${theme === 'dark' ? 'hover:bg-black hover:bg-opacity-20' : 'hover:bg-white hover:bg-opacity-20'}
-                                                        hover:backdrop-blur-md`
-                                                    }
-                                                >
-                                                    {getThemeIcon(theme)}
-                                                </button>
-                                            )
-                                        }
-                                        <div className="md:hidden ml-2">
-                                            {isLoading ? 
-                                                (
-                                                    <Skeleton className="w-8 h-8 rounded" />
-                                                ) : 
-                                                (
-                                                    <button
-                                                        onClick={toggleMenu}
-                                                        className={
-                                                            `p-2 rounded-md text-black dark:text-white transition-transform duration-300 ease-in-out
-                                                            ${isMenuOpen ? 'bg-opacity-30 backdrop-blur-md' : 'bg-transparent hover:bg-opacity-30 hover:backdrop-blur-md'}
-                                                            ${theme === 'dark' ? 'hover:bg-black' : 'hover:bg-white'}`
-                                                        }
-                                                    >
-                                                        {isMenuOpen ? '✕' : '☰'}
-                                                    </button>
-                                                )
-                                            }
-                                        </div>
+        <div className="min-h-screen bg-[#030014]">
+            {/* Navbar - Fixed at top */}
+            <nav className={`fixed w-full z-50 transition-all duration-300 ease-in-out ${isScrolled ? (isScrollingUp ? 'translate-y-0 glass-navbar' : '-translate-y-full') : ''}`}>
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="flex items-center justify-between h-16">
+                        {/* Logo */}
+                        <div className="flex items-center">
+                            <img className="hover:scale-110 duration-1000 transform w-10 md:w-20" src={theme === 'light' ? light : dark} alt="Logo" />
+                        </div>
+            
+                        {/* Desktop Navigation Links */}
+                        <div className="hidden md:flex items-center justify-center flex-1 space-x-4">
+                            {['About Me', 'Services', 'Projects', 'Contact Me'].map((item) => (
+                                <a key={item} href={`#${item.toLowerCase().replace(' ', '-')}`} className="text-white dark:text-white border-b-2 border-transparent hover:text-baseColor hover:border-baseColor dark:hover:text-baseColor px-3 py-2 text-sm font-medium" > {item}</a>
+                            ))}
+                        </div>
+            
+                        {/* Theme Toggle and Mobile Menu */}
+                        <div className="flex items-center gap-2">
+                            <button onClick={toggleTheme} className="p-2 rounded-full text-gray-800 dark:text-white transition-transform duration-300" >{getThemeIcon(theme)}</button>
+                            <button onClick={toggleMenu} className="md:hidden p-2 rounded-md text-black dark:text-white">{isMenuOpen ? '✕' : '☰'}</button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        
+            {/* Main Content Section */}
+            <div className={`relative z-10 pt-16 transition-all duration-1000 ${isLoaded ? "opacity-100" : "opacity-0"}`}>
+                <div className="container mx-auto px-4 min-h-screen">
+                    <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-8 py-12">
+                        {/* Left Content Section */}
+                        <div className="w-full lg:w-1/2 space-y-8">
+                            {/* Ready to Innovate Badge */}
+                            <div className="inline-block animate-float" data-aos="zoom-in">
+                                <div className="relative group">
+                                    <div className="absolute -inset-0.5 bg-gradient-to-r from-[#6366f1] to-[#a855f7] rounded-full blur opacity-30 group-hover:opacity-50 transition duration-1000"></div>
+                                    <div className="relative px-4 py-2 rounded-full bg-black/40 backdrop-blur-xl border border-white/10">
+                                        <span className="bg-gradient-to-r from-[#6366f1] to-[#a855f7] text-transparent bg-clip-text text-sm font-medium flex items-center">
+                                            <Sparkles className="w-4 h-4 mr-2 text-blue-400" />
+                                            Crafting Tomorrow
+                                        </span>
                                     </div>
                                 </div>
                             </div>
-                        </nav>
-
-                        {/* Mobile menu */}
-                        <HamburgerNavbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} theme={theme} />
-
-                        {/* Main content */}
-                        <div className="absolute bottom-[4%] md:top-2/3 md:left-0 md:transform md:-translate-y-2/3 w-full p-4 md:pl-8">
-                            <div className="text-left">
-                                {isLoading ? 
-                                    (
-                                        <Skeleton className="w-3/4 h-16 md:h-24 rounded" />
-                                    ) : (
-                                        <div>
-                                            <h1 className="head text-4xl md:text-6xl font-bold text-white">
-                                                Hi <span className='text-baseColor'>I'm</span> 
-                                                <br/>
-                                                <span className="head text-[1.5rem] md:text-[2.4rem]" >Rajesh Balasubramaniam</span>
-                                                <br />
-                                                <span className="block h-12 md:h-16 text-[1.5rem] md:text-[2.4rem] text-yellow-400">{typeEffect}</span>
-                                            </h1>
-                                            <a href="/Resume.pdf" download>
-                                                <button className="px-6 py-3 bg-blue-500 text-white font-bold rounded-full hover:bg-blue-700">
-                                                    Download Now
-                                                </button>
-                                            </a>
+            
+                            {/* Name and Title */}
+                            <div className="space-y-4">
+                                <h1 className="text-5xl sm:text-6xl font-bold tracking-tight">
+                                    <span className="head bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
+                                        HI I'M 
+                                    </span>
+                                    <br />
+                                    <span className="head bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">
+                                        Rajesh
+                                        <br/>
+                                        Balasubramaniam
+                                    </span>
+                                </h1>
+                                
+                                {/* Animated Text */}
+                                <div className="h-8 flex items-center">
+                                    <span className="text-xl md:text-2xl bg-gradient-to-r from-gray-100 to-gray-300 bg-clip-text text-transparent font-light">
+                                        {text}
+                                    </span>
+                                    <span className="w-[3px] h-6 bg-gradient-to-t from-[#6366f1] to-[#a855f7] ml-1 animate-blink"></span>
+                                </div>
+                
+                                {/* Description */}
+                                <p className="text-base md:text-lg text-gray-400 max-w-xl leading-relaxed">
+                                    A forward-thinking Software Engineer, blending creativity with technical 
+                                    prowess to build innovative, high-performance applications. With a passion
+                                    for continuous learning, I turn complex challenges into elegant solutions
+                                    across full-stack development, AI/ML, and beyond.
+                                </p>
+                
+                                {/* Tech Stack */}
+                                <div className="flex flex-wrap gap-3">
+                                    {TECH_STACK.map((tech, index) => (
+                                        <div key={index} className="px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 text-sm text-gray-300 hover:bg-white/10 transition-colors">
+                                            {tech}
                                         </div>
-                                    )
-                                }
+                                    ))}
+                                </div>
+                
+                                {/* Social Links */}
+                                <div className="flex gap-4">
+                                    {SOCIAL_LINKS.map((social, index) => (
+                                        <a key={index} href={social.link} target="_blank" rel="noopener noreferrer" className="group">
+                                            <div className="relative p-3 rounded-xl bg-black/50 backdrop-blur-xl border border-white/10 group-hover:border-white/20 transition-all duration-300">
+                                                <social.icon className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
+                                            </div>
+                                        </a>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                
+                        {/* Right Image Section */}
+                        <div className="w-full lg:w-1/2 flex justify-center items-center">
+                            <div className="relative w-1/2 h-1/2 group">
+                                <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 opacity-20 group-hover:opacity-40 transition-opacity duration-300 animate-morph"></div>
+                                <div className="relative h-full w-full flex items-center justify-center">
+                                    <div className=" p-4 ">
+                                        <img src={theme === 'light' ? about_light : about_dark} alt="Profile" className="w-full h-full object-cover rounded-lg"/>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                )
-            }
+                </div>
+            </div>
         </div>
     );
-};
+    
+});
 
 export default Cover;
