@@ -132,7 +132,7 @@ const Cover = memo(() => {
             
                             {/* Name and Title */}
                             <div className="space-y-4">
-                                <h1 className="text-5xl sm:text-6xl font-bold tracking-tight">
+                                <h1 className="text-3xl sm:text-6xl font-bold tracking-tight">
                                     <span className="head bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
                                         HI I'M 
                                     </span>
