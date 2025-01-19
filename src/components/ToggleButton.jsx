@@ -2,7 +2,7 @@ import React from 'react';
 
 const ToggleButton = ({ onClick, isShowingMore }) => {
     return (
-        <button onClick={onClick} className="px-3 py-1.5 text-slate-300 hover:text-white text-sm font-medium transition-all duration-300 ease-in-out flex items-center gap-2 bg-white/5 hover:bg-white/10 rounded-md border border-white/10 hover:border-white/20 backdrop-blur-sm group relative overflow-hidden">
+        <button onClick={onClick} className="px-3 py-1.5 text-gray-700 dark:text-slate-300 hover:text-gray-800 dark:hover:text-white text-sm font-medium transition-all duration-300 ease-in-out flex items-center gap-2  backdrop-blur-sm group relative overflow-hidden">
             <span className="relative z-10 flex items-center gap-2">
                 {isShowingMore ? "See Less" : "See More"}
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`transition-transform duration-300 ${isShowingMore ? "group-hover:-translate-y-0.5" : "group-hover:translate-y-0.5"}`}>

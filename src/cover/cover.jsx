@@ -85,7 +85,7 @@ const Cover = memo(() => {
     }, [handleTyping]);
 
     return (
-        <div className="min-h-screen bg-[#030014]">
+        <div className="min-h-screen bg-baseLight dark:bg-[#030014]">
             {/* Navbar - Fixed at top */}
             <nav className={`fixed w-full z-50 transition-all duration-300 ease-in-out ${isScrolled ? (isScrollingUp ? 'translate-y-0 glass-navbar' : '-translate-y-full') : ''}`}>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -121,7 +121,7 @@ const Cover = memo(() => {
                             <div className="inline-block animate-float" data-aos="zoom-in">
                                 <div className="relative group">
                                     <div className="absolute -inset-0.5 bg-gradient-to-r from-[#6366f1] to-[#a855f7] rounded-full blur opacity-30 group-hover:opacity-50 transition duration-1000"></div>
-                                    <div className="relative px-4 py-2 rounded-full bg-black/40 backdrop-blur-xl border border-white/10">
+                                    <div className="relative px-4 py-2 rounded-full bg-white/40 dark:bg-black/40 backdrop-blur-xl border border-black/10 dark:border-white/10">
                                         <span className="bg-gradient-to-r from-[#6366f1] to-[#a855f7] text-transparent bg-clip-text text-sm font-medium flex items-center">
                                             <Sparkles className="w-4 h-4 mr-2 text-blue-400" />
                                             Crafting Tomorrow
@@ -133,7 +133,7 @@ const Cover = memo(() => {
                             {/* Name and Title */}
                             <div className="space-y-4">
                                 <h1 className="text-3xl sm:text-6xl font-bold tracking-tight">
-                                    <span className="head bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
+                                    <span className="head bg-gradient-to-r from-secLight via-blue-200 to-purple-400 dark:bg-gradient-to-r dark:from-white dark:via-blue-100 dark:to-purple-200 bg-clip-text text-transparent">
                                         HI I'M 
                                     </span>
                                     <br />
@@ -146,14 +146,14 @@ const Cover = memo(() => {
                                 
                                 {/* Animated Text */}
                                 <div className="h-8 flex items-center">
-                                    <span className="text-xl md:text-2xl bg-gradient-to-r from-gray-100 to-gray-300 bg-clip-text text-transparent font-light">
+                                    <span className="text-xl md:text-2xl bg-gradient-to-r from-gray-800 to-gray-600 dark:bg-gradient-to-r dark:from-gray-100 dark:to-gray-300 bg-clip-text text-transparent font-light">
                                         {text}
                                     </span>
                                     <span className="w-[3px] h-6 bg-gradient-to-t from-[#6366f1] to-[#a855f7] ml-1 animate-blink"></span>
                                 </div>
                 
                                 {/* Description */}
-                                <p className="text-base md:text-lg text-gray-400 max-w-xl leading-relaxed">
+                                <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-xl leading-relaxed">
                                     A forward-thinking Software Engineer, blending creativity with technical 
                                     prowess to build innovative, high-performance applications. With a passion
                                     for continuous learning, I turn complex challenges into elegant solutions
@@ -173,7 +173,7 @@ const Cover = memo(() => {
                                 <div className="flex gap-4">
                                     {SOCIAL_LINKS.map((social, index) => (
                                         <a key={index} href={social.link} target="_blank" rel="noopener noreferrer" className="group">
-                                            <div className="relative p-3 rounded-xl bg-black/50 backdrop-blur-xl border border-white/10 group-hover:border-white/20 transition-all duration-300">
+                                            <div className="relative p-3 rounded-xl bg-white/50 dark:bg-black/50 backdrop-blur-xl border border-black/10 dark:border-white/10 group-hover:border-black/20 dark:group-hover:border-white/20 transition-all duration-300">
                                                 <social.icon className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
                                             </div>
                                         </a>

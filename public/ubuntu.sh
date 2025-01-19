@@ -25,7 +25,7 @@ get_input() {
 
 # Minta input IP dan domain dengan cara yang lebih robust
 user_ip=$(get_input "Masukkan IP address (contoh: 192.168.1.1): ")
-user_domain=$(get_input "Masukkan nama domain (contoh: smkeki.sch.id): ")
+user_domain=$(get_input "Masukkan nama domain (contoh: smk.sch.id): ")
 
 # Minta input untuk password MySQL dan phpMyAdmin
 mysql_root_password=$(get_input "Masukkan password untuk root MySQL: ")

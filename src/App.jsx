@@ -1,22 +1,16 @@
-import React , { useState,useEffect } from 'react'
+import React , { useState } from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import AOS from 'aos'
-import 'aos/dist/aos.css'
-
 import './index.css';
-import {THEME_TYPES } from './constants'
-import Loader from './utils/Loader';
 import WelcomeScreen from './components/WelcomeScreen';
+import ProjectDetails from './components/ProjectDetail';
 import AnimatedBackground from './utils/Background';
 import Portfolio from './portfolio/Portfolio';
 import Cover from './cover/cover';
 import StatsSection from './stat/StatsSection';
 import About from './about/About';
 import Service from './service/Service';
-import Footer from './footer/Footer';
 import { AnimatePresence } from 'framer-motion';
-const { THEME_LIGHT, THEME_DARK } = THEME_TYPES;
 
 const LandingPage = ({ showWelcome, setShowWelcome }) => {
     return (
@@ -29,7 +23,7 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
                 </AnimatePresence>
 
                 {!showWelcome && (
-                    <div className="bg-baseDark">
+                    <div className="bg-baseLight dark:bg-baseDark">
                         {/* Cover */}
                         <AnimatedBackground />
 
@@ -41,14 +35,38 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
                         <Service />
                         {/* Portfolio */}
                         <Portfolio />
-                        {/* Footer */}
-                        <Footer />
+                        <footer>
+                            <center>
+                            <hr className="my-3 border-gray-400 opacity-15 sm:mx-auto lg:my-6 text-center" />
+                            <span className="block text-sm pb-4 text-gray-500 text-center dark:text-gray-400">
+                                © 2025{" "}
+                                
+                                All Rights Reserved.
+                            </span>
+                            </center>
+                        </footer>
                     </div>
                 )}
             </div>
         </>
     );
 };
+
+const ProjectPageLayout = () => (
+    <>
+      <ProjectDetails />
+      <footer>
+        <center>
+          <hr className="my-3 border-gray-400 opacity-15 sm:mx-auto lg:my-6 text-center" />
+          <span className="block text-sm pb-4 text-gray-500 text-center dark:text-gray-400">
+            © 2025{" "}
+              
+            All Rights Reserved.
+          </span>
+        </center>
+      </footer>
+    </>
+  );
 
 function App() {
     const [showWelcome, setShowWelcome] = useState(true);
@@ -57,6 +75,7 @@ function App() {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<LandingPage showWelcome={showWelcome} setShowWelcome={setShowWelcome} />} />
+                <Route path="/project/:id" element={<ProjectPageLayout />} />
             </Routes>
         </BrowserRouter>
     );

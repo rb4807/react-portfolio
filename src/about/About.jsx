@@ -10,7 +10,7 @@ const About = memo(() => {
     const theme = useThemeStore((state) => state.theme);
 
     return (
-        <div className="h-auto pb-[10%] text-white overflow-hidden px-[5%] sm:px-[5%] lg:px-[10%] sm-mt-0" id="About">
+        <div className="h-auto pb-[10%] text-titleLight dark:text-white overflow-hidden px-[5%] sm:px-[5%] lg:px-[10%] sm-mt-0" id="About">
             {/* Main Content Section */}
             <div className="w-full mx-auto pt-8 sm:pt-12 relative flex flex-col lg:flex-row items-start gap-10 lg:gap-16">
                 {/* Profile Image Section */}
@@ -43,17 +43,17 @@ const About = memo(() => {
                     <div className="lg:mb-8 mb-2 px-[5%]">
                         <div className="inline-block relative group">
                             <h2 className="title text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7]" data-aos="zoom-in-up" data-aos-duration="600">
-                               <span className="text-white">About</span> Me
+                               <span className="text-titleLight dark:text-white">About</span> Me
                             </h2>
                         </div>
-                        <p className="mt-2 text-gray-400 max-w-2xl text-base sm:text-lg flex items-center gap-2" data-aos="zoom-in-up" data-aos-duration="800">
+                        <p className="mt-2 text-gray-600 dark:text-gray-400 max-w-2xl text-base sm:text-lg flex items-center gap-2" data-aos="zoom-in-up" data-aos-duration="800">
                             <Sparkles className="w-5 h-5 text-purple-400" />
                             Transforming ideas into digital experiences
                             <Sparkles className="w-5 h-5 text-purple-400" />
                         </p>
                     </div>
     
-                    <p className="text-base sm:text-lg lg:text-xl text-gray-400 leading-relaxed text-justify pb-4 sm:pb-0" data-aos="fade-right" data-aos-duration="1500">
+                    <p className="text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-400 leading-relaxed text-justify pb-4 sm:pb-0" data-aos="fade-right" data-aos-duration="1500">
                         Proficient Software Engineer with a strong foundation in development,
                         programming, and problem-solving. Successfully completed a six-month
                         internship in Python Full Stack Development, where I honed my skills

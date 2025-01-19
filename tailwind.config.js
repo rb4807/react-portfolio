@@ -13,11 +13,11 @@ module.exports = {
         contentDark:'#b0b0b0',
         subDark:'#F1EFEF',
 
-        baseLight:'#F0F0F0',
+        baseLight:'#dbdbde',
         gradient1Light:'#4158D0',
         gradient2Light:'#C850C0',
         gradient3Light:'#FFCC70',
-        secLight:'#f6f6f6',
+        secLight:'#333333',
         titleLight:'#3C4048',
         contentLight:'#454545',
         subLight:'#888888',

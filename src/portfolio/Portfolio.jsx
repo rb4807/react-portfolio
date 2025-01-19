@@ -119,15 +119,15 @@ function Portfolio() {
     const displayedCertificates = showAllCertificates ? CertificatesData : CertificatesData.slice(0, initialItems);
     return (
         <>
-            <div className="md:px-[10%] px-[5%] w-full sm:mt-0 bg-[#030014] overflow-hidden" id="Portfolio">
+            <div className="md:px-[10%] px-[5%] w-full sm:mt-0 bg-baseLight dark:bg-baseDark overflow-hidden" id="Portfolio">
                 {/* Header section */}
                 <div className="text-center pb-10" data-aos="fade-up" data-aos-duration="1000">
                     <h2 className="title inline-block text-3xl md:text-5xl md:pt-[10%] text-center mx-auto">
-                        <span className='text-gray-400'>My </span><span className='text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7]' style={{ color: '#6366f1', backgroundImage: 'linear-gradient(45deg, #6366f1 10%, #a855f7 93%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
+                        <span className='text-titleLight dark:text-gray-400'>My </span><span className='text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7]' style={{ color: '#6366f1', backgroundImage: 'linear-gradient(45deg, #6366f1 10%, #a855f7 93%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
                             Professional Journey
                         </span>
                     </h2>
-                    <p className="text-slate-400 max-w-2xl mx-auto text-sm md:text-base mt-2">
+                    <p className="text-gray-700 dark:text-slate-400 max-w-2xl mx-auto text-sm md:text-base mt-2">
                         Explore my professional journey through impactful projects, 
                         recognized certifications, diverse work experience, and technical 
                         expertise, each marking a milestone in my continuous learning and growth.
@@ -216,7 +216,7 @@ function Portfolio() {
                                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-3 gap-5">
                                     {displayedProjects.map((project, index) => (
                                         <div key={project.id} data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"} data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}>
-                                            <CardProject Img={project.Img} Title={project.Title} Description={project.responsibility} Link={project.Link} />
+                                            <CardProject id={project.id} Img={project.Img} Title={project.Title} Description={project.responsibility} Link={project.Link} />
                                         </div>
                                     ))}
                                 </div>
@@ -238,17 +238,17 @@ function Portfolio() {
                                 <TabPanel value={subTab} index={0}>
                                     {/* Education Journey */}
                                     <div className="container mx-auto flex flex-col items-start pl-4" style={{ overflow: 'hidden' }}>
-                                        <div className="relative border-l border-gray-200">
+                                        <div className="relative border-l border-gray-500 dark:border-gray-200">
                                             {JourneyData.education.map((event, index) => (
                                                 <div key={event.id} className="mb-8 ml-6" data-aos="fade-up" data-aos-duration="1000">
-                                                    <div className={`absolute w-4 h-4 rounded-full bg-blue-500 -left-8 border border-white`}></div>
+                                                    <div className={`absolute w-4 h-4 rounded-full bg-blue-500 -left-8 border border-gray-500 dark:border-white`}></div>
                                                     <div className="flex items-center justify-between">
                                                         <h3 className="text-lg font-bold bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">{event.title}</h3>
                                                         <span className="text-sm md:pl-4 text-gray-300">{event.year}</span>
                                                     </div>
-                                                    <p className="text-gray-400 mt-2">{event.school}</p>
-                                                    <p className="text-gray-400 mt-2">{event.university}</p>
-                                                    <p className="text-gray-400 mt-2">CGPA : {event.cgpa}</p>
+                                                    <p className="text-gray-700 dark:text-gray-400 mt-2">{event.school}</p>
+                                                    <p className="text-gray-700 dark:text-gray-400 mt-2">{event.university}</p>
+                                                    <p className="text-gray-700 dark:text-gray-400 mt-2">CGPA : {event.cgpa}</p>
                                                 </div>
                                             ))}
                                         </div>
@@ -258,16 +258,16 @@ function Portfolio() {
                                 <TabPanel value={subTab} index={1}>
                                     {/* Experience Journey */}
                                     <div className="container mx-auto flex flex-col items-start pl-4" style={{ overflow: 'hidden' }}>
-                                        <div className="relative border-l border-gray-200">
+                                        <div className="relative border-l border-gray-500 dark:border-gray-200">
                                             {JourneyData.experience.map((event, index) => (
                                                 <div key={event.id} className="mb-8 ml-6" data-aos="fade-up" data-aos-duration="1000">
-                                                    <div className={`absolute w-4 h-4 rounded-full bg-blue-500 -left-8 border border-white`}></div>
+                                                    <div className={`absolute w-4 h-4 rounded-full bg-blue-500 -left-8 border border-gray-500 dark:border-white`}></div>
                                                     <div className="flex items-center justify-between">
                                                         <h3 className="text-lg font-bold bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">{event.role}</h3>
                                                         <span className="text-sm md:pl-4 text-gray-300">{event.year}</span>
                                                     </div>
-                                                    <p className="text-gray-400 mt-2">{event.company}</p>
-                                                    <p className="text-gray-400 mt-2">{event.location}</p>
+                                                    <p className="text-gray-700 dark:text-gray-400 mt-2">{event.company}</p>
+                                                    <p className="text-gray-700 dark:text-gray-400 mt-2">{event.location}</p>
                                                 </div>
                                             ))}
                                         </div>

@@ -2,10 +2,10 @@ const Footer = () => {
 
     return (
         <>
-            <footer className="bg-baseLight dark:bg-baseDark" id="social">
-                <hr className="my-6 border-titleLight sm:mx-auto dark:border-titleDark lg:my-8" />
+            <footer className="bg-baseLight dark:bg-baseDark">
+                <hr className="my-6 border-gray-400 sm:mx-auto dark:border-titleDark lg:my-8" />
                 <div className="sm:flex sm:items-center sm:justify-between">
-                    <span className="text-sm ml-4 mb-2 text-contentLight dark:text-contentDark sm:text-center">© 2024 Copyright. All Rights Reserved.</span>
+                    <span className="text-sm ml-4 mb-2 text-contentLight dark:text-contentDark sm:text-center">© 2025 Copyright. All Rights Reserved.</span>
                     <div className="flex mt-4 space-x-5 p-2 sm:justify-center sm:mt-0">
                         <a href="https://www.linkedin.com/in/rajesh-mbalu">
                             <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-brand-linkedin bg-gradient-to-r from-[#6366f1] to-[#a855f7] rounded-full hover:bg-red-500" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
