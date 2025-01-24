@@ -19,6 +19,20 @@ const projectMetadata = {
         techStackCount: 9,
         packageCount: 20, 
     },
+    'Visual Takes': {
+        TechStack: {
+            Language: ['Python'],
+            Backend: ['REST API', 'AWS'],
+            Packages: ['Swagger', 'geopy', 'boot3','SimpleJWT'],
+            AIML : ['Ollama', 'Pytourch', 'Stable diffusion', 'xformers', 'Hugging Face', 'TensorFlow', 'Lora'],
+            Devops: ['Apache','GitHub'],
+            Tools: ['Postman','Terminus', 'GitDesktop', 'VScode'],
+        },
+        ProjectDescription: 'Led the backend development of the MovieTech app, which generates image stripes of movies based on script input, utilizing advanced artificial intelligence (AI) and machine learning (ML) technologies like Ollama and Stable Diffusion to process scripts and generate visually cohesive, contextually relevant image stripes. Designed and implemented the backend architecture to efficiently handle the script-to-image generation process, ensuring quick and accurate outputs. Integrated AI models to enhance the quality of generated visuals while optimizing performance for scalability and reliability. Collaborated with the frontend team to ensure seamless integration of the backend, delivering a smooth and interactive user experience.',
+        Github: 'https://github.com/rb4807',
+        techStackCount: 7,
+        packageCount: 15, 
+    },
     'Deltafour': {
         TechStack: {
             Language: ['Python', 'JavaScript'],

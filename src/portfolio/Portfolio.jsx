@@ -16,6 +16,7 @@ import teammed from '../assets/teammed.webp';
 import beond_audit from '../assets/beond_audit.jpg';
 import deltafour from '../assets/deltafour.jpg';
 import beond_work from '../assets/beond_work.jpg';
+import movie from '../assets/movie.png';
 import text_to_voice from '../assets/text_to_voice.png';
 
 import agile from '../assets/agile.jpg';
@@ -29,15 +30,16 @@ import react from '../assets/react.jpg';
 
 const ProjectsData = [
     { id: 1, Img: notespedia, Title: 'Notespaedia', responsibility: 'Backend development & Full Stack Development', Link: '#', category: ['Python', 'JavaScript'] },
-    { id: 2, Img: deltafour, Title: 'Deltafour', responsibility: 'Backend development & Full Stack Development', Link: '#', category: ['Python', 'JavaScript'] },
-    { id: 3, Img: beond_audit, Title: 'Beond Audit', responsibility: 'Backend development & Full Stack Development', Link: '#', category: ['Python', 'JavaScript', 'Golang'] },
-    { id: 4, Img: beond_work, Title: 'Beond Work', responsibility: 'Backend development & Full Stack Development', Link: '#', category: ['Python', 'JavaScript'] },
-    { id: 5, Img: school, Title: 'School Management Web App', responsibility: 'Full Stack Development', Link: '#', category: ['Python', 'JavaScript'] },
-    { id: 6, Img: mfj, Title: 'Jewellery Shopping Web App', responsibility: 'Full Stack Development', Link: '#', category: ['JavaScript', 'Python'] },
-    { id: 7, Img: chatgpt, Title: 'ChatGPT Clone', responsibility: 'Full Stack Development', Link: '#', category: ['JavaScript'] },
-    { id: 8, Img: ecommerce, Title: 'Ecommerce Web App', responsibility: 'Full Stack Development', Link: '#', category: ['Python', 'JavaScript'] },
-    { id: 9, Img: teammed, Title: 'Hospital Appointment Web App', responsibility: 'Full Stack Development', Link: '#', category: ['Python', 'JavaScript'] },
-    { id: 10, Img: text_to_voice, Title: 'Text to Voice Generator with Muliple Voice', responsibility: 'Full Stack Development', Link: '#', category: ['JavaScript'] },
+    { id: 2, Img: movie, Title: 'Visual takes', responsibility: 'Backend development', Link: '#', category: ['Python'] },
+    { id: 3, Img: deltafour, Title: 'Deltafour', responsibility: 'Backend development & Full Stack Development', Link: '#', category: ['Python', 'JavaScript'] },
+    { id: 4, Img: beond_audit, Title: 'Beond Audit', responsibility: 'Backend development & Full Stack Development', Link: '#', category: ['Python', 'JavaScript', 'Golang'] },
+    { id: 5, Img: beond_work, Title: 'Beond Work', responsibility: 'Backend development & Full Stack Development', Link: '#', category: ['Python', 'JavaScript'] },
+    { id: 6, Img: school, Title: 'School Management Web App', responsibility: 'Full Stack Development', Link: '#', category: ['Python', 'JavaScript'] },
+    { id: 7, Img: mfj, Title: 'Jewellery Shopping Web App', responsibility: 'Full Stack Development', Link: '#', category: ['JavaScript', 'Python'] },
+    { id: 8, Img: chatgpt, Title: 'ChatGPT Clone', responsibility: 'Full Stack Development', Link: '#', category: ['JavaScript'] },
+    { id: 9, Img: ecommerce, Title: 'Ecommerce Web App', responsibility: 'Full Stack Development', Link: '#', category: ['Python', 'JavaScript'] },
+    { id: 10, Img: teammed, Title: 'Hospital Appointment Web App', responsibility: 'Full Stack Development', Link: '#', category: ['Python', 'JavaScript'] },
+    { id: 11, Img: text_to_voice, Title: 'Text to Voice Generator with Muliple Voice', responsibility: 'Full Stack Development', Link: '#', category: ['JavaScript'] },
 ];
 
 const CertificatesData = [
