@@ -30,7 +30,7 @@ import react from '../assets/react.jpg';
 
 const ProjectsData = [
     { id: 1, Img: notespedia, Title: 'Notespaedia', responsibility: 'Backend development & Full Stack Development', Link: '#', category: ['Python', 'JavaScript'] },
-    { id: 2, Img: movie, Title: 'Visual takes', responsibility: 'Backend development', Link: '#', category: ['Python'] },
+    { id: 2, Img: movie, Title: 'Visual Takes', responsibility: 'Backend development', Link: '#', category: ['Python'] },
     { id: 3, Img: deltafour, Title: 'Deltafour', responsibility: 'Backend development & Full Stack Development', Link: '#', category: ['Python', 'JavaScript'] },
     { id: 4, Img: beond_audit, Title: 'Beond Audit', responsibility: 'Backend development & Full Stack Development', Link: '#', category: ['Python', 'JavaScript', 'Golang'] },
     { id: 5, Img: beond_work, Title: 'Beond Work', responsibility: 'Backend development & Full Stack Development', Link: '#', category: ['Python', 'JavaScript'] },

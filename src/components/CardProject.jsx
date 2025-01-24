@@ -19,7 +19,7 @@ const projectMetadata = {
         techStackCount: 9,
         packageCount: 20, 
     },
-    'Visual takes': {
+    'Visual Takes': {
         TechStack: {
             Language: ['Python'],
             Backend: ['REST API', 'AWS'],
