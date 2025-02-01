@@ -5,7 +5,7 @@ const statsData = [
     {
         icon: Code,
         color: "from-[#6366f1] to-[#a855f7]",
-        value: 10,
+        value: 11,
         label: "Total Projects",
         description: "Innovative web solutions crafted",
         animation: "fade-right",
@@ -21,7 +21,7 @@ const statsData = [
     {
         icon: Briefcase,
         color: "from-[#6366f1] to-[#a855f7]",
-        value: 1,
+        value: "1+",
         label: "Years of Experience",
         description: "Continuous learning journey",
         animation: "fade-left",

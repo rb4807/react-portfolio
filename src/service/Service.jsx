@@ -9,8 +9,8 @@ const servicesData = [
     "API Integration",
     "DevOps",
     "ETL",
-    "Shopify",
-    "WordPress",
+    "Shopify & WordPress",
+    "AI & ML",
     "Technical Support",
     "Testing & Debugging"
 ];

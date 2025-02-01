@@ -2,6 +2,7 @@ import dark from '../assets/dark.webp';
 import light from '../assets/light.png';
 import about_dark from '../assets/about_dark.webp';
 import about_light from '../assets/about_light.jpg';
+import hackerrank from '../assets/hackerrank.png';
 import useThemeStore from "../stores/useThemeStore";
 import FloatNavbar from '../hooks/FloatNavbar';
 import { Skeleton } from '../utils/Skeleton';
@@ -9,7 +10,7 @@ import { applyThemePreference } from "../utils/themeUtils";
 import HamburgerNavbar from '../utils/HamburgerNavbar';
 import { getThemeIcon } from '../utils/ThemeIcons';
 import React, { useState, useEffect, useCallback, memo } from "react";
-import { Github, Linkedin, Mail, ExternalLink, Instagram, Sparkles } from "lucide-react";
+import { Github, Linkedin, Mail, ExternalLink, Instagram, Sparkles, Hackerrank } from "lucide-react";
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -37,6 +38,26 @@ const Cover = memo(() => {
         return () => clearTimeout(timer);
     }, [theme]);
 
+    const HackerRankIcon = () => {
+        const [isHovered, setIsHovered] = useState(false);
+    
+        return (
+            <img
+                src={hackerrank}
+                alt="HackerRank"
+                style={{
+                    width: '22px',
+                    height: '22px',
+                    filter: isHovered ? 'invert(100%) brightness(100%)' : 'invert(100%) brightness(60%)',
+                    transition: 'filter 0.3s ease'  
+                }}
+                onMouseEnter={() => setIsHovered(true)}  
+                onMouseLeave={() => setIsHovered(false)}  
+            />
+        );
+    };   
+      
+
     const TYPING_SPEED = 100;
     const ERASING_SPEED = 50;
     const PAUSE_DURATION = 2000;
@@ -46,7 +67,8 @@ const Cover = memo(() => {
         { icon: Mail , link: "mailto:rajesh.mbalu@gmail.com" },
         { icon: Linkedin, link: "https://www.linkedin.com/in/rajesh-mbalu" },
         { icon: Github, link: "https://github.com/rb4807" },
-        { icon: Instagram, link: "https://instagram.com/https://instagram.com/_._r__b_._" }
+        { icon: Instagram, link: "https://instagram.com/https://instagram.com/_._r__b_._" },        
+        { icon: HackerRankIcon, link: "https://www.hackerrank.com/profile/rb160601"}
     ];
 
     useEffect(() => {
