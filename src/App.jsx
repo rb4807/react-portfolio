@@ -6,6 +6,7 @@ import WelcomeScreen from './components/WelcomeScreen';
 import ProjectDetails from './components/ProjectDetail';
 import AnimatedBackground from './utils/Background';
 import Portfolio from './portfolio/Portfolio';
+import TechInsightsGuides from './techInsightsGuides/techInsightsGuides';
 import Cover from './cover/cover';
 import StatsSection from './stat/StatsSection';
 import About from './about/About';
@@ -35,6 +36,7 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
                         <Service />
                         {/* Portfolio */}
                         <Portfolio />
+                        <TechInsightsGuides />
                         <footer>
                             <center>
                             <hr className="my-3 border-gray-400 opacity-15 sm:mx-auto lg:my-6 text-center" />

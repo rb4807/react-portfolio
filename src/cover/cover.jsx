@@ -3,6 +3,8 @@ import light from '../assets/light.png';
 import about_dark from '../assets/about_dark.webp';
 import about_light from '../assets/about_light.jpg';
 import hackerrank from '../assets/hackerrank.png';
+import vercel from '../assets/vercel.png';
+import leetcode from '../assets/leetcode.png';
 import useThemeStore from "../stores/useThemeStore";
 import FloatNavbar from '../hooks/FloatNavbar';
 import { Skeleton } from '../utils/Skeleton';
@@ -55,6 +57,44 @@ const Cover = memo(() => {
                 onMouseLeave={() => setIsHovered(false)}  
             />
         );
+    };  
+
+    const VercelIcon = () => {
+        const [isHovered, setIsHovered] = useState(false);
+    
+        return (
+            <img
+                src={vercel}
+                alt="Vercel"
+                style={{
+                    width: '22px',
+                    height: '22px',
+                    filter: isHovered ? 'invert(100%) brightness(100%)' : 'invert(100%) brightness(60%)',
+                    transition: 'filter 0.3s ease'  
+                }}
+                onMouseEnter={() => setIsHovered(true)}  
+                onMouseLeave={() => setIsHovered(false)}  
+            />
+        );
+    };   
+
+    const LeetCodeIcon = () => {
+        const [isHovered, setIsHovered] = useState(false);
+    
+        return (
+            <img
+                src={leetcode}
+                alt="Leetcode"
+                style={{
+                    width: '22px',
+                    height: '22px',
+                    filter: isHovered ? 'invert(100%) brightness(100%)' : 'invert(100%) brightness(60%)',
+                    transition: 'filter 0.3s ease'  
+                }}
+                onMouseEnter={() => setIsHovered(true)}  
+                onMouseLeave={() => setIsHovered(false)}  
+            />
+        );
     };   
       
 
@@ -67,8 +107,10 @@ const Cover = memo(() => {
         { icon: Mail , link: "mailto:rajesh.mbalu@gmail.com" },
         { icon: Linkedin, link: "https://www.linkedin.com/in/rajesh-mbalu" },
         { icon: Github, link: "https://github.com/rb4807" },
-        { icon: Instagram, link: "https://instagram.com/https://instagram.com/_._r__b_._" },        
-        { icon: HackerRankIcon, link: "https://www.hackerrank.com/profile/rb160601"}
+        { icon: VercelIcon, link: "https://vercel.com/rb4807s-projects" },
+        { icon: HackerRankIcon, link: "https://www.hackerrank.com/profile/rb160601"},
+        { icon: LeetCodeIcon, link: "https://leetcode.com/u/rajesh-mbalu/"},
+        { icon: Instagram, link: "https://instagram.com/https://instagram.com/_._r__b_._" }       
     ];
 
     useEffect(() => {

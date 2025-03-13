@@ -316,18 +316,6 @@ function Portfolio() {
                         </TabPanel>
                     </SwipeableViews>
                 </Box>
-                <div className="flex justify-center mt-6">
-                    <a href="#top"> 
-                        <button className="px-6 py-2 rounded-lg bg-gradient-to-r from-[#6366f1] to-[#a855f7] hover:bg-titleLight text-titleDark hover:text-white dark:bg-baseColor dark:hover:bg-titleDark dark:text-titleDark dark:hover:text-black hover:border-transparent transition duration-300 flex items-center">
-                            Back to top
-                            <svg xmlns="http://www.w3.org/2000/svg" className="ml-2 inline-block icon icon-tabler icon-tabler-chevrons-up" width="20" height="20" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                <path d="M7 11l5 -5l5 5" />
-                                <path d="M7 17l5 -5l5 5" />
-                            </svg>
-                        </button>
-                    </a>
-                </div>
             </div>
         </>
     );
