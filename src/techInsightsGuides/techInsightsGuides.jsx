@@ -17,7 +17,6 @@ const TechInsightsGuidesData = [
     { id: 4, Img: web_gl_deployment, Title: 'Web GL Deployment Deployment Guide on Ubuntu with Nginx and Apache', description: 'Comprehensive guide to deploying WebGL applications on Ubuntu Server using Apache and Nginx, covering setup, configuration, and optimization steps.', category: ['DevOps'], url: 'https://web-gl-deployment.vercel.app/' },
     { id: 5, Img: automated_react_tailwind_setup, Title: 'Automated React + Tailwind Setup with a Single Python Script', description: 'One-step solution to create a React project with Tailwind CSS using a single Python script and command.', category: ['Tools'], url: 'https://react-tailwind-auto-setup.vercel.app/' },
     { id: 6, Img: ckeditor_integration_django, Title: 'CKEditor Integration in Django: With and Without forms.py', description: 'Comprehensive guide to integrating CKEditor rich text editor in Django projects, covering both direct model integration and forms.py approach.', category: ['Tools'], url: 'https://ckeditor-integration-documentation.vercel.app/' },
-    { id: 7, Img: ckeditor_integration_django, Title: 'CKEditor Integration in Django: With and Without forms.py', description: 'Comprehensive guide to integrating CKEditor rich text editor in Django projects, covering both direct model integration and forms.py approach.', category: ['Tools'], url: 'https://ckeditor-integration-documentation.vercel.app/' },
 ];
 
 function TechInsightsGuides() {
