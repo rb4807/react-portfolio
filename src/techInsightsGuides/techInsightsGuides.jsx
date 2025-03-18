@@ -8,13 +8,16 @@ import nginx_django from '../assets/nginx_django.jpg';
 import nginx_react from '../assets/nginx_react.jpg';
 import automated_react_tailwind_setup from '../assets/automated_react_tailwind_setup.jpg';
 import ckeditor_integration_django from '../assets/ckeditor_integration_django.jpg';
+import web_gl_deployment from '../assets/web_gl_deployment.jpg';
 
 const TechInsightsGuidesData = [
     { id: 1, Img: nginx_django, Title: 'Django Deployment Guide on Ubuntu with Nginx', description: 'Comprehensive guide to deploying Django projects on Ubuntu Server with Nginx, MySQL, and PostgreSQL.', category: ['DevOps'], url: 'https://nginx-django-deployment-mzuz.vercel.app/' },
     { id: 2, Img: apache_django, Title: 'Django Deployment Guide on Ubuntu with Apache', description: 'Comprehensive guide to deploying Django projects on Ubuntu Server with Apache, MySQL, and PostgreSQL.', category: ['DevOps'], url: 'https://apache-django-deployment.vercel.app/' },
     { id: 3, Img: nginx_react, Title: 'React Deployment Guide on Ubuntu with Nginx', description: 'Comprehensive guide to deploying React apps on Ubuntu Server with Nginx, covering Standard Build, Docker, and PM2 methods.', category: ['DevOps'], url: 'https://nginx-react-deployment.vercel.app/' },
-    { id: 4, Img: automated_react_tailwind_setup, Title: 'Automated React + Tailwind Setup with a Single Python Script', description: 'One-step solution to create a React project with Tailwind CSS using a single Python script and command.', category: ['Tools'], url: 'https://react-tailwind-auto-setup.vercel.app/' },
-    { id: 5, Img: ckeditor_integration_django, Title: 'CKEditor Integration in Django: With and Without forms.py', description: 'Comprehensive guide to integrating CKEditor rich text editor in Django projects, covering both direct model integration and forms.py approach.', category: ['Tools'], url: 'https://ckeditor-integration-documentation.vercel.app/' },
+    { id: 4, Img: web_gl_deployment, Title: 'Web GL Deployment Deployment Guide on Ubuntu with Nginx and Apache', description: 'Comprehensive guide to deploying WebGL applications on Ubuntu Server using Apache and Nginx, covering setup, configuration, and optimization steps.', category: ['DevOps'], url: 'https://web-gl-deployment.vercel.app/' },
+    { id: 5, Img: automated_react_tailwind_setup, Title: 'Automated React + Tailwind Setup with a Single Python Script', description: 'One-step solution to create a React project with Tailwind CSS using a single Python script and command.', category: ['Tools'], url: 'https://react-tailwind-auto-setup.vercel.app/' },
+    { id: 6, Img: ckeditor_integration_django, Title: 'CKEditor Integration in Django: With and Without forms.py', description: 'Comprehensive guide to integrating CKEditor rich text editor in Django projects, covering both direct model integration and forms.py approach.', category: ['Tools'], url: 'https://ckeditor-integration-documentation.vercel.app/' },
+    { id: 7, Img: ckeditor_integration_django, Title: 'CKEditor Integration in Django: With and Without forms.py', description: 'Comprehensive guide to integrating CKEditor rich text editor in Django projects, covering both direct model integration and forms.py approach.', category: ['Tools'], url: 'https://ckeditor-integration-documentation.vercel.app/' },
 ];
 
 function TechInsightsGuides() {
