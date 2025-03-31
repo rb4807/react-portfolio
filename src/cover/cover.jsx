@@ -48,8 +48,8 @@ const Cover = memo(() => {
                 src={hackerrank}
                 alt="HackerRank"
                 style={{
-                    width: '22px',
-                    height: '22px',
+                    width: '18px',
+                    height: '18px',
                     filter: isHovered ? 'invert(100%) brightness(100%)' : 'invert(100%) brightness(60%)',
                     transition: 'filter 0.3s ease'  
                 }}
@@ -67,8 +67,8 @@ const Cover = memo(() => {
                 src={vercel}
                 alt="Vercel"
                 style={{
-                    width: '22px',
-                    height: '22px',
+                    width: '18px',
+                    height: '18px',
                     filter: isHovered ? 'invert(100%) brightness(100%)' : 'invert(100%) brightness(60%)',
                     transition: 'filter 0.3s ease'  
                 }}
@@ -86,8 +86,8 @@ const Cover = memo(() => {
                 src={leetcode}
                 alt="Leetcode"
                 style={{
-                    width: '22px',
-                    height: '22px',
+                    width: '18px',
+                    height: '18px',
                     filter: isHovered ? 'invert(100%) brightness(100%)' : 'invert(100%) brightness(60%)',
                     transition: 'filter 0.3s ease'  
                 }}
@@ -240,11 +240,18 @@ const Cover = memo(() => {
                                 </div>
                 
                                 {/* Social Links */}
-                                <div className="flex gap-4">
+                                <div className="flex flex-wrap gap-3 sm:gap-4 sm:justify-start">
                                     {SOCIAL_LINKS.map((social, index) => (
-                                        <a key={index} href={social.link} target="_blank" rel="noopener noreferrer" className="group">
-                                            <div className="relative p-3 rounded-xl bg-white/50 dark:bg-black/50 backdrop-blur-xl border border-black/10 dark:border-white/10 group-hover:border-black/20 dark:group-hover:border-white/20 transition-all duration-300">
-                                                <social.icon className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
+                                        <a 
+                                            key={index} 
+                                            href={social.link} 
+                                            target="_blank" 
+                                            rel="noopener noreferrer" 
+                                            className="group"
+                                            aria-label={social.name || "Social link"}  // Add accessibility
+                                        >
+                                            <div className="relative p-2 sm:p-3 rounded-lg sm:rounded-xl bg-white/50 dark:bg-black/50 backdrop-blur-xl border border-black/10 dark:border-white/10 group-hover:border-black/20 dark:group-hover:border-white/20 transition-all duration-300">
+                                                <social.icon className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 group-hover:text-white transition-colors" />
                                             </div>
                                         </a>
                                     ))}
