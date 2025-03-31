@@ -169,11 +169,17 @@ const Cover = memo(() => {
                         {/* Theme Toggle and Mobile Menu */}
                         <div className="flex items-center gap-2">
                             <button onClick={toggleTheme} className="p-2 rounded-full text-gray-800 dark:text-white transition-transform duration-300" >{getThemeIcon(theme)}</button>
-                            <button onClick={toggleMenu} className="md:hidden p-2 rounded-md text-black dark:text-white">{isMenuOpen ? '✕' : '☰'}</button>
+                            <button onClick={toggleMenu} className="md:hidden p-2 rounded-md text-black dark:text-white">{isMenuOpen ? '' : '☰'}</button>
                         </div>
                     </div>
                 </div>
             </nav>
+
+            <HamburgerNavbar 
+                isMenuOpen={isMenuOpen} 
+                toggleMenu={toggleMenu} 
+                theme={theme}
+            />
         
             {/* Main Content Section */}
             <div className={`relative z-10 pt-16 transition-all duration-1000 ${isLoaded ? "opacity-100" : "opacity-0"}`}>

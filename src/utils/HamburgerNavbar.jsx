@@ -12,12 +12,13 @@ const HamburgerNavbar = ({ isMenuOpen, toggleMenu, theme }) => {
                 <div className="px-6 pt-4 pb-6 space-y-4 flex-grow overflow-y-auto">
                     {
                         [
-                            { text: 'About Me', href: '#journey' },
-                            { text: 'Services', href: '#about' },
-                            { text: 'Journey', href: '#services' },
+                            { text: 'About Me', href: '#about-me' },
+                            { text: 'Services', href: '#services' },
+                            { text: 'Projects', href: '#projects' },
+                            { text: 'Tech Insights', href: '#tech-insights' },
                             { text: 'Contact Me', href: '#social' },
                         ].map((item) => (
-                            <a key={item.text} href={item.href} onClick={() => { toggleMenu(); }} className="text-gray-800 dark:text-white hover:bg-gray-700 hover:text-white block px-4 py-2 rounded-md text-base font-medium">
+                            <a key={item.text} href={item.href} onClick={() => { toggleMenu(); }} className="text-gray-800 dark:text-white hover:bg-black/30 hover:text-white block px-4 py-2 rounded-md text-base font-medium">
                                 {item.text}
                             </a>
                         ))
