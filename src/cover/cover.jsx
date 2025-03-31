@@ -48,8 +48,8 @@ const Cover = memo(() => {
                 src={hackerrank}
                 alt="HackerRank"
                 style={{
-                    width: '18px',
-                    height: '18px',
+                    width: '17px',
+                    height: '17px',
                     filter: isHovered ? 'invert(100%) brightness(100%)' : 'invert(100%) brightness(60%)',
                     transition: 'filter 0.3s ease'  
                 }}
@@ -67,8 +67,8 @@ const Cover = memo(() => {
                 src={vercel}
                 alt="Vercel"
                 style={{
-                    width: '18px',
-                    height: '18px',
+                    width: '17px',
+                    height: '17px',
                     filter: isHovered ? 'invert(100%) brightness(100%)' : 'invert(100%) brightness(60%)',
                     transition: 'filter 0.3s ease'  
                 }}
@@ -86,8 +86,8 @@ const Cover = memo(() => {
                 src={leetcode}
                 alt="Leetcode"
                 style={{
-                    width: '18px',
-                    height: '18px',
+                    width: '17px',
+                    height: '17px',
                     filter: isHovered ? 'invert(100%) brightness(100%)' : 'invert(100%) brightness(60%)',
                     transition: 'filter 0.3s ease'  
                 }}
