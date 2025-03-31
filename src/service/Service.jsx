@@ -27,9 +27,15 @@ const ServiceCard = React.memo(({ service }) => (
 const Service = () => {
     return (
         <>
-            <h1 data-aos="fade-up" className="title text-titleLight dark:text-titleDark text-[2.4rem] mt-[8%] ml-[30%] md:mt-[3%] md:ml-[43%]" id="services">
-                My <span className="text-[2.4rem] bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">Service</span>
-            </h1>
+            <div>
+                <h1 data-aos="fade-up" className="title text-titleLight dark:text-titleDark text-[2.4rem] mt-[8%] ml-[30%] md:mt-[3%] md:ml-[43%]" id="services">
+                    My <span className="text-[2.4rem] bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">Service</span>
+                </h1>
+                <p className="text-center mt-4 text-gray-400 max-w-2xl mx-auto text-sm md:text-base">
+                    I offer a range of high-quality, reliable solutions tailored to your needs. Whether it's software development or other tech solutions, 
+                    I bring expertise and dedication to every project. Let’s build something exceptional together!
+                </p> 
+            </div>
             <div data-aos="fade-up" className="container mx-auto p-4">
                 <div className="grid md:grid-cols-4 grid-cols-2 gap-4 text-contentLight dark:text-contentDark">
                     {servicesData.map((service, index) => (

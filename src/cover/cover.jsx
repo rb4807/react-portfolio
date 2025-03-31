@@ -161,7 +161,7 @@ const Cover = memo(() => {
             
                         {/* Desktop Navigation Links */}
                         <div className="hidden md:flex items-center justify-center flex-1 space-x-4">
-                            {['About Me', 'Services', 'Projects', 'Contact Me'].map((item) => (
+                            {['About Me', 'Services', 'Projects', 'Tech Insights', 'Contact Me'].map((item) => (
                                 <a key={item} href={`#${item.toLowerCase().replace(' ', '-')}`} className="text-white dark:text-white border-b-2 border-transparent hover:text-baseColor hover:border-baseColor dark:hover:text-baseColor px-3 py-2 text-sm font-medium" > {item}</a>
                             ))}
                         </div>
@@ -182,7 +182,7 @@ const Cover = memo(() => {
                         {/* Left Content Section */}
                         <div className="w-full lg:w-1/2 space-y-8">
                             {/* Ready to Innovate Badge */}
-                            <div className="inline-block animate-float" data-aos="zoom-in">
+                            <div className="inline-block" data-aos="zoom-in">
                                 <div className="relative group">
                                     <div className="absolute -inset-0.5 bg-gradient-to-r from-[#6366f1] to-[#a855f7] rounded-full blur opacity-30 group-hover:opacity-50 transition duration-1000"></div>
                                     <div className="relative px-4 py-2 rounded-full bg-white/40 dark:bg-black/40 backdrop-blur-xl border border-black/10 dark:border-white/10">
@@ -196,12 +196,12 @@ const Cover = memo(() => {
             
                             {/* Name and Title */}
                             <div className="space-y-4">
-                                <h1 className="text-3xl sm:text-6xl font-bold tracking-tight">
-                                    <span className="head bg-gradient-to-r from-secLight via-blue-200 to-purple-400 tracking-wider dark:bg-gradient-to-r dark:from-white dark:via-blue-100 dark:to-purple-200 bg-clip-text text-transparent">
+                                <h1 className="text-3xl sm:text-6xl font-bold tracking-wider">
+                                    <span className="head bg-gradient-to-r from-secLight via-blue-200 to-purple-400  dark:bg-gradient-to-r dark:from-white dark:via-blue-100 dark:to-purple-200 bg-clip-text text-transparent">
                                         HI I'M 
                                     </span>
                                     <br />
-                                    <span className="head tracking-wider bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">
+                                    <span className="head  bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">
                                         Rajesh
                                         <br/>
                                         Balasubramaniam

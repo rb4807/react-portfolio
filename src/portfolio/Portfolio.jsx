@@ -121,7 +121,7 @@ function Portfolio() {
     const displayedCertificates = showAllCertificates ? CertificatesData : CertificatesData.slice(0, initialItems);
     return (
         <>
-            <div className="md:px-[10%] px-[5%] w-full sm:mt-0 bg-baseLight dark:bg-baseDark overflow-hidden" id="Portfolio">
+            <div className="md:px-[10%] px-[5%] w-full sm:mt-0 bg-baseLight dark:bg-baseDark overflow-hidden" id="projects">
                 {/* Header section */}
                 <div className="text-center pb-10" data-aos="fade-up" data-aos-duration="1000">
                     <h2 className="title inline-block text-3xl md:text-5xl md:pt-[10%] text-center mx-auto">
@@ -135,6 +135,7 @@ function Portfolio() {
                         expertise, each marking a milestone in my continuous learning and growth.
                     </p>
                 </div>
+                
 
                 <Box sx={{ width: "100%" }}>
                     {/* AppBar and Tabs section */}

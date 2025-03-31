@@ -5,7 +5,7 @@ const statsData = [
     {
         icon: Code,
         color: "from-[#6366f1] to-[#a855f7]",
-        value: 11,
+        value: "10+",
         label: "Total Projects",
         description: "Innovative solutions crafted",
         animation: "fade-right",

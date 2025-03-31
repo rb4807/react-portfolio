@@ -10,7 +10,7 @@ const About = memo(() => {
     const theme = useThemeStore((state) => state.theme);
 
     return (
-        <div className="h-auto pb-[10%] text-titleLight dark:text-white overflow-hidden px-[5%] sm:px-[5%] lg:px-[10%] sm-mt-0" id="About">
+        <div className="h-auto pb-[10%] text-titleLight dark:text-white overflow-hidden px-[5%] sm:px-[5%] lg:px-[10%] sm-mt-0" id="about-me">
             {/* Main Content Section */}
             <div className="w-full mx-auto pt-8 sm:pt-12 relative flex flex-col lg:flex-row items-start gap-10 lg:gap-16">
                 {/* Profile Image Section */}
@@ -68,7 +68,7 @@ const About = memo(() => {
                                 <FileText className="w-4 h-4 sm:w-5 sm:h-5" /> Download CV
                             </button>
                         </a>
-                        <a href="#Portfolio" className="w-full lg:w-auto">
+                        <a href="#projects" className="w-full lg:w-auto">
                             <button data-aos="fade-up" data-aos-duration="1000" className="w-full lg:w-auto sm:px-6 py-2 sm:py-3 rounded-lg border border-[#a855f7]/50 text-[#a855f7] font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center lg:justify-start gap-2 hover:bg-[#a855f7]/10 animate-bounce-slow delay-200">
                                 <Code className="w-4 h-4 sm:w-5 sm:h-5" /> View Projects
                             </button>
