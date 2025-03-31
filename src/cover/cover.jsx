@@ -258,7 +258,7 @@ const Cover = memo(() => {
                                 <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 opacity-20 group-hover:opacity-40 transition-opacity duration-300 animate-morph"></div>
                                 <div className="relative h-full w-full flex items-center justify-center">
                                     <div className=" p-4 ">
-                                        <img src={theme === 'light' ? about_light : about_dark} alt="Profile" className="w-full h-full object-cover rounded-lg"/>
+                                        <img src={theme === 'light' ? about_light : about_light} alt="Profile" className="w-full h-full object-cover rounded-lg"/>
                                     </div>
                                 </div>
                             </div>
