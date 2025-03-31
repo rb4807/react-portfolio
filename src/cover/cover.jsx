@@ -197,11 +197,11 @@ const Cover = memo(() => {
                             {/* Name and Title */}
                             <div className="space-y-4">
                                 <h1 className="text-3xl sm:text-6xl font-bold tracking-tight">
-                                    <span className="head bg-gradient-to-r from-secLight via-blue-200 to-purple-400 dark:bg-gradient-to-r dark:from-white dark:via-blue-100 dark:to-purple-200 bg-clip-text text-transparent">
+                                    <span className="head bg-gradient-to-r from-secLight via-blue-200 to-purple-400 tracking-wider dark:bg-gradient-to-r dark:from-white dark:via-blue-100 dark:to-purple-200 bg-clip-text text-transparent">
                                         HI I'M 
                                     </span>
                                     <br />
-                                    <span className="head bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">
+                                    <span className="head tracking-wider bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">
                                         Rajesh
                                         <br/>
                                         Balasubramaniam
