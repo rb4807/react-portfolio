@@ -42,7 +42,7 @@ const About = memo(() => {
                     {/* Header Section */}
                     <div className="lg:mb-8 mb-2 px-[5%]">
                         <div className="inline-block relative group">
-                            <h2 className="title text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7]" data-aos="zoom-in-up" data-aos-duration="600">
+                            <h2 className="title text-2xl sm:text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7]" data-aos="zoom-in-up" data-aos-duration="600">
                                <span className="text-titleLight dark:text-white">About</span> Me
                             </h2>
                         </div>
