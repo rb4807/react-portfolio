@@ -124,7 +124,7 @@ function Portfolio() {
             <div className="md:px-[10%] px-[5%] w-full sm:mt-0 bg-baseLight dark:bg-baseDark overflow-hidden" id="projects">
                 {/* Header section */}
                 <div className="text-center pb-10" data-aos="fade-up" data-aos-duration="1000">
-                    <h2 className="title inline-block text-2xl sm:text-3xl md:text-4xl font-bold pt-[10%] md:pt-[10%] text-center mx-auto">
+                    <h2 className="title inline-block text-2xl sm:text-3xl md:text-4xl font-bold pt-[15%] md:pt-[10%] text-center mx-auto">
                         <span className='text-titleLight dark:text-gray-400'>My </span><span className='text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7]' style={{ color: '#6366f1', backgroundImage: 'linear-gradient(45deg, #6366f1 10%, #a855f7 93%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
                             Professional Journey
                         </span>
