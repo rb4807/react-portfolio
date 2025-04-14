@@ -110,7 +110,7 @@ useEffect(() => {
                         {/* Portfolio */}
                         <Portfolio />
                         <TechInsightsGuides />
-                        <hr className="border-t dark:border-gray-600 border-black/30" />
+                        <hr className="border-t dark:border-gray-600 border-black/30" id="contact-me"/>
                     
                         <footer className="py-6">
                             <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
