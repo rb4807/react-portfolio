@@ -329,7 +329,7 @@ const TechInsightsGuides = () => {
                         >
                             {/* Card shine effect overlay */}
                             <div className="card-shine"></div>
-                            <div className="group h-full bg-white/20 dark:bg-gray-900/50 backdrop-blur-lg border border-black/10 dark:border-white/10 rounded-2xl overflow-hidden hover:border-indigo-500/50 transition-all duration-500 shadow-xl hover:shadow-indigo-500/20 flex flex-col transform">
+                            <div className="group h-full bg-indigo-200/50 dark:bg-gray-900/50 backdrop-blur-lg border border-black/10 dark:border-white/10 rounded-2xl overflow-hidden hover:border-indigo-500/50 transition-all duration-500 shadow-xl hover:shadow-indigo-500/20 flex flex-col transform">
                                 <div className="relative overflow-hidden h-52">
                                     <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/20 to-purple-600/20 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                                     <img 
@@ -369,7 +369,7 @@ const TechInsightsGuides = () => {
                                         href={insight.url} 
                                         target="_blank" 
                                         rel="noopener noreferrer"
-                                        className="mt-auto group relative py-3 px-6 rounded-lg bg-white/5 hover:from-indigo-500 hover:to-purple-500 text-white font-medium transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/25 text-center overflow-hidden"
+                                        className="mt-auto group relative py-3 px-6 rounded-lg bg-black/10 dark:bg-white/5 hover:from-indigo-500 hover:to-purple-500 text-gray-500 dark:text-white font-medium transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/25 text-center overflow-hidden"
                                     >
                                         <span className="relative z-10 flex items-center justify-center">
                                             Explore Guide

@@ -38,7 +38,7 @@ const statsData = [
 
 const StatCard = React.memo(({ icon: Icon, color, value, label, description, animation }) => (
     <div data-aos={animation} data-aos-duration={1300} className="relative group">
-        <div className="relative z-10 bg-white/60 dark:bg-gray-900/50 backdrop-blur-lg rounded-2xl p-6 border border-black/10 dark:border-white/10 overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl h-full flex flex-col justify-between">
+        <div className="relative z-10 bg-white-900/50 dark:bg-gray-900/50 backdrop-blur-lg rounded-2xl p-6 border border-black/10 dark:border-white/10 overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl h-full flex flex-col justify-between">
             <div className={`absolute -z-10 inset-0 bg-gradient-to-br ${color} opacity-10 group-hover:opacity-20 transition-opacity duration-300`}></div>
             <div className="flex items-center justify-between mb-4">
                 <div className="w-16 h-16 rounded-full flex items-center justify-center bg-black/10 dark:bg-white/10 transition-transform group-hover:rotate-6">

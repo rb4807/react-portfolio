@@ -18,7 +18,7 @@ const icons = {
 const TechStack = ({ IconName, Heading, Languages }) => {
     const IconComponent = icons[IconName];
     return (
-        <div className="w-full sm:w-64 h-72 group p-6 rounded-2xl bg-white/40 dark:bg-gray-900/50 hover:bg-white/70 dark:hover:bg-gray-800/50 transition-all duration-300 ease-in-out flex flex-col items-center justify-start gap-4 hover:scale-105 cursor-pointer backdrop-blur-lg shadow-lg hover:shadow-xl border border-black/10 dark:border-white/10 overflow-hidden">
+        <div className="w-full sm:w-64 h-72 group p-6 rounded-2xl bg-white-900/50 dark:bg-gray-900/50 hover:bg-white/70 dark:hover:bg-gray-800/50 transition-all duration-300 ease-in-out flex flex-col items-center justify-start gap-4 hover:scale-105 cursor-pointer backdrop-blur-lg shadow-lg hover:shadow-xl border border-black/10 dark:border-white/10 overflow-hidden">
             <div className="absolute -z-10 inset-0 bg-gradient-to-br from-[#6366f1] to-[#a855f7] opacity-10 group-hover:opacity-20 transition-opacity duration-300"></div>
             <div className="relative flex-shrink-0">
                 <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full opacity-0 group-hover:opacity-50 blur transition duration-300"></div>

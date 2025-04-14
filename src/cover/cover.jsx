@@ -42,60 +42,78 @@ const Cover = memo(() => {
 
     const HackerRankIcon = () => {
         const [isHovered, setIsHovered] = useState(false);
-    
         return (
-            <img
-                src={hackerrank}
-                alt="HackerRank"
-                style={{
-                    width: '17px',
-                    height: '17px',
-                    filter: isHovered ? 'invert(100%) brightness(100%)' : 'invert(100%) brightness(60%)',
-                    transition: 'filter 0.3s ease'  
-                }}
-                onMouseEnter={() => setIsHovered(true)}  
-                onMouseLeave={() => setIsHovered(false)}  
+            <img 
+                src={hackerrank} 
+                alt="HackerRank" 
+                className="w-4 h-4 sm:w-5 sm:h-5"
+                style={{ 
+                filter: `brightness(0) saturate(100%) 
+                    ${!document.documentElement.classList.contains('dark') 
+                    ? isHovered 
+                        ? 'invert(65%) sepia(72%) saturate(4462%) hue-rotate(178deg) brightness(102%) contrast(104%)' // gradient4Light color
+                        : 'invert(39%) sepia(57%) saturate(2371%) hue-rotate(224deg) brightness(101%) contrast(101%)' // gradient1Light color
+                    : isHovered 
+                        ? 'invert(100%) brightness(100%)' 
+                        : 'invert(100%) brightness(60%)'
+                    }`,
+                transition: 'filter 0.3s ease'
+                }} 
+                onMouseEnter={() => setIsHovered(true)} 
+                onMouseLeave={() => setIsHovered(false)} 
             />
         );
-    };  
-
+    };
+      
     const VercelIcon = () => {
         const [isHovered, setIsHovered] = useState(false);
-    
         return (
-            <img
-                src={vercel}
-                alt="Vercel"
-                style={{
-                    width: '17px',
-                    height: '17px',
-                    filter: isHovered ? 'invert(100%) brightness(100%)' : 'invert(100%) brightness(60%)',
-                    transition: 'filter 0.3s ease'  
-                }}
-                onMouseEnter={() => setIsHovered(true)}  
-                onMouseLeave={() => setIsHovered(false)}  
+            <img 
+                src={vercel} 
+                alt="Vercel" 
+                className="w-4 h-4 sm:w-5 sm:h-5"
+                style={{ 
+                filter: `brightness(0) saturate(100%) 
+                    ${!document.documentElement.classList.contains('dark') 
+                    ? isHovered 
+                        ? 'invert(65%) sepia(72%) saturate(4462%) hue-rotate(178deg) brightness(102%) contrast(104%)' // gradient4Light color
+                        : 'invert(39%) sepia(57%) saturate(2371%) hue-rotate(224deg) brightness(101%) contrast(101%)' // gradient1Light color
+                    : isHovered 
+                        ? 'invert(100%) brightness(100%)' 
+                        : 'invert(100%) brightness(60%)'
+                    }`,
+                transition: 'filter 0.3s ease'
+                }} 
+                onMouseEnter={() => setIsHovered(true)} 
+                onMouseLeave={() => setIsHovered(false)} 
             />
         );
-    };   
-
+    };
+      
     const LeetCodeIcon = () => {
         const [isHovered, setIsHovered] = useState(false);
-    
         return (
-            <img
-                src={leetcode}
-                alt="Leetcode"
-                style={{
-                    width: '17px',
-                    height: '17px',
-                    filter: isHovered ? 'invert(100%) brightness(100%)' : 'invert(100%) brightness(60%)',
-                    transition: 'filter 0.3s ease'  
-                }}
-                onMouseEnter={() => setIsHovered(true)}  
-                onMouseLeave={() => setIsHovered(false)}  
-            />
+          <img 
+            src={leetcode} 
+            alt="Leetcode" 
+            className="w-4 h-4 sm:w-5 sm:h-5"
+            style={{ 
+              filter: `brightness(0) saturate(100%) 
+                ${!document.documentElement.classList.contains('dark') 
+                  ? isHovered 
+                    ? 'invert(65%) sepia(72%) saturate(4462%) hue-rotate(178deg) brightness(102%) contrast(104%)' // gradient4Light color
+                    : 'invert(39%) sepia(57%) saturate(2371%) hue-rotate(224deg) brightness(101%) contrast(101%)' // gradient1Light color
+                  : isHovered 
+                    ? 'invert(100%) brightness(100%)' 
+                    : 'invert(100%) brightness(60%)'
+                }`,
+              transition: 'filter 0.3s ease'
+            }} 
+            onMouseEnter={() => setIsHovered(true)} 
+            onMouseLeave={() => setIsHovered(false)} 
+          />
         );
-    };   
+    };  
       
 
     const TYPING_SPEED = 100;
@@ -107,7 +125,7 @@ const Cover = memo(() => {
         { icon: Mail , link: "mailto:rajesh.mbalu@gmail.com" },
         { icon: Linkedin, link: "https://www.linkedin.com/in/rajesh-mbalu" },
         { icon: Github, link: "https://github.com/rb4807" },
-        { icon: VercelIcon, link: "https://vercel.com/rb4807s-projects" },
+        // { icon: VercelIcon, link: "https://vercel.com/rb4807s-projects" },
         { icon: HackerRankIcon, link: "https://www.hackerrank.com/profile/rb160601"},
         { icon: LeetCodeIcon, link: "https://leetcode.com/u/rajesh-mbalu/"},
         { icon: Instagram, link: "https://instagram.com/https://instagram.com/_._r__b_._" }       
@@ -162,13 +180,13 @@ const Cover = memo(() => {
                         {/* Desktop Navigation Links */}
                         <div className="hidden md:flex items-center justify-center flex-1 space-x-4">
                             {['About Me', 'Services', 'Projects', 'Tech Insights', 'Contact Me'].map((item) => (
-                                <a key={item} href={`#${item.toLowerCase().replace(' ', '-')}`} className="text-white dark:text-white border-b-2 border-transparent hover:text-baseColor hover:border-baseColor dark:hover:text-baseColor px-3 py-2 text-sm font-medium" > {item}</a>
+                                <a key={item} href={`#${item.toLowerCase().replace(' ', '-')}`} className="text-gray-600 dark:text-white border-b-2 border-transparent hover:text-baseColor hover:border-baseColor dark:hover:text-baseColor px-3 py-2 text-sm font-medium" > {item}</a>
                             ))}
                         </div>
             
                         {/* Theme Toggle and Mobile Menu */}
                         <div className="flex items-center gap-2">
-                            <button onClick={toggleTheme} className="p-2 rounded-full text-gray-800 dark:text-white transition-transform duration-300" >{getThemeIcon(theme)}</button>
+                            <button onClick={toggleTheme} className="p-2 rounded-full text-black dark:text-white transition-transform duration-300" >{getThemeIcon(theme)}</button>
                             <button onClick={toggleMenu} className="md:hidden p-2 rounded-md text-black dark:text-white">{isMenuOpen ? '' : '☰'}</button>
                         </div>
                     </div>
@@ -203,11 +221,11 @@ const Cover = memo(() => {
                             {/* Name and Title */}
                             <div className="space-y-4">
                                 <h1 className="text-3xl sm:text-6xl font-bold tracking-wider">
-                                    <span className="head bg-gradient-to-r from-secLight via-blue-200 to-purple-400  dark:bg-gradient-to-r dark:from-white dark:via-blue-100 dark:to-purple-200 bg-clip-text text-transparent">
+                                    <span className="head bg-gradient-to-r from-titleLight via-gradient1Light to-accentLight dark:bg-gradient-to-r dark:from-white dark:via-blue-100 dark:to-purple-200 bg-clip-text text-transparent">
                                         HI I'M 
                                     </span>
                                     <br />
-                                    <span className="head  bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">
+                                    <span className="head bg-gradient-to-r from-gradient1Light via-gradient2Light to-gradient4Light dark:bg-gradient-to-r dark:from-[#6366f1] dark:to-[#a855f7] bg-clip-text text-transparent">
                                         Rajesh
                                         <br/>
                                         Balasubramaniam
@@ -233,7 +251,15 @@ const Cover = memo(() => {
                                 {/* Tech Stack */}
                                 <div className="flex flex-wrap gap-3">
                                     {TECH_STACK.map((tech, index) => (
-                                        <div key={index} className="px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 text-sm text-gray-300 hover:bg-white/10 transition-colors">
+                                        <div 
+                                            key={index} 
+                                            className="px-4 py-2 rounded-full 
+                                                dark:bg-white/5 dark:border-white/10 dark:text-gray-300 dark:hover:bg-white/10
+                                                bg-gradient-to-r from-gradient1Light/10 to-gradient4Light/10 backdrop-blur-sm 
+                                                border border-gradient2Light/10 text-sm text-gray-800 
+                                                hover:bg-gradient-to-r hover:from-gradient1Light/20 hover:to-gradient4Light/20 
+                                                shadow-sm hover:shadow transition-all duration-300"
+                                        >
                                             {tech}
                                         </div>
                                     ))}
@@ -248,10 +274,20 @@ const Cover = memo(() => {
                                             target="_blank" 
                                             rel="noopener noreferrer" 
                                             className="group"
-                                            aria-label={social.name || "Social link"}  // Add accessibility
+                                            aria-label={social.name || "Social link"}
                                         >
-                                            <div className="relative p-2 sm:p-3 rounded-lg sm:rounded-xl bg-white/50 dark:bg-black/50 backdrop-blur-xl border border-black/10 dark:border-white/10 group-hover:border-black/20 dark:group-hover:border-white/20 transition-all duration-300">
-                                                <social.icon className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 group-hover:text-white transition-colors" />
+                                            <div className="relative p-2 sm:p-3 rounded-lg sm:rounded-xl 
+                                                bg-white/80 to-baseLight/70 bg-gradient-to-br 
+                                                dark:bg-black/50 dark:bg-none 
+                                                backdrop-blur-xl 
+                                                border border-gradient1Light/30 dark:border-white/10 
+                                                group-hover:border-gradient1Light/50 dark:group-hover:border-white/20 
+                                                group-hover:shadow-md
+                                                transition-all duration-300">
+                                                <social.icon className="w-4 h-4 sm:w-5 sm:h-5 
+                                                    text-gradient1Light dark:text-gray-400 
+                                                    group-hover:text-gradient4Light dark:group-hover:text-white 
+                                                transition-colors" />
                                             </div>
                                         </a>
                                     ))}
