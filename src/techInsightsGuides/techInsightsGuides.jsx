@@ -278,7 +278,7 @@ const TechInsightsGuides = () => {
                 {/* Header Section */}
                 <div className={`text-center mb-16 transition-all duration-1000 ${inView ? 'animate-slide-in-up' : 'opacity-0'}`} style={{ animationDelay: '100ms' }}>
                     <h2 className="title text-4xl md:text-5xl mt-4 mb-2">
-                        <span className="text-gray-300">Tech </span>
+                        <span className="text-titleLight dark:text-titleDark">Tech </span>
                         <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-gradient-move">
                             Insights & Guides
                         </span>
