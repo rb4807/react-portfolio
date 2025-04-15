@@ -3,7 +3,7 @@ import dark from './assets/dark.webp';
 import light from './assets/light.png';
 import './index.css';
 import WelcomeScreen from './components/WelcomeScreen';
-import ProjectDetails from './components/ProjectDetail';
+import ProjectPageLayout from './components/ProjectPageLayout';
 import AnimatedBackground from './utils/Background';
 import Portfolio from './portfolio/Portfolio';
 import TechInsightsGuides from './techInsightsGuides/techInsightsGuides';
@@ -156,21 +156,6 @@ useEffect(() => {
     );
 };
 
-const ProjectPageLayout = () => (
-    <>
-      <ProjectDetails />
-      <footer>
-        <center>
-          <hr className="my-3 border-gray-400 opacity-15 sm:mx-auto lg:my-6 text-center" />
-          <span className="block text-sm pb-4 text-gray-500 text-center dark:text-gray-400">
-            © 2025{" "}
-              
-            All Rights Reserved.
-          </span>
-        </center>
-      </footer>
-    </>
-  );
 
 function App() {
     const [showWelcome, setShowWelcome] = useState(true);
