@@ -56,7 +56,7 @@ const TechStacksData = [
     { id: 1, icon: 'Binary', heading: 'Languages', language: ['Python', 'JavaScript', 'Golang'] },
     { id: 2, icon: 'Globe', heading: 'Web Technologies', language: ['HTML5', 'CSS3', 'jQuery'] },
     { id: 3, icon: 'LayoutPanelTop', heading: 'CSS Framework', language: ['TailwindCSS', 'Bootstrap'] },
-    { id: 4, icon: 'Braces', heading: 'Framework', language: ['Django', 'Gin', 'React.JS'] },
+    { id: 4, icon: 'Braces', heading: 'Framework', language: ['Django', 'Fast API', 'Gin', 'React.JS'] },
     { id: 5, icon: 'ChevronsLeftRightEllipsis', heading: 'API Integration', language: ['REST API', 'Axios', 'Swagger'] },
     { id: 6, icon: 'Cloud', heading: 'DevOps', language: ['GitHub', 'Vercel', 'Docker', 'AWS', 'Apache', 'Nginx'] },
     { id: 7, icon: 'ShoppingBag', heading: 'CMS Platforms', language: ['Shopify', 'WordPress'] },
