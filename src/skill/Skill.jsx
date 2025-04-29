@@ -50,7 +50,7 @@ const Skill = () => {
                         <div className="rounded-lg text-contentLight dark:text-contentDark bg-secLight dark:bg-secDark p-6">
                             <h1 className="text-2xl font-bold text-center text-baseColor">Full Stack</h1>
                             <h1 className="mt-2 text-xl text-center">React.JS, Angular.JS</h1>
-                            <h1 className="text-xl text-center">Django, Gin</h1>
+                            <h1 className="text-xl text-center">Django, FastAPI, Gin</h1>
                         </div>
                     </div>
                     <div className="p-4">
