@@ -77,7 +77,7 @@ const projectMetadata = {
         techStackCount: 6,
         packageCount: 13, 
     },
-    'School Management Web App': {
+    'School Management App': {
         TechStack: {
             Language: ['Python', 'JavaScript'],
             Frontend: ['React.JS', 'TailwindCSS'],
@@ -92,7 +92,7 @@ const projectMetadata = {
         techStackCount: 10,
         packageCount: 15, 
     },
-    'Jewellery Shopping Web App': {
+    'Jewellery Shopping App': {
         TechStack: {
             Language: ['Python', 'JavaScript'],
             Frontend: ['HTML', 'jQuery', 'Ajax', 'TailwindCSS'],
@@ -119,7 +119,7 @@ const projectMetadata = {
         techStackCount: 4,
         packageCount: 7, 
     },
-    'Ecommerce Web App': {
+    'Ecommerce App': {
         TechStack: {
             Language: ['Python', 'JavaScript'],
             Frontend: ['HTML', 'jQuery', 'Ajax', 'TailwindCSS'],
@@ -134,7 +134,7 @@ const projectMetadata = {
         techStackCount: 4,
         packageCount: 7, 
     },
-    'Hospital Appointment Web App': {
+    'Hospital Appointment App': {
         TechStack: {
             Language: ['Python', 'JavaScript'],
             Frontend: ['HTML', 'jQuery', 'Ajax', 'TailwindCSS'],
@@ -145,7 +145,8 @@ const projectMetadata = {
         },
         Github: 'https://github.com/rb4807/teammed-django.git',
         ProjectDescription: 'Led the development of a hospital booking web app, managing both frontend and backend components. Designed a user-friendly interface that allows patients to easily browse through available doctors and book appointments. Integrated features such as doctor profiles, appointment scheduling, and real-time availability updates to enhance user experience. Implemented secure user authentication for privacy, along with a smooth booking flow and appointment management system. Optimized the backend for efficiency, ensuring seamless integration with hospital databases and real-time updates for both patients and doctors.',
-
+        techStackCount: 3,
+        packageCount: 3, 
     },
     'Text to Voice Generator with Multiple Voice': {
         TechStack: {
@@ -156,7 +157,22 @@ const projectMetadata = {
         },
         Github: 'https://github.com/rb4807/text_to_voice_generator.git',
         ProjectDescription: 'Led the development of a Text to Voice Generator web tool, creating an interactive and user-friendly single-page application. Designed a sleek and intuitive interface that allows users to input text and choose from multiple voice options for text-to-speech conversion. Integrated advanced voice synthesis technology for high-quality and natural-sounding speech, with features like adjustable speech rate and volume control. Ensured seamless performance with smooth text processing and voice output. Optimized the tool for responsiveness and quick load times, providing a seamless experience across devices.',
-
+        techStackCount: 2,
+        packageCount: 1, 
+    },
+    'Real-time market data multi streaming via WebSocket': {
+        TechStack: {
+            Language: ['Golang', 'JavaScript'],
+            Frontend: ['HTML', 'CSS'],
+            Backend: ['Gin'],
+            Packages: ['Gorilla Websocket', 'Google uuid'],
+            Devops: ['GitHub'],
+            Tools: ['GitDesktop', 'VScode'],
+        },
+        Github: 'https://github.com/rb4807/Web_Socketing_Real_Time',
+        ProjectDescription: 'Led the development of a real-time market data streaming platform leveraging WebSocket technology, designed to efficiently deliver live financial data to multiple consumers and clients simultaneously. Built with a robust backend using gin-gonic/gin for handling HTTP requests, and gorilla/websocket for persistent, low-latency data streams. Engineered a scalable system capable of handling multiple ticker symbols and concurrent streaming sessions, ensuring high performance and data consistency across all connections. Integrated google/uuid to uniquely identify and manage client sessions, enhancing reliability and traceability. Focused on delivering a seamless, real-time experience with optimized resource management and concurrent data delivery pipelines.',
+        techStackCount: 2,
+        packageCount: 2, 
     }
 };
 

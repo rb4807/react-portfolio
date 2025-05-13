@@ -18,6 +18,7 @@ import deltafour from '../assets/deltafour.jpg';
 import beond_work from '../assets/beond_work.jpg';
 import movie from '../assets/movie.png';
 import text_to_voice from '../assets/text_to_voice.png';
+import real_time_web_socket from '../assets/real_time_web_socket.png';
 
 import agile from '../assets/agile.jpg';
 import django from '../assets/django.jpg';
@@ -34,12 +35,13 @@ const ProjectsData = [
     { id: 3, Img: deltafour, Title: 'Deltafour', responsibility: 'Backend development & Full Stack Development', Link: '#', category: ['Python', 'JavaScript'] },
     { id: 4, Img: beond_audit, Title: 'Beond Audit', responsibility: 'Backend development & Full Stack Development', Link: '#', category: ['Python', 'JavaScript', 'Golang'] },
     { id: 5, Img: beond_work, Title: 'Beond Work', responsibility: 'Backend development & Full Stack Development', Link: '#', category: ['Python', 'JavaScript'] },
-    { id: 6, Img: school, Title: 'School Management Web App', responsibility: 'Full Stack Development', Link: '#', category: ['Python', 'JavaScript'] },
-    { id: 7, Img: mfj, Title: 'Jewellery Shopping Web App', responsibility: 'Full Stack Development', Link: '#', category: ['JavaScript', 'Python'] },
-    { id: 8, Img: chatgpt, Title: 'ChatGPT Clone', responsibility: 'Full Stack Development', Link: '#', category: ['JavaScript'] },
-    { id: 9, Img: ecommerce, Title: 'Ecommerce Web App', responsibility: 'Full Stack Development', Link: '#', category: ['Python', 'JavaScript'] },
-    { id: 10, Img: teammed, Title: 'Hospital Appointment Web App', responsibility: 'Full Stack Development', Link: '#', category: ['Python', 'JavaScript'] },
-    { id: 11, Img: text_to_voice, Title: 'Text to Voice Generator with Muliple Voice', responsibility: 'Full Stack Development', Link: '#', category: ['JavaScript'] },
+    { id: 6, Img: school, Title: 'School Management App', responsibility: 'Full Stack Development', Link: '#', category: ['Python', 'JavaScript'] },
+    { id: 7, Img: real_time_web_socket, Title: 'Real-time market data multi streaming via WebSocket', responsibility: 'Full Stack Development', Link: '#', category: ['Golang', 'JavaScript'] },
+    { id: 8, Img: mfj, Title: 'Jewellery Shopping App', responsibility: 'Full Stack Development', Link: '#', category: ['JavaScript', 'Python'] },
+    { id: 9, Img: chatgpt, Title: 'ChatGPT Clone', responsibility: 'Full Stack Development', Link: '#', category: ['JavaScript'] },
+    { id: 10, Img: ecommerce, Title: 'Ecommerce App', responsibility: 'Full Stack Development', Link: '#', category: ['Python', 'JavaScript'] },
+    { id: 11, Img: teammed, Title: 'Hospital Appointment App', responsibility: 'Full Stack Development', Link: '#', category: ['Python', 'JavaScript'] },
+    { id: 12, Img: text_to_voice, Title: 'Text to Voice Generator with Multiple Voice', responsibility: 'Full Stack Development', Link: '#', category: ['JavaScript'] },
 ];
 
 const CertificatesData = [

@@ -1,16 +1,39 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import {
-  ArrowLeft,
-  ExternalLink,
-  Github,
-  Code2,
-  ChevronRight,
-  Layers,
-  Layout,
-} from "lucide-react";
+
+import school_1 from '../assets/school_1.png';
+import school_2 from '../assets/school_2.png';
+import jewellery_1 from '../assets/jewellery_1.png';
+import jewellery_2 from '../assets/jewellery_2.png';
+import chatgpt_1 from '../assets/chatgpt_1.png';
+import chatgpt_2 from '../assets/chatgpt_2.png';
+import text_voice_1 from '../assets/text_voice_1.jpg';
+import text_voice_2 from '../assets/text_voice_2.jpg';
+import real_time_web_socket_1 from '../assets/real_time_web_socket_1.png';
+import real_time_web_socket_2 from '../assets/real_time_web_socket_2.png';
+import teammed_1 from '../assets/teammed_1.png';
+import teammed_2 from '../assets/teammed_2.png';
+import ecommerce_1 from '../assets/ecommerce_1.png';
+import ecommerce_2 from '../assets/ecommerce_2.png';
+import { ArrowLeft, ExternalLink, Github, Code2, ChevronRight, Layers, Layout, Image as ImageIcon } from "lucide-react";
 import Swal from "sweetalert2";
 import useThemeStore from "../stores/useThemeStore";
+
+// Add this array near the top of your file, before the component definitions
+const ProjectsGalleryData = [
+    { id: 1, Title: 'Notespaedia', GalleryImg: [], DemoLink: 'https://github.com/rb4807/'  },
+    { id: 2, Title: 'Visual Takes', GalleryImg: [], DemoLink: 'https://github.com/rb4807/' },
+    { id: 3, Title: 'Deltafour', GalleryImg: [], DemoLink: 'https://github.com/rb4807/'},
+    { id: 4, Title: 'Beond Audit', GalleryImg: [], DemoLink:'https://app.beondaudit.com/' },
+    { id: 5, Title: 'Beond Work', GalleryImg: [] , DemoLink: 'https://beondwork.com/'},
+    { id: 6, Title: 'School Management App', GalleryImg: [school_1, school_2], DemoLink: 'https://school-psi-ten.vercel.app/'},
+    { id: 7, Title: 'Real-time market data multi streaming via WebSocket', GalleryImg: [real_time_web_socket_1, real_time_web_socket_2], DemoLink: 'https://github.com/rb4807/'},
+    { id: 8, Title: 'Jewellery Shopping App', GalleryImg: [jewellery_1, jewellery_2], DemoLink: 'https://mfj.vercel.app/'},
+    { id: 9, Title: 'ChatGPT Clone', GalleryImg: [chatgpt_1, chatgpt_2], DemoLink: 'https://chatgpt-clone-7jxv.vercel.app/'},
+    { id: 10, Title: 'Ecommerce App', GalleryImg: [ecommerce_1, ecommerce_2] , DemoLink: 'https://github.com/rb4807/'},
+    { id: 11, Title: 'Hospital Appointment App', GalleryImg: [teammed_1, teammed_2] , DemoLink: 'https://github.com/rb4807/'},
+    { id: 12, Title: 'Text to Voice Generator with Multiple Voice', GalleryImg: [text_voice_1, text_voice_2], DemoLink:'https://text-to-voice-generator.vercel.app/'},
+];
 
 // Animated Background Component for Light Theme
 const AnimatedBackground = () => {
@@ -177,6 +200,48 @@ const ProjectStats = ({ project }) => {
     </div>
   );
 };
+
+// Enhanced Project Gallery component
+const ProjectGallery = ({ projectImages }) => {
+  const theme = useThemeStore((state) => state.theme);
+  const isDark = theme === 'dark';
+  
+  // If no images are provided, return null
+  if (!projectImages || projectImages.length === 0) {
+    return null;
+  }
+
+  return (
+    <div className={`${isDark ? 'bg-white/[0.02]' : 'bg-white/50 backdrop-blur-xl'} rounded-2xl mt-8 p-8 ${isDark ? 'border border-white/10' : 'border border-gray-200'} space-y-6 ${isDark ? 'hover:border-white/20' : 'hover:border-gray-300'} transition-colors duration-300 group`}>
+      <h3 className={`text-xl font-semibold ${isDark ? 'text-white/90' : 'text-gray-800'} flex items-center gap-3`}>
+        <ImageIcon className="w-5 h-5 text-blue-400 group-hover:rotate-[20deg] transition-transform duration-300" />
+        Project Gallery
+      </h3>
+      
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        {projectImages.map((image, index) => (
+          <div 
+            key={index} 
+            className={`overflow-hidden rounded-xl ${isDark ? 'bg-white/5' : 'bg-white/70'} p-2 border ${isDark ? 'border-white/10' : 'border-gray-200'} hover:shadow-lg transition-all duration-300 group/card`}
+          >
+            <div className="relative overflow-hidden rounded-lg aspect-video">
+              <img 
+                src={image} 
+                alt={`${index === 0 ? 'Main' : `Screenshot ${index}`}`} 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover/card:scale-105"
+              />
+              <div className={`absolute inset-0 ${isDark ? 'bg-black/40' : 'bg-white/10'} opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 flex items-center justify-center`}>
+                <div className={`transform translate-y-4 opacity-0 group-hover/card:translate-y-0 group-hover/card:opacity-100 transition-all duration-300 ${isDark ? 'text-white' : 'text-gray-800'}`}>
+                  <span className="text-sm font-medium">{index === 0 ? 'Main Image' : `Screenshot ${index}`}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
   
 const handleGithubClick = (githubLink) => {
   if (githubLink === "Private") {
@@ -198,7 +263,6 @@ const ProjectDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [project, setProject] = useState(null);
-  const [isImageLoaded, setIsImageLoaded] = useState(false);
   const theme = useThemeStore((state) => state.theme);
   const isDark = theme === 'dark';
   
@@ -206,16 +270,30 @@ const ProjectDetails = () => {
     window.scrollTo(0, 0);
     const storedProjects = JSON.parse(localStorage.getItem("projects")) || [];
     const selectedProject = storedProjects.find((p) => String(p.id) === id);
+    
+    // Find gallery data from the local array
+    const galleryData = ProjectsGalleryData.find(p => p.id === parseInt(id));
+    
     if (selectedProject) {
+      // Create image array - start with main image, then add gallery images
+      const projectImages = [
+        selectedProject.Img,
+        ...(galleryData ? galleryData.GalleryImg : [])
+      ].filter(img => img);
+      
+      console.log("selectedProject", selectedProject)
       const enhancedProject = {
         ...selectedProject,
         Features: selectedProject.Features || [],
         TechStack: selectedProject.TechStack || {},
+        DemoLink: galleryData?.DemoLink || "https://github.com/rb4807", 
         Github: selectedProject.Github || "https://github.com/rb4807",
         ProjectDescription: selectedProject.ProjectDescription || "",
         techStackCount: selectedProject.techStackCount || 0,  
-        packageCount: selectedProject.packageCount || 0,     
+        packageCount: selectedProject.packageCount || 0,
+        projectImages: projectImages
       };
+      
       setProject(enhancedProject);
     }
   }, [id]);
@@ -272,7 +350,7 @@ const ProjectDetails = () => {
           <div className="grid lg:grid-cols-2 gap-8 md:gap-16">
             <div className="space-y-6 md:space-y-10 animate-slideInLeft">
               <div className="space-y-4 md:space-y-6">
-                <h1 className={`text-3xl md:text-6xl font-bold ${isDark ? 'bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200 bg-clip-text text-transparent' : 'text-gray-800'} leading-tight`}>
+                <h1 className={`text-3xl md:text-5xl font-bold ${isDark ? 'bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200 bg-clip-text text-transparent' : 'text-gray-800'} leading-tight`}>
                   {project.Title}
                 </h1>
                 <div className="relative h-1 w-16 md:w-24">
@@ -290,36 +368,9 @@ const ProjectDetails = () => {
               <ProjectDescriptionFun description={project.ProjectDescription} />
 
               <ProjectStats project={project} />
-
-              <div className="flex flex-wrap gap-3 md:gap-4">
-                <a
-                  href={project.Github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`group relative inline-flex items-center space-x-1.5 md:space-x-2 px-4 md:px-8 py-2.5 md:py-4 ${isDark ? 'bg-gradient-to-r from-purple-600/10 to-pink-600/10 hover:from-purple-600/20 hover:to-pink-600/20 text-purple-300 border-purple-500/20 hover:border-purple-500/40' : 'bg-gradient-to-r from-purple-100/70 to-pink-100/70 hover:from-purple-200/70 hover:to-pink-200/70 text-purple-700 border-purple-300 hover:border-purple-400'} rounded-xl transition-all duration-300 border backdrop-blur-xl overflow-hidden text-sm md:text-base`}
-                  onClick={(e) =>
-                    !handleGithubClick(project.Github) && e.preventDefault()
-                  }
-                >
-                  <div className={`absolute inset-0 translate-y-[100%] ${isDark ? 'bg-gradient-to-r from-purple-600/10 to-pink-600/10' : 'bg-gradient-to-r from-purple-200/70 to-pink-200/70'} transition-transform duration-300 group-hover:translate-y-[0%]`} />
-                  <Github className="relative w-4 h-4 md:w-5 md:h-5 group-hover:rotate-12 transition-transform" />
-                  <span className="relative font-medium">Github</span>
-                </a>
-              </div>
             </div>
 
             <div className="space-y-6 md:space-y-10 animate-slideInRight">
-              <div className={`relative rounded-2xl overflow-hidden ${isDark ? 'border border-white/10' : 'border border-gray-200'} shadow-2xl group`}>
-                <div className={`absolute inset-0 bg-gradient-to-t ${isDark ? 'from-[#030014]' : 'from-gray-100'} via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-                <img
-                  src={project.Img}
-                  alt={project.Title}
-                  className="w-full object-cover transform transition-transform duration-700 will-change-transform group-hover:scale-105"
-                  onLoad={() => setIsImageLoaded(true)}
-                />
-                <div className={`absolute inset-0 border-2 ${isDark ? 'border-white/0 group-hover:border-white/10' : 'border-gray-200/0 group-hover:border-gray-300'} transition-colors duration-300 rounded-2xl`} />
-              </div>
-
               {/* Tech Stack */}
               <div className={`${isDark ? 'bg-white/[0.02]' : 'bg-white/50'} backdrop-blur-xl rounded-2xl p-8 ${isDark ? 'border border-white/10' : 'border border-gray-200'} space-y-6 ${isDark ? 'hover:border-white/20' : 'hover:border-gray-300'} transition-colors duration-300 group`}>
                 <h3 className={`text-xl font-semibold ${isDark ? 'text-white/90' : 'text-gray-800'} flex items-center gap-3`}>
@@ -348,8 +399,40 @@ const ProjectDetails = () => {
                   </p>
                 )}
               </div>
+              <div className="flex flex-wrap gap-3 md:gap-4">
+                  <a
+                    href={project.Github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`group relative inline-flex items-center space-x-1.5 md:space-x-2 px-4 md:px-8 py-2.5 md:py-4 ${isDark ? 'bg-gradient-to-r from-purple-600/10 to-pink-600/10 hover:from-purple-600/20 hover:to-pink-600/20 text-purple-300 border-purple-500/20 hover:border-purple-500/40' : 'bg-gradient-to-r from-purple-100/70 to-pink-100/70 hover:from-purple-200/70 hover:to-pink-200/70 text-purple-700 border-purple-300 hover:border-purple-400'} rounded-xl transition-all duration-300 border backdrop-blur-xl overflow-hidden text-sm md:text-base`}
+                    onClick={(e) =>
+                      !handleGithubClick(project.Github) && e.preventDefault()
+                    }
+                  >
+                    <div className={`absolute inset-0 translate-y-[100%] ${isDark ? 'bg-gradient-to-r from-purple-600/10 to-pink-600/10' : 'bg-gradient-to-r from-purple-200/70 to-pink-200/70'} transition-transform duration-300 group-hover:translate-y-[0%]`} />
+                    <Github className="relative w-4 h-4 md:w-5 md:h-5 group-hover:rotate-12 transition-transform" />
+                    <span className="relative font-medium">Github</span>
+                  </a>
+
+                  <a
+                    href={project.DemoLink} // Assuming you have a LiveLink property in your project object
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`group relative inline-flex items-center space-x-1.5 md:space-x-2 px-4 md:px-8 py-2.5 md:py-4 ${isDark ? 'bg-gradient-to-r from-blue-600/10 to-cyan-600/10 hover:from-blue-600/20 hover:to-cyan-600/20 text-blue-300 border-blue-500/20 hover:border-blue-500/40' : 'bg-gradient-to-r from-blue-100/70 to-cyan-100/70 hover:from-blue-200/70 hover:to-cyan-200/70 text-blue-700 border-blue-300 hover:border-blue-400'} rounded-xl transition-all duration-300 border backdrop-blur-xl overflow-hidden text-sm md:text-base`}
+                  >
+                    <div className={`absolute inset-0 translate-y-[100%] ${isDark ? 'bg-gradient-to-r from-blue-600/10 to-cyan-600/10' : 'bg-gradient-to-r from-blue-200/70 to-cyan-200/70'} transition-transform duration-300 group-hover:translate-y-[0%]`} />
+                    <ExternalLink className="relative w-4 h-4 md:w-5 md:h-5 group-hover:rotate-12 transition-transform" />
+                    <span className="relative font-medium">Check Now</span>
+                  </a>
+                </div>
             </div>
           </div>
+          
+          {/* Project Gallery moved here, outside the grid for full-width display */}
+          {project.projectImages && project.projectImages.length > 0 && (
+            <ProjectGallery projectImages={project.projectImages} />
+          )}
+          
         </div>
       </div>
 

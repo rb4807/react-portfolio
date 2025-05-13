@@ -8,6 +8,7 @@ import nginx_react from '../assets/nginx_react.jpg';
 import automated_react_tailwind_setup from '../assets/automated_react_tailwind_setup.jpg';
 import ckeditor_integration_django from '../assets/ckeditor_integration_django.jpg';
 import web_gl_deployment from '../assets/web_gl_deployment.jpg';
+import real_time_web_socket_guide from '../assets/real_time_web_socket_guide.png';
 
 import { React, useState, useEffect, useRef } from 'react';
 import { Sparkles, ChevronRight, Heart, Star, Clock, ExternalLink, ArrowUp } from 'lucide-react';
@@ -20,6 +21,7 @@ const TechInsightsGuidesData = [
     { id: 4, Img: web_gl_deployment, Title: 'Web GL Deployment Deployment Guide on Ubuntu with Nginx and Apache', description: 'Comprehensive guide to deploying WebGL applications on Ubuntu Server using Apache and Nginx, covering setup, configuration, and optimization steps.', category: ['DevOps'], url: 'https://web-gl-deployment.vercel.app/' },
     { id: 5, Img: automated_react_tailwind_setup, Title: 'Automated React + Tailwind Setup with a Single Python Script', description: 'One-step solution to create a React project with Tailwind CSS using a single Python script and command.', category: ['Tools'], url: 'https://react-tailwind-auto-setup.vercel.app/' },
     { id: 6, Img: ckeditor_integration_django, Title: 'CKEditor Integration in Django: With and Without forms.py', description: 'Comprehensive guide to integrating CKEditor rich text editor in Django projects, covering both direct model integration and forms.py approach.', category: ['Tools'], url: 'https://ckeditor-integration-documentation.vercel.app/' },
+    { id: 7, Img: real_time_web_socket_guide, Title: 'Real Time Web Socketing in Go using Gin Framework', description: 'Learn real-time WebSocket communication in Go with Gin. Set up bidirectional connections, handle live data, and build responsive apps with practical examples.', category: ['Web Socketing'], url: 'https://real-time-web-socket-using-gin.vercel.app/' },
 ];
 
 // Animation styles
@@ -226,7 +228,7 @@ const TechInsightsGuides = () => {
     const initialItems = 6;
   
     // Filter categories
-    const categories = ['All', 'DevOps', 'Tools'];
+    const categories = ['All', 'DevOps', 'Tools', 'Web Socketing'];
     useEffect(() => {
         filterInsights(activeFilter);
     }, [activeFilter]);
