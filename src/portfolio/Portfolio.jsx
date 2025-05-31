@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { AppBar, Tabs, Tab, Box } from '@mui/material';
 import SwipeableViews from 'react-swipeable-views';
-import { Code, Award, Boxes, Waypoints } from 'lucide-react'; 
+import { Code, Award, Boxes, Waypoints, BriefcaseIcon } from 'lucide-react'; 
 import CardProject from '../components/CardProject'; 
 import Certificate from '../components/Certificate';
 import TechStack from '../components/TechStack';
@@ -70,15 +70,67 @@ const TechStacksData = [
 
 const JourneyData = {
     education: [
-        { id: 1, year: '2019-2023', title: 'BACHELOR’S OF ENGINEERING', school: 'Nehru Institute of Engineering and Technology', cgpa:'7.9', university:'Anna University' },
+        { id: 1, year: '2019-2023', title: 'BACHELOR\'S OF ENGINEERING', school: 'Nehru Institute of Engineering and Technology', cgpa:'7.9', university:'Anna University' },
         { id: 2, year: '2017-2019', title: 'SENIOR SECONDARY EDUCATION', school: 'Karnakiyamman School', cgpa:'6.6', university:'Kerala State Board' },
         { id: 3, year: '2016-2017', title: 'SECONDARY EDUCATION', school: 'St.Raphaels School', cgpa:'7.2', university:'Central Board of Secondary Education' },
     ],
     experience: [
-        { id: 1, year: '2024-Present (1 Year)', company:'Deienami', role: 'Software Solution Engineer', location: 'Kochi, Kerala' },
-        { id: 2, year: '2023-2024 (6 Months)', company:'Luminar Technolab', role: 'Python Full Stack Developer Intern', location: 'Trivandrum, Kerala' },
+        { 
+            id: 1, 
+            company: 'Deienami',
+            jobType: 'Full Time', 
+            roles: [
+                {
+                    title: 'Product Engineer',
+                    period: 'Jan 2025 - Present',
+                    duration: '5 months',
+                    location: 'Trivandrum, Kerala',
+                    promoted: true
+                },
+                {
+                    title: 'Software Solution Engineer',
+                    period: 'Jan 2024 - Dec 2024',
+                    duration: '1 year',
+                    location: 'Trivandrum, Kerala'
+                }
+            ],
+        },
+        { 
+            id: 2, 
+            company: 'Luminar Technolab',
+            jobType: 'Internship',  
+            roles: [
+                {
+                    title: 'Python Full Stack Developer Intern',
+                    period: 'Jun 2023 - Dec 2023',
+                    duration: '7 months',
+                    location: 'Kochi, Kerala'
+                }
+            ]
+        },
     ],
 };
+
+const calculateDuration = (period) => {
+    if (!period) return '';
+
+    const [startStr, endStr] = period.split(' - ');
+    const startDate = new Date(startStr + ' 1');
+    const endDate = endStr === 'Present' ? new Date() : new Date(endStr + ' 1');
+
+    let totalMonths = (endDate.getFullYear() - startDate.getFullYear()) * 12 +
+                      (endDate.getMonth() - startDate.getMonth());
+
+    totalMonths += 1;
+
+    const years = Math.floor(totalMonths / 12);
+    const months = totalMonths % 12;
+
+    if (years === 0) return `${months} month${months !== 1 ? 's' : ''}`;
+    if (months === 0) return `${years} year${years !== 1 ? 's' : ''}`;
+    return `${years} year${years !== 1 ? 's' : ''} ${months} month${months !== 1 ? 's' : ''}`;
+};
+
 
 function Portfolio() {
     const [value, setValue] = useState(0);
@@ -236,8 +288,8 @@ function Portfolio() {
                         <TabPanel value={value} index={1}>
                             {/* Journey Content */}
                             <Tabs value={subTab} onChange={handleJourneySubTabChange} centered>
-                                <Tab className='relative z-10 transition-colors duration-300 bg-gradient-to-r from-white to-white bg-clip-text text-transparent font-semibold'  label="Education" />
-                                <Tab className='relative z-10 transition-colors duration-300 bg-gradient-to-r from-white to-white bg-clip-text text-transparent font-semibold'  label="Experience" />
+                                <Tab className='relative z-10 transition-colors duration-300 bg-gradient-to-r from-white to-white bg-clip-text text-transparent font-semibold' label="Education" />
+                                <Tab className='relative z-10 transition-colors duration-300 bg-gradient-to-r from-white to-white bg-clip-text text-transparent font-semibold' label="Experience" />
                             </Tabs>
                             <SwipeableViews axis="x" index={subTab} onChangeIndex={(index) => setSubTab(index)}>
                                 <TabPanel value={subTab} index={0}>
@@ -261,18 +313,88 @@ function Portfolio() {
                                 </TabPanel>
 
                                 <TabPanel value={subTab} index={1}>
-                                    {/* Experience Journey */}
                                     <div className="container mx-auto flex flex-col items-start pl-4" style={{ overflow: 'hidden' }}>
-                                        <div className="relative border-l border-gray-500 dark:border-gray-200">
-                                            {JourneyData.experience.map((event, index) => (
-                                                <div key={event.id} className="mb-8 ml-6" data-aos="fade-up" data-aos-duration="1000">
+                                        <div className="relative border-l-2 border-gray-300 dark:border-gray-600">
+                                            {JourneyData.experience.map((exp, expIndex) => (
+                                                <div key={exp.id} className="mb-10 ml-6 relative" data-aos="fade-up" data-aos-duration="800" data-aos-delay={expIndex * 200}>
+                                                    {/* Company Timeline Marker */}
                                                     <div className={`absolute w-4 h-4 rounded-full bg-blue-500 -left-8 border border-gray-500 dark:border-white`}></div>
-                                                    <div className="flex items-center justify-between">
-                                                        <h3 className="text-lg font-bold bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">{event.role}</h3>
-                                                        <span className="text-sm md:pl-4 text-gray-300">{event.year}</span>
+                                                    
+                                                    {/* Company Card - LinkedIn Style */}
+                                                    <div className="transition-all duration-300 overflow-hidden">
+                                                        {/* Company Header - Adjusted alignment */}
+                                                        <div className=" pb-4">
+                                                            <div className="flex items-start gap-4 mb-2">
+                                                                <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-[#6366f1] to-[#a855f7] flex items-center justify-center shadow-md flex-shrink-0 mt-1">
+                                                                    <BriefcaseIcon className="w-6 h-6 text-white" />
+                                                                </div>
+                                                                <div className="flex-1">
+                                                                    <h3 className="text-xl font-bold bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">
+                                                                        {exp.company}
+                                                                    </h3>
+                                                                    <p className="text-gray-600 dark:text-gray-400 text-sm">
+                                                                        {exp.jobType || 'Full-time'} ·{' '}
+                                                                        {(() => {
+                                                                            const totalMonths = exp.roles.reduce((total, role) => {
+                                                                            const months = role.duration.includes('year')
+                                                                                ? parseInt(role.duration) * 12
+                                                                                : parseInt(role.duration);
+                                                                            return total + (months || 0);
+                                                                            }, 0);
+
+                                                                            if (totalMonths === 12) {
+                                                                            return '1 year total';
+                                                                            } else if (totalMonths < 12) {
+                                                                            return `${totalMonths} month${totalMonths !== 1 ? 's' : ''} total`;
+                                                                            } else {
+                                                                            const years = Math.ceil((totalMonths / 12) * 10) / 10;
+                                                                            const formattedYears =
+                                                                                years % 1 === 0 ? years.toString() : years.toFixed(1);
+                                                                            return `${formattedYears} year${years === 1 ? '' : 's'} total`;
+                                                                            }
+                                                                        })()}
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        {/* Roles List */}
+                                                        <div className="px-6 ml-10 pb-6">
+                                                            {exp.roles.map((role, roleIndex) => (
+                                                                <div key={roleIndex} className={`relative ${roleIndex > 0 ? 'pt-4 mt-4 border-t border-gray-100 dark:border-gray-700' : ''}`}>
+                                                                    
+                                                                    {/* Role Content */}
+                                                                    <div className={exp.roles.length > 1 ? 'ml-4' : ''}>
+                                                                        <div className="flex items-start justify-between mb-2">
+                                                                            <div className="flex-1">
+                                                                                <div className="flex items-center gap-2 mb-1">
+                                                                                    <h4 className="text-lg font-semibold text-gray-900 dark:text-white">
+                                                                                        {role.title}
+                                                                                    </h4>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        
+                                                                        <div className="space-y-1 text-sm text-gray-600 dark:text-gray-400">
+                                                                            <div className="flex items-center gap-2">
+                                                                                <svg className="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                                                    <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
+                                                                                </svg>
+                                                                                <span>{role.period} · {role.period ? calculateDuration(role.period) : role.duration}</span>
+                                                                            </div>
+                                                                            
+                                                                            <div className="flex items-center gap-2">
+                                                                                <svg className="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                                                    <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                                                                                </svg>
+                                                                                <span>{role.location}</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            ))}
+                                                        </div>
                                                     </div>
-                                                    <p className="text-gray-700 dark:text-gray-400 mt-2">{event.company}</p>
-                                                    <p className="text-gray-700 dark:text-gray-400 mt-2">{event.location}</p>
                                                 </div>
                                             ))}
                                         </div>
