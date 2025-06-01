@@ -83,7 +83,7 @@ const JourneyData = {
                 {
                     title: 'Product Engineer',
                     period: 'Jan 2025 - Present',
-                    duration: '5 months',
+                    duration: '',
                     location: 'Trivandrum, Kerala',
                     promoted: true
                 },
@@ -131,6 +131,19 @@ const calculateDuration = (period) => {
     return `${years} year${years !== 1 ? 's' : ''} ${months} month${months !== 1 ? 's' : ''}`;
 };
 
+function calculateMonthsBetween(startDateStr, endDateStr) {
+    const [startMonth, startYear] = startDateStr.split(' ');
+    const startDate = new Date(`${startMonth} 1, ${startYear}`);
+
+    const endDate = endDateStr === 'Present'
+        ? new Date()
+        : new Date(`${endDateStr.split(' ')[0]} 1, ${endDateStr.split(' ')[1]}`);
+
+    const years = endDate.getFullYear() - startDate.getFullYear();
+    const months = endDate.getMonth() - startDate.getMonth();
+
+    return years * 12 + months + 1; 
+}
 
 function Portfolio() {
     const [value, setValue] = useState(0);
@@ -301,7 +314,7 @@ function Portfolio() {
                                                     <div className={`absolute w-4 h-4 rounded-full bg-blue-500 -left-8 border border-gray-500 dark:border-white`}></div>
                                                     <div className="flex items-center justify-between">
                                                         <h3 className="text-lg font-bold bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">{event.title}</h3>
-                                                        <span className="text-sm md:pl-4 text-gray-300">{event.year}</span>
+                                                        <span className="text-sm md:pl-4 text-gray-600 dark:text-gray-400">{event.year}</span>
                                                     </div>
                                                     <p className="text-gray-700 dark:text-gray-400 mt-2">{event.school}</p>
                                                     <p className="text-gray-700 dark:text-gray-400 mt-2">{event.university}</p>
@@ -312,15 +325,17 @@ function Portfolio() {
                                     </div>
                                 </TabPanel>
 
+                             
+
                                 <TabPanel value={subTab} index={1}>
                                     <div className="container mx-auto flex flex-col items-start pl-4" style={{ overflow: 'hidden' }}>
-                                        <div className="relative border-l-2 border-gray-300 dark:border-gray-600">
+                                        <div className="relative border-l border-gray-500 dark:border-gray-600">
                                             {JourneyData.experience.map((exp, expIndex) => (
                                                 <div key={exp.id} className="mb-10 ml-6 relative" data-aos="fade-up" data-aos-duration="800" data-aos-delay={expIndex * 200}>
                                                     {/* Company Timeline Marker */}
                                                     <div className={`absolute w-4 h-4 rounded-full bg-blue-500 -left-8 border border-gray-500 dark:border-white`}></div>
                                                     
-                                                    {/* Company Card - LinkedIn Style */}
+                                                    {/* Company Card */}
                                                     <div className="transition-all duration-300 overflow-hidden">
                                                         {/* Company Header - Adjusted alignment */}
                                                         <div className=" pb-4">
@@ -336,21 +351,22 @@ function Portfolio() {
                                                                         {exp.jobType || 'Full-time'} ·{' '}
                                                                         {(() => {
                                                                             const totalMonths = exp.roles.reduce((total, role) => {
-                                                                            const months = role.duration.includes('year')
-                                                                                ? parseInt(role.duration) * 12
-                                                                                : parseInt(role.duration);
-                                                                            return total + (months || 0);
+                                                                                if (role.period) {
+                                                                                    const [start, end] = role.period.split(' - ');
+                                                                                    return total + calculateMonthsBetween(start, end);
+                                                                                }
+                                                                                return total;
                                                                             }, 0);
 
                                                                             if (totalMonths === 12) {
-                                                                            return '1 year total';
+                                                                                return '1 year total';
                                                                             } else if (totalMonths < 12) {
-                                                                            return `${totalMonths} month${totalMonths !== 1 ? 's' : ''} total`;
+                                                                                return `${totalMonths} month${totalMonths !== 1 ? 's' : ''} total`;
                                                                             } else {
-                                                                            const years = Math.ceil((totalMonths / 12) * 10) / 10;
-                                                                            const formattedYears =
-                                                                                years % 1 === 0 ? years.toString() : years.toFixed(1);
-                                                                            return `${formattedYears} year${years === 1 ? '' : 's'} total`;
+                                                                                const years = Math.floor(totalMonths / 12);
+                                                                                const months = totalMonths % 12;
+                                                                                const total = (years + months * 0.1).toFixed(1);
+                                                                                return `${total} year${total === '1.0' ? '' : 's'} total`
                                                                             }
                                                                         })()}
                                                                     </p>
@@ -361,7 +377,7 @@ function Portfolio() {
                                                         {/* Roles List */}
                                                         <div className="px-6 ml-10 pb-6">
                                                             {exp.roles.map((role, roleIndex) => (
-                                                                <div key={roleIndex} className={`relative ${roleIndex > 0 ? 'pt-4 mt-4 border-t border-gray-100 dark:border-gray-700' : ''}`}>
+                                                                <div key={roleIndex} className={`relative ${roleIndex > 0 ? 'pt-4 mt-4 border-t border-gray-400 dark:border-gray-700' : ''}`}>
                                                                     
                                                                     {/* Role Content */}
                                                                     <div className={exp.roles.length > 1 ? 'ml-4' : ''}>
