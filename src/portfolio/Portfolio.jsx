@@ -18,6 +18,7 @@ import deltafour from '../assets/deltafour.jpg';
 import beond_work from '../assets/beond_work.jpg';
 import movie from '../assets/movie.png';
 import text_to_voice from '../assets/text_to_voice.png';
+import daily_food_expense_tracker from '../assets/daily_food_expense_tracker.png';
 import real_time_web_socket from '../assets/real_time_web_socket.png';
 
 import agile from '../assets/agile.jpg';
@@ -42,6 +43,7 @@ const ProjectsData = [
     { id: 10, Img: ecommerce, Title: 'Ecommerce App', responsibility: 'Full Stack Development', Link: '#', category: ['Python', 'JavaScript'] },
     { id: 11, Img: teammed, Title: 'Hospital Appointment App', responsibility: 'Full Stack Development', Link: '#', category: ['Python', 'JavaScript'] },
     { id: 12, Img: text_to_voice, Title: 'Text to Voice Generator with Multiple Voice', responsibility: 'Full Stack Development', Link: '#', category: ['JavaScript'] },
+    { id: 13, Img: daily_food_expense_tracker, Title: 'Daily Food Expense Tracker', responsibility: 'Full Stack Development', Link: '#', category: ['Dart'] },
 ];
 
 const CertificatesData = [
@@ -171,7 +173,7 @@ function Portfolio() {
 
     const getFilteredProjects = () => {
         if (subTabValue === 0) return ProjectsData; 
-        const categories = ['Python', 'JavaScript', 'Golang'];
+        const categories = ['Python', 'JavaScript', 'Golang', 'Dart'];
         return ProjectsData.filter(project => project.category.includes(categories[subTabValue - 1]));
     };
     
@@ -279,6 +281,7 @@ function Portfolio() {
                                 <Tab label="Python" {...a11yProps(1)} className='relative z-10 transition-colors duration-300 bg-gradient-to-r from-white to-white bg-clip-text text-transparent font-semibold' />
                                 <Tab label="JavaScript" {...a11yProps(2)} className='relative z-10 transition-colors duration-300 bg-gradient-to-r from-white to-white bg-clip-text text-transparent font-semibold' />
                                 <Tab label="Golang" {...a11yProps(3)} className='relative z-10 transition-colors duration-300 bg-gradient-to-r from-white to-white bg-clip-text text-transparent font-semibold' />
+                                <Tab label="Dart" {...a11yProps(3)} className='relative z-10 transition-colors duration-300 bg-gradient-to-r from-white to-white bg-clip-text text-transparent font-semibold' />
                             </Tabs>
                             
                             {/* Projects Content */}

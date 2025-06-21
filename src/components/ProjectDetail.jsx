@@ -11,6 +11,9 @@ import text_voice_1 from '../assets/text_voice_1.jpg';
 import text_voice_2 from '../assets/text_voice_2.jpg';
 import real_time_web_socket_1 from '../assets/real_time_web_socket_1.png';
 import real_time_web_socket_2 from '../assets/real_time_web_socket_2.png';
+import daily_food_expense_tracker_1 from '../assets/daily_food_expense_tracker_1.jpg';
+import daily_food_expense_tracker_3 from '../assets/daily_food_expense_tracker_3.jpg';
+import daily_food_expense_tracker_4 from '../assets/daily_food_expense_tracker_4.jpg';
 import teammed_1 from '../assets/teammed_1.png';
 import teammed_2 from '../assets/teammed_2.png';
 import ecommerce_1 from '../assets/ecommerce_1.png';
@@ -33,6 +36,7 @@ const ProjectsGalleryData = [
     { id: 10, Title: 'Ecommerce App', GalleryImg: [ecommerce_1, ecommerce_2] , DemoLink: 'https://github.com/rb4807/'},
     { id: 11, Title: 'Hospital Appointment App', GalleryImg: [teammed_1, teammed_2] , DemoLink: 'https://github.com/rb4807/'},
     { id: 12, Title: 'Text to Voice Generator with Multiple Voice', GalleryImg: [text_voice_1, text_voice_2], DemoLink:'https://text-to-voice-generator.vercel.app/'},
+    { id: 13, Title: 'Daily Food Expense Tracker', GalleryImg: [daily_food_expense_tracker_1, daily_food_expense_tracker_3, daily_food_expense_tracker_4], DemoLink:'https://github.com/rb4807/food-expense-tracker/'},
 ];
 
 // Animated Background Component for Light Theme

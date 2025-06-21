@@ -173,6 +173,20 @@ const projectMetadata = {
         ProjectDescription: 'Developed a real-time market data streaming platform using WebSocket technology to deliver live financial data to multiple clients simultaneously. Built with gin-gonic/gin for HTTP handling and gorilla/websocket for low-latency streams. Designed a scalable backend supporting multiple tickers and concurrent sessions, ensuring high performance and data consistency. Focused on seamless real-time delivery with optimized resource and concurrency management.',
         techStackCount: 2,
         packageCount: 2, 
+    },
+    'Daily Food Expense Tracker': {
+        TechStack: {
+            Language: ['Dart'],
+            Frontend: [ 'Flutter', 'Material Design', 'Cupertino (iOS-style) widgets', 'Responsive UI'],
+            StateManagement: ['Provider'],
+            Packages: [ 'Shared Preferences', 'Intl', 'Flutter Svg', 'Provider', 'Path Provider', 'Flutter Launcher Icons', 'Flutter Native Splash', 'Url Launcher', 'Flutter Local Notifications'],
+            Devops: ['GitHub'],
+            Tools: [ 'VS Code', 'Android Studio', 'Git Desktop', 'Flutter SDK', 'Dart DevTools','GitDesktop', 'VScode']
+        },
+        Github: 'https://github.com/rb4807/Web_Socketing_Real_Time',
+        ProjectDescription: 'Developed a food expense tracking application to monitor daily spending across breakfast, lunch, and dinner categories. Built using Flutter for a smooth cross-platform experience, with persistent data storage managed via SharedPreferences. The app calculates and displays total expenses on a daily, weekly, and monthly basis, providing users with clear spending insights. Emphasized intuitive UI and efficient state management to ensure real-time updates and seamless expense tracking. Designed for lightweight performance and quick access to historical data without external dependencies.',
+        techStackCount: 2,
+        packageCount: 9, 
     }
 };
 
