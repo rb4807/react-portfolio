@@ -4,6 +4,7 @@ import SwipeableViews from 'react-swipeable-views';
 import ToggleButton from '../components/ToggleButton';
 import apache_django from '../assets/apache_django.jpg';
 import nginx_django from '../assets/nginx_django.jpg';
+import sftp_operation from '../assets/sftp_operation.png';
 import nginx_react from '../assets/nginx_react.jpg';
 import automated_react_tailwind_setup from '../assets/automated_react_tailwind_setup.jpg';
 import ckeditor_integration_django from '../assets/ckeditor_integration_django.jpg';
@@ -22,6 +23,7 @@ const TechInsightsGuidesData = [
     { id: 5, Img: automated_react_tailwind_setup, Title: 'Automated React + Tailwind Setup with a Single Python Script', description: 'One-step solution to create a React project with Tailwind CSS using a single Python script and command.', category: ['Tools'], url: 'https://react-tailwind-auto-setup.vercel.app/' },
     { id: 6, Img: ckeditor_integration_django, Title: 'CKEditor Integration in Django: With and Without forms.py', description: 'Comprehensive guide to integrating CKEditor rich text editor in Django projects, covering both direct model integration and forms.py approach.', category: ['Tools'], url: 'https://ckeditor-integration-documentation.vercel.app/' },
     { id: 7, Img: real_time_web_socket_guide, Title: 'Real Time Web Socketing in Go using Gin Framework', description: 'Learn real-time WebSocket communication in Go with Gin. Set up bidirectional connections, handle live data, and build responsive apps with practical examples.', category: ['Web Socketing'], url: 'https://real-time-web-socket-using-gin.vercel.app/' },
+    { id: 8, Img: sftp_operation, Title: 'SFTP Authentication with File Operation.', category: ['DevOps'], url: 'https://sftp-sage.vercel.app/' },
 ];
 
 // Animation styles
