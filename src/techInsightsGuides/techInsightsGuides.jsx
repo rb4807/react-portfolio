@@ -23,7 +23,7 @@ const TechInsightsGuidesData = [
     { id: 5, Img: automated_react_tailwind_setup, Title: 'Automated React + Tailwind Setup with a Single Python Script', description: 'One-step solution to create a React project with Tailwind CSS using a single Python script and command.', category: ['Tools'], url: 'https://react-tailwind-auto-setup.vercel.app/' },
     { id: 6, Img: ckeditor_integration_django, Title: 'CKEditor Integration in Django: With and Without forms.py', description: 'Comprehensive guide to integrating CKEditor rich text editor in Django projects, covering both direct model integration and forms.py approach.', category: ['Tools'], url: 'https://ckeditor-integration-documentation.vercel.app/' },
     { id: 7, Img: real_time_web_socket_guide, Title: 'Real Time Web Socketing in Go using Gin Framework', description: 'Learn real-time WebSocket communication in Go with Gin. Set up bidirectional connections, handle live data, and build responsive apps with practical examples.', category: ['Web Socketing'], url: 'https://real-time-web-socket-using-gin.vercel.app/' },
-    { id: 8, Img: sftp_operation, Title: 'SFTP Authentication with File Operation.', category: ['DevOps'], url: 'https://sftp-sage.vercel.app/' },
+    { id: 8, Img: sftp_operation, Title: 'SFTP Authentication with File Operation', description: 'Complete guide for secure file transfers using SFTP with password and key-based authentication', category: ['DevOps'], url: 'https://sftp-sage.vercel.app/' },
 ];
 
 // Animation styles
